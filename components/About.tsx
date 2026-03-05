@@ -1,12 +1,30 @@
 'use client'
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
 import { Rethink_Sans } from 'next/font/google'
+import { useRef } from 'react'
 
 const rethink = Rethink_Sans({ subsets: ['latin'] })
 
 export default function About(){
+  const containerRef = useRef<HTMLElement>(null)
+  
+  // Track scroll progress of this specific section
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  })
+
+  // Apply a spring physics layer to make the scroll movement extremely smooth
+  const smoothProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 25 })
+
+  // Map progress to a much faster/further horizontal shift (move left aggressively)
+  const xMovement = useTransform(smoothProgress, [0, 1], [50, -600])
+  
+  // Rotate backwards smoothly in sync with the horizontal movement to simulate rolling
+  const rotateMovement = useTransform(smoothProgress, [0, 1], [0, -720])
+
   return(
-    <section className={`bg-white py-24 md:py-36 relative overflow-hidden ${rethink.className}`}>
+    <section ref={containerRef} className={`bg-white py-24 md:py-36 relative overflow-hidden ${rethink.className}`}>
       <div className="max-w-[1400px] mx-auto px-6 xl:px-8 relative z-10">
         
         <div className="grid md:grid-cols-[200px_1fr] lg:grid-cols-[250px_1fr] gap-8 md:gap-12">
@@ -52,10 +70,7 @@ export default function About(){
 
       {/* Decorative Large Asterisk (Bottom Right) */}
       <motion.div 
-        initial={{opacity:0, rotate:-45, scale: 0.5}}
-        whileInView={{opacity:1, rotate:0, scale: 1}}
-        viewport={{once:true, margin:"-100px"}}
-        transition={{duration:1, delay:0.4}}
+        style={{ x: xMovement, rotate: rotateMovement }}
         className="absolute right-[-10px] bottom-[-10px] md:right-10 md:bottom-10 opacity-80 pointer-events-none"
       >
         <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#222" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
