@@ -9,6 +9,7 @@ import Process from '../components/Process'
 import Portfolio from '../components/Portfolio'
 import Testimonials from '../components/Testimonials'
 import CTA from '../components/CTA'
+import LatestArticles from '../components/LatestArticles'
 
 export default function Page(){
   return(
@@ -18,13 +19,13 @@ export default function Page(){
       <About />
       <Stats />
       <WhyChooseUs />
-      
       <Services />
       <Process />
       <WhyTrust />
-      <Portfolio />
-      <Testimonials />
-      <CTA />
+      {/* <Portfolio /> */}
+      {/* <Testimonials /> */}
+      <LatestArticles />
+      {/* <CTA /> */}
     </main>
   )
 }
