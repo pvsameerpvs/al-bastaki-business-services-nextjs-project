@@ -1,6 +1,6 @@
 import Hero from '../components/Hero'
 import TimelineBar from '../components/TimelineBar'
-import Services from '../components/Services'
+import WhyChooseUs from '../components/WhyChooseUs'
 import About from '../components/About'
 import Stats from '../components/Stats'
 import Process from '../components/Process'
@@ -15,7 +15,7 @@ export default function Page(){
       <TimelineBar />
       <About />
       <Stats />
-      <Services />
+      <WhyChooseUs />
       <Process />
       <Portfolio />
       <Testimonials />

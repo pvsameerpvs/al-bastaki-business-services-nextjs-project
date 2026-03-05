@@ -4,7 +4,7 @@ import { Rethink_Sans } from 'next/font/google'
 
 const rethink = Rethink_Sans({ subsets: ['latin'] })
 
-export default function Services() {
+export default function WhyChooseUs() {
   return (
     <section className={`bg-[#F9FAFB] pb-24 md:pb-32 overflow-hidden ${rethink.className}`}>
       <div className="max-w-[1400px] mx-auto px-6 xl:px-8">
