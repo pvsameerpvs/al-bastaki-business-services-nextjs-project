@@ -76,8 +76,9 @@ export default function Services() {
   }
 
   return (
-    <section className={`relative py-14 md:py-20 overflow-hidden ${rethink.className}`}>
-      {/* Background Image & Overlay */}
+    <>
+      <section className={`relative py-14 md:py-20 overflow-hidden ${rethink.className}`}>
+        {/* Background Image & Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
           src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1920&q=80" 
@@ -149,7 +150,7 @@ export default function Services() {
         {/* Glass Cards Slider Layout with Native Snap */}
         <div 
           ref={scrollRef}
-          className="flex flex-row w-full h-[320px] lg:h-[360px] relative z-10 gap-4 lg:gap-5 overflow-x-auto snap-x snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']"
+          className="flex flex-row w-full relative z-10 gap-4 lg:gap-5 px-2 pt-8 overflow-x-auto snap-x snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']"
         >
           {services.map((svc, idx) => (
             <motion.div
@@ -158,11 +159,11 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 * idx }}
-              className="group relative flex-shrink-0 w-[300px] sm:w-[320px] lg:w-[340px] h-full cursor-pointer snap-center lg:snap-start"
+              className="group relative flex-shrink-0 w-[300px] sm:w-[320px] lg:w-[340px] h-[380px] sm:h-[400px] lg:h-[440px] cursor-pointer snap-center lg:snap-start"
             >
               {/* Expanding Glass Background with gaps and rounded edges */}
-              {/* Unhovered: 95px bottom pill. Hovered: Full height glass card. */}
-              <div className="absolute bottom-0 inset-x-0 h-full lg:h-[95px] group-hover:h-full bg-white/5 group-hover:bg-[#00223E]/90 backdrop-blur-md transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] rounded-3xl z-0 group-hover:shadow-2xl border border-white/10 group-hover:border-white/20" />
+              {/* Unhovered: 110px bottom pill. Hovered: Full height glass card. */}
+              <div className="absolute bottom-0 inset-x-0 h-full lg:h-[110px] group-hover:h-full bg-white/5 group-hover:bg-[#00223E]/90 backdrop-blur-md transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] rounded-3xl z-0 group-hover:shadow-2xl border border-white/10 group-hover:border-white/20" />
 
               {/* Icon - Leaps to top on hover */}
               <div className="absolute left-6 lg:left-8 bottom-[55px] lg:bottom-[50px] group-hover:bottom-[65%] lg:group-hover:bottom-[72%] transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] text-[#bad5e8] group-hover:text-primary z-10">
@@ -205,8 +206,39 @@ export default function Services() {
             </motion.div>
           ))}
         </div>
-
       </div>
-    </section>
+      </section>
+
+      {/* Brand-Themed Infinite Scrolling Marquee */}
+      <div className={`w-full bg-primary text-white py-5 lg:py-6 overflow-hidden flex border-t border-white/10 shadow-[0_-5px_25px_rgba(0,102,166,0.2)] ${rethink.className}`}>
+        <motion.div
+          animate={{ x: [0, "-50%"] }}
+          transition={{ repeat: Infinity, duration: 35, ease: "linear" }}
+          className="flex whitespace-nowrap w-fit items-center"
+        >
+          {/* We duplicate the content twice to ensure seamless looping without snapping gaps */}
+          {[...Array(2)].map((_, i) => (
+            <div key={i} className="flex items-center w-max shrink-0">
+              {[
+                "REAL ESTATE",
+                "HEALTHCARE",
+                "MANUFACTURING",
+                "TECHNOLOGY",
+                "RETAIL",
+              ].map((item, j) => (
+                <div key={j} className="flex items-center shrink-0">
+                  <span className="font-bold tracking-[0.2em] text-[15px] lg:text-[18px] px-8 lg:px-12 text-white/90">
+                    {item}
+                  </span>
+                  <span className="text-white/40 text-[20px] lg:text-[28px] font-normal mt-1">
+                    ❋
+                  </span>
+                </div>
+              ))}
+            </div>
+          ))}
+        </motion.div>
+      </div>
+    </>
   )
 }
