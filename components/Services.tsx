@@ -76,9 +76,8 @@ export default function Services() {
   }
 
   return (
-    <>
-      <section className={`relative py-14 md:py-20 overflow-hidden ${rethink.className}`}>
-        {/* Background Image & Overlay */}
+    <section className={`relative pt-14 md:pt-20 pb-0 overflow-hidden ${rethink.className}`}>
+      {/* Background Image & Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
           src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1920&q=80" 
@@ -207,10 +206,9 @@ export default function Services() {
           ))}
         </div>
       </div>
-      </section>
 
       {/* Brand-Themed Infinite Scrolling Marquee */}
-      <div className={`w-full bg-primary text-white py-5 lg:py-6 overflow-hidden flex border-t border-white/10 shadow-[0_-5px_25px_rgba(0,102,166,0.2)] ${rethink.className}`}>
+      <div className={`w-full relative z-20 bg-primary text-white py-4 lg:py-6 overflow-hidden flex border-t border-white/10 shadow-[0_-5px_25px_rgba(0,102,166,0.2)] ${rethink.className}`}>
         <motion.div
           animate={{ x: [0, "-50%"] }}
           transition={{ repeat: Infinity, duration: 35, ease: "linear" }}
@@ -239,6 +237,7 @@ export default function Services() {
           ))}
         </motion.div>
       </div>
-    </>
+    </section>
   )
 }
+
