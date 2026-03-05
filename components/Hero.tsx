@@ -14,7 +14,7 @@ export default function Hero(){
   }, [])
 
   return(
-    <section className="relative pt-[160px] md:pt-[220px] pb-20 md:pb-[140px] text-white overflow-hidden w-full min-h-[90vh] flex items-center">
+    <section className="relative pt-[160px] md:pt-[200px] pb-[320px] md:pb-[240px] text-white overflow-hidden w-full min-h-screen flex items-center">
       
       {/* Background Image Slider */}
       <div className="absolute inset-0 z-0 bg-[#00223E]">
@@ -33,12 +33,13 @@ export default function Hero(){
           </div>
         ))}
         {/* Dark overlay to ensure text readability */}
-        <div className="absolute inset-0 bg-black/30 z-10 transition-all"></div>
+        <div className="absolute inset-0 bg-black/40 z-10 transition-all"></div>
         {/* Subtle primary color gradient overlay matching business theme */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#003B62]/90 via-primary/50 to-transparent z-10 mix-blend-multiply"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#001D33]/80 via-transparent to-[#001D33]/40 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#003B62]/90 via-primary/40 to-transparent z-10 mix-blend-multiply"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#001D33]/95 via-[#001D33]/40 to-[#001D33]/20 z-10"></div>
       </div>
 
+      {/* Main Hero Content */}
       <div className="max-w-[1400px] mx-auto px-6 xl:px-8 relative z-20 w-full grid md:grid-cols-[1.2fr_0.8fr] gap-12 lg:gap-20 items-center">
         
         {/* Left Column Content */}
@@ -52,10 +53,7 @@ export default function Hero(){
             <span className="text-green-300">In Dubai</span>
           </h1>
           
-          <p className="mb-10 text-lg md:text-xl text-white/90 font-medium max-w-xl leading-relaxed">
-            Helping visionaries and entrepreneurs establish, grow, and maintain competitive businesses across the UAE with expert guidance.
-          </p>
-        
+          
         </motion.div>
 
         {/* Right Column Glassmorphic Card (matching the UI reference) */}
@@ -65,14 +63,14 @@ export default function Hero(){
           transition={{duration:1, delay: 0.3, ease:"easeOut"}}
           className="justify-self-center md:justify-self-end mt-10 md:mt-0 w-full"
         >
-          <div className="bg-white/10 backdrop-blur-[12px] border border-white/20 rounded-[2rem] p-8 md:p-10 max-w-[360px] w-full text-white shadow-2xl relative overflow-hidden ml-auto">
+          <div className="bg-white/10 backdrop-blur-[16px] border border-white/20 rounded-[2rem] p-7 md:p-8 max-w-[280px] w-full text-white shadow-2xl relative overflow-hidden ml-auto hidden md:block">
             {/* Subtle glow inside card */}
-            <div className="absolute -top-20 -right-20 w-40 h-32 bg-blue-300/20 blur-[50px] rounded-full pointer-events-none"></div>
+            <div className="absolute -top-20 -right-20 w-40 h-32 bg-white/10 blur-[50px] rounded-full pointer-events-none"></div>
 
-            <div className="text-[4.5rem] font-bold leading-none tracking-tight mb-1">20+</div>
-            <div className="text-[1.15rem] text-white/90 mb-8 font-medium">Years Of Expertise</div>
+            <div className="text-[4rem] font-bold leading-none tracking-tight mb-2">20+</div>
+            <div className="text-[1.1rem] text-white/95 mb-6 font-medium">Years Of Expertise</div>
             
-            <div className="flex -space-x-4 mb-6">
+            <div className="flex -space-x-3 mb-6">
               {[
                 "https://i.pravatar.cc/100?img=11", 
                 "https://i.pravatar.cc/100?img=12", 
@@ -83,21 +81,63 @@ export default function Hero(){
                   key={i}
                   src={src}
                   alt={`Client ${i}`} 
-                  className="w-[52px] h-[52px] rounded-full border-[3px] border-[#20455E] object-cover relative z-10" 
+                  className="w-12 h-12 rounded-full border-[2px] border-white object-cover relative z-10" 
                   style={{ zIndex: 10 - i }}
                 />
               ))}
             </div>
             
-            <div className="font-semibold text-[1.1rem] mb-3 pr-4 leading-tight">2,250+ businesses are trusting us.</div>
-            
-            <p className="text-sm text-white/70 leading-relaxed">
-              Tailored business setup and management strategies to optimize performance and drive continuous growth.
-            </p>
+            <div className="text-[1.1rem] font-normal leading-snug tracking-wide text-white/95">
+              2,250+ businesses are <br/> trusting us.
+            </div>
           </div>
         </motion.div>
         
       </div>
+
+      {/* Bottom Action Bar */}
+      <div className="absolute bottom-0 left-0 w-full z-20 pb-8 pt-20">
+        <div className="max-w-[1400px] mx-auto px-6 xl:px-8 w-full flex flex-col md:flex-row justify-between items-end md:items-center gap-10">
+          
+          {/* Left - Socials */}
+          <div className="flex flex-col gap-3 text-[15px] font-medium hidden md:flex min-w-[150px]">
+            <div className="relative flex items-center">
+              <span className="absolute -left-4 w-[5px] h-[5px] rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]"></span>
+              <a href="#" className="text-white hover:text-white/80 transition-colors">Facebook</a>
+            </div>
+            <a href="#" className="text-white/50 hover:text-white transition-colors">Twitter</a>
+            <a href="#" className="text-white/50 hover:text-white transition-colors">Linkedin</a>
+            <a href="#" className="text-white/50 hover:text-white transition-colors">Instagram</a>
+          </div>
+
+          {/* Center - Slider Counter */}
+          <div className="flex items-baseline md:absolute md:left-1/2 md:-translate-x-1/2 md:translate-y-4">
+            <span className="text-[4rem] font-bold text-white tracking-tighter leading-none">
+              0{currentImage + 1}
+            </span>
+            <span className="text-2xl text-white/40 tracking-widest ml-1 font-light">
+              /0{images.length}
+            </span>
+          </div>
+
+          {/* Right - Text & CTA */}
+          <div className="flex flex-col max-w-[320px] gap-5 mt-4 md:mt-0">
+            <p className="text-[15px] text-white/90 leading-relaxed font-medium">
+              Tailored business setup and management strategies to optimize performance and reduce risks.
+            </p>
+            <button className="flex items-center self-start gap-4 bg-white text-gray-900 pr-6 pl-2 py-2 rounded-full font-bold hover:bg-gray-100 transition shadow-xl text-sm group">
+              <span className="flex items-center justify-center w-8 h-8 rounded-full border border-gray-200 transition-colors bg-white">
+                <svg className="w-4 h-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </span>
+              Explore Services
+            </button>
+          </div>
+
+        </div>
+      </div>
+
     </section>
   )
 }
