@@ -70,19 +70,19 @@ export default function Stats(){
             <div className="grid grid-cols-3 gap-6 mb-16 max-w-[500px]">
               <div>
                 <h3 className="text-[2.2rem] md:text-[2.8rem] font-bold text-gray-900 leading-none tracking-tighter mb-4">
-                  <CountUp end={99} duration={2}/>%
+                  <CountUp end={99} duration={2} enableScrollSpy={true} scrollSpyOnce={true}/>%
                 </h3>
                 <p className="text-[12px] text-gray-400 font-semibold tracking-wide">Professional Advisors</p>
               </div>
               <div>
                 <h3 className="text-[2.2rem] md:text-[2.8rem] font-bold text-gray-900 leading-none tracking-tighter mb-4">
-                  <CountUp end={2.2} decimals={1} duration={2}/>K+
+                  <CountUp end={2.2} decimals={1} duration={2} enableScrollSpy={true} scrollSpyOnce={true}/>K+
                 </h3>
                 <p className="text-[12px] text-gray-400 font-semibold tracking-wide">Completed Projects</p>
               </div>
               <div>
                 <h3 className="text-[2.2rem] md:text-[2.8rem] font-bold text-gray-900 leading-none tracking-tighter mb-4">
-                  <CountUp end={98} duration={2}/>%
+                  <CountUp end={98} duration={2} enableScrollSpy={true} scrollSpyOnce={true}/>%
                 </h3>
                 <p className="text-[12px] text-gray-400 font-semibold tracking-wide">Client Retention</p>
               </div>
