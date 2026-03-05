@@ -13,8 +13,8 @@ export default function Page(){
     <main>
       <Hero />
       <TimelineBar />
-      <Services />
       <About />
+      <Services />
       <Stats />
       <Process />
       <Portfolio />
