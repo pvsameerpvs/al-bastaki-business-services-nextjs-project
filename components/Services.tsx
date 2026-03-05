@@ -208,7 +208,7 @@ export default function Services() {
       </div>
 
       {/* Brand-Themed Infinite Scrolling Marquee */}
-      <div className={`w-full relative z-20 bg-primary text-white py-4 lg:py-6 overflow-hidden flex border-t border-white/10 shadow-[0_-5px_25px_rgba(0,102,166,0.2)] ${rethink.className}`}>
+      <div className={`w-full relative z-20 bg-primary text-white py-4 lg:py-6 overflow-hidden flex border-t border-white/10 shadow-[0_-5px_25px_rgba(0,102,166,0.2)] -mt-4 lg:-mt-6 ${rethink.className}`}>
         <motion.div
           animate={{ x: [0, "-50%"] }}
           transition={{ repeat: Infinity, duration: 35, ease: "linear" }}
