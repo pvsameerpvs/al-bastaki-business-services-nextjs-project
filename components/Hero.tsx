@@ -61,16 +61,22 @@ export default function Hero(){
           initial={{opacity:0,y:40}}
           animate={{opacity:1,y:0}}
           transition={{duration:1, delay: 0.3, ease:"easeOut"}}
-          className="justify-self-center md:justify-self-end mt-10 md:mt-0 w-full"
+          className="justify-self-center md:justify-self-end mt-10 md:mt-0 w-full drop-shadow-2xl"
         >
-          <div className="bg-white/10 backdrop-blur-[16px] border border-white/20 rounded-[2rem] p-7 md:p-8 max-w-[280px] w-full text-white shadow-2xl relative overflow-hidden ml-auto hidden md:block">
+          <div 
+            className="bg-white/10 backdrop-blur-[16px] border border-white/20 rounded-[2rem] rounded-tr-none p-7 md:p-8 max-w-[280px] w-full text-white relative overflow-hidden ml-auto hidden md:block"
+            style={{ 
+              WebkitMaskImage: 'linear-gradient(225deg, transparent 55px, black 56px)',
+              maskImage: 'linear-gradient(225deg, transparent 55px, black 56px)'
+            }}
+          >
             {/* Subtle glow inside card */}
-            <div className="absolute -top-20 -right-20 w-40 h-32 bg-white/10 blur-[50px] rounded-full pointer-events-none"></div>
+            <div className="absolute -top-10 -right-10 w-40 h-32 bg-white/10 blur-[50px] rounded-full pointer-events-none"></div>
 
-            <div className="text-[4rem] font-bold leading-none tracking-tight mb-2">20+</div>
-            <div className="text-[1.1rem] text-white/95 mb-6 font-medium">Years Of Expertise</div>
+            <div className="text-[4rem] font-bold leading-none tracking-tight mb-2 relative z-10">20+</div>
+            <div className="text-[1.1rem] text-white/95 mb-6 font-medium relative z-10">Years Of Expertise</div>
             
-            <div className="flex -space-x-3 mb-6">
+            <div className="flex -space-x-3 mb-6 relative z-10">
               {[
                 "https://i.pravatar.cc/100?img=11", 
                 "https://i.pravatar.cc/100?img=12", 
@@ -87,7 +93,7 @@ export default function Hero(){
               ))}
             </div>
             
-            <div className="text-[1.1rem] font-normal leading-snug tracking-wide text-white/95">
+            <div className="text-[1.1rem] font-normal leading-snug tracking-wide text-white/95 relative z-10">
               2,250+ businesses are <br/> trusting us.
             </div>
           </div>
