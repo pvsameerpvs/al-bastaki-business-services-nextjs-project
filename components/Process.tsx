@@ -46,7 +46,7 @@ const cards = [
     description:
       'Event management includes a variety of functions for executing large scale events, from handling the overall logistics to working with staff and conducting project management of the event as a whole.',
     points: ['Events Organizing & Managing', 'Exhibition Organizing', 'Film, TV & Radio Production', 'Wedding Parties Organizing', 'Parties Filming', 'Equipment Rental', 'Conferences & Seminars'],
-    image: 'https://images.unsplash.com/photo-1511556532299-8f662fc26c06?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=800&auto=format&fit=crop',
     tone: 'dark' as const
   },
   {
@@ -95,6 +95,18 @@ export default function Process() {
       <div className="max-w-[1400px] mx-auto px-6 xl:px-8 relative">
         <div className="">
           
+          <div className="mb-16 lg:mb-24 max-w-5xl mx-auto flex flex-col md:flex-row px-0 sm:px-4 items-start gap-4 md:gap-16">
+            <div className="md:w-1/4 pt-1 md:pt-3 text-left">
+              <span className="inline-block text-[11px] md:text-[13px] font-medium tracking-[0.2em] text-gray-500 uppercase">
+                OUR SERVICES
+              </span>
+            </div>
+            <div className="md:w-3/4 text-left">
+              <p className="text-[24px] md:text-[32px] font-medium text-[#2d3748] leading-[1.4] tracking-tight text-left">
+                From company formation to IT solutions, Al Bastaki Business Services provides everything you need to establish, manage, and grow your business seamlessly in the UAE.
+              </p>
+            </div>
+          </div>
 
           <div className="relative">
             <div className="relative">
