@@ -77,6 +77,33 @@ export default function LatestArticles() {
     <section className={`py-20 md:py-32 bg-[#F9FAFB] ${rethink.className}`}>
       <div className="max-w-[1400px] mx-auto px-6 xl:px-8 overflow-hidden">
         
+        <style dangerouslySetInnerHTML={{__html: `
+          @keyframes glitch-anim-1 {
+            0% { clip-path: inset(20% 0 80% 0); transform: translate(-4px, 1px); }
+            20% { clip-path: inset(60% 0 10% 0); transform: translate(4px, -1px); }
+            40% { clip-path: inset(40% 0 50% 0); transform: translate(-4px, 2px); }
+            60% { clip-path: inset(80% 0 5% 0); transform: translate(4px, -2px); }
+            80% { clip-path: inset(10% 0 70% 0); transform: translate(-4px, 2px); }
+            100% { clip-path: inset(30% 0 40% 0); transform: translate(4px, -2px); }
+          }
+          @keyframes glitch-anim-2 {
+            0% { clip-path: inset(10% 0 60% 0); transform: translate(4px, -1px); }
+            20% { clip-path: inset(30% 0 20% 0); transform: translate(-4px, 2px); }
+            40% { clip-path: inset(70% 0 10% 0); transform: translate(3px, -2px); }
+            60% { clip-path: inset(20% 0 50% 0); transform: translate(-3px, 1px); }
+            80% { clip-path: inset(50% 0 30% 0); transform: translate(4px, -2px); }
+            100% { clip-path: inset(5% 0 80% 0); transform: translate(-4px, 2px); }
+          }
+          .custom-glitch-parent:hover .glitch-layer-1 {
+            animation: glitch-anim-1 0.2s infinite linear alternate-reverse;
+            filter: sepia(100%) hue-rotate(150deg) saturate(300%) contrast(150%);
+          }
+          .custom-glitch-parent:hover .glitch-layer-2 {
+            animation: glitch-anim-2 0.25s infinite linear alternate-reverse;
+            filter: sepia(100%) hue-rotate(320deg) saturate(300%) contrast(150%);
+          }
+        `}} />
+
         {/* Header Section */}
         <div className="mb-12 md:mb-16 max-w-5xl mx-auto flex flex-col md:flex-row px-0 sm:px-4 items-start md:items-start gap-4 md:gap-12">
           <div className="md:w-[25%] pt-1 md:pt-3 text-left md:text-right">
@@ -106,12 +133,21 @@ export default function LatestArticles() {
               transition={{ duration: 0.5, delay: Math.min(idx, 2) * 0.1 }}
               className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-21.33px)] flex-shrink-0 snap-start bg-white rounded-[1.5rem] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.03)] group cursor-pointer hover:shadow-[0_15px_50px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-300 flex flex-col"
             >
-              <div className="w-full aspect-[4/3] overflow-hidden relative bg-gray-100">
+              <div className="w-full aspect-[4/3] overflow-hidden relative bg-gray-100 custom-glitch-parent">
                 <img 
                   src={article.image} 
                   alt={article.title} 
                   loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)]"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] relative z-10"
+                />
+                {/* Glitch Overlay Layers */}
+                <div 
+                  className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-100 mix-blend-screen pointer-events-none glitch-layer-1 group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] z-20" 
+                  style={{ backgroundImage: `url(${article.image})` }} 
+                />
+                <div 
+                  className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-100 mix-blend-screen pointer-events-none glitch-layer-2 group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] z-20" 
+                  style={{ backgroundImage: `url(${article.image})` }} 
                 />
               </div>
               <div className="p-7 md:p-8 flex-1 flex flex-col">

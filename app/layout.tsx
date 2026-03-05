@@ -3,6 +3,7 @@ import './globals.css'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import SmoothScroller from '../components/SmoothScroller'
+import CustomCursor from '../components/CustomCursor'
 
 export const metadata = {
   title: 'Al Bastaki Business Services LLC',
@@ -13,6 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
+        <CustomCursor />
         <SmoothScroller>
           <Navbar />
           {children}
