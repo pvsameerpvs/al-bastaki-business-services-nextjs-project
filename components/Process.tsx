@@ -6,26 +6,56 @@ const rethink = Rethink_Sans({ subsets: ['latin'] })
 const cards = [
   {
     step: '01',
-    title: 'Business Consultation',
+    title: 'Company Formation',
     description:
-      'We understand your goals, timeline, and budget, then recommend the best jurisdiction and license type.',
-    points: ['Free zone vs mainland clarity', 'Activity selection & eligibility', 'Upfront cost + timeline'],
+      'Setting up a new business or branch office in Dubai and the UAE can be a complicated and expensive procedure. We help establish your company under the correct legal framework, choosing the most cost-effective and time-saving alternatives.',
+    points: ['Dubai Business Setup', 'Free Zone Company Setup', 'Offshore Company Setup', 'Branch of Foreign Company Setup'],
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop',
     tone: 'light' as const
   },
   {
     step: '02',
-    title: 'Legal Setup & Licensing',
+    title: 'Business Setup',
     description:
-      'We handle the paperwork end-to-end: name approvals, MOA, licensing, and government submissions.',
-    points: ['Fast approvals with PRO support', 'Bank-friendly structure', 'Compliance-first approach'],
+      'Al Bastaki Business Services holds responsibility for all registration aspects of a new business. Our goal is to help evaluate, create, and grow businesses by providing necessary support, management, and consultancy services.',
+    points: ['Company Setup & Liquidation', 'Visa & PRO Services', 'Local Partner', 'Contracts & POA Services', 'Amendments & Registration', 'Document Copying', 'Trademark Registration', 'Dubai Court Services', 'Corporate Services Provider'],
+    image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop',
     tone: 'dark' as const
   },
   {
     step: '03',
-    title: 'Launch & Ongoing Support',
+    title: 'Accounting Services',
     description:
-      'From visas and Emirates ID to accounting and renewals, we stay with you after incorporation.',
-    points: ['Visa & establishment card', 'Accounting & corporate tax support', 'Renewals + admin services'],
+      'Based on the requirements of our clients, we can provide a complete range of accounting services. We can help you manage these tasks while maintaining vital confidentiality and accuracy for your business.',
+    points: ['Accounting & Bookkeeping', 'Payroll Management', 'Auditing Services', 'VAT Registration', 'Bank Account Opening'],
+    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=800&auto=format&fit=crop',
+    tone: 'primary' as const
+  },
+  {
+    step: '04',
+    title: 'Consultancy Services',
+    description:
+      'Hire the best consultants who have a deep understanding of the region and provide insights into the investment context and challenges for your business, ensuring you capture potential growth opportunities.',
+    points: ['Marketing Management', 'Feasibility Study Consultancies', 'Facilities Resource Planning', 'Management Services', 'Facilities Management Services'],
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop',
+    tone: 'light' as const
+  },
+  {
+    step: '05',
+    title: 'Event Management',
+    description:
+      'Event management includes a variety of functions for executing large scale events, from handling the overall logistics to working with staff and conducting project management of the event as a whole.',
+    points: ['Events Organizing & Managing', 'Exhibition Organizing', 'Film, TV & Radio Production', 'Wedding Parties Organizing', 'Parties Filming', 'Equipment Rental', 'Conferences & Seminars'],
+    image: 'https://images.unsplash.com/photo-1511556532299-8f662fc26c06?q=80&w=800&auto=format&fit=crop',
+    tone: 'dark' as const
+  },
+  {
+    step: '06',
+    title: 'IT Services',
+    description:
+      'We offer every solution under one roof to grow your business. We expertise in Website Design, Web Development, Branding, and Digital Marketing, providing rewarding solutions for your digital presence.',
+    points: ['Web Designing', 'Internet Content Provider', 'Social Media App Management', 'Software Design', 'Portal Systems', 'Claim Settlement Services', 'CSR Initiatives Preparation'],
+    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop',
     tone: 'primary' as const
   }
 ]
@@ -86,52 +116,72 @@ export default function Process() {
                     ? 'bg-white/10 text-white'
                     : 'bg-white/15 text-white'
 
-                const zClass = idx === 0 ? 'z-10' : idx === 1 ? 'z-20' : 'z-30'
+                const zMap = ['z-10', 'z-20', 'z-30', 'z-40', 'z-50', 'z-[60]']
+                const zClass = zMap[idx] || 'z-10'
 
                 return (
                   <div key={c.step} className={`sticky top-24 md:top-28 ${zClass} mb-10 md:mb-14`}>
                     <div className={`rounded-[2.25rem] ${cardClass} shadow-[0_30px_80px_rgba(0,0,0,0.08)] overflow-hidden min-h-[64vh] md:min-h-[68vh] lg:min-h-[72vh] flex flex-col`}>
-                      <div className="p-7 sm:p-8 md:p-10">
-                        <div className="flex items-start justify-between gap-6">
-                          <div className="flex items-center gap-4">
-                            <CardIcon tone={c.tone} />
-                            <div className="flex flex-col">
-                              <span className={`inline-flex w-fit px-3 py-1 rounded-full text-[12px] font-bold tracking-widest ${pillClass}`}>
-                                STEP {c.step}
-                              </span>
-                              <h3 className="mt-4 text-[22px] md:text-[26px] font-bold tracking-tight leading-snug">
-                                {c.title}
-                              </h3>
+                      <div className="p-7 sm:p-8 md:p-10 flex flex-col lg:flex-row gap-8 lg:gap-12 flex-1">
+                        
+                        {/* Text and Info Area */}
+                        <div className="flex-1 flex flex-col">
+                          <div className="flex items-start justify-between gap-6">
+                            <div className="flex items-center gap-4">
+                              <CardIcon tone={c.tone} />
+                              <div className="flex flex-col">
+                                {/* <span className={`inline-flex w-fit px-3 py-1 rounded-full text-[12px] font-bold tracking-widest ${pillClass}`}>
+                                  SERVICE {c.step}
+                                </span> */}
+                                <h3 className="mt-4 text-[22px] md:text-[26px] font-bold tracking-tight leading-snug">
+                                  {c.title}
+                                </h3>
+                              </div>
+                            </div>
+
+                            <div className={`hidden sm:flex items-center justify-center w-12 h-12 rounded-2xl ${isLight ? 'bg-gray-50 border border-gray-100 text-gray-600' : 'bg-black/15 border border-white/10 text-white/90'}`}>
+                              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                              </svg>
                             </div>
                           </div>
 
-                          <div className={`hidden sm:flex items-center justify-center w-12 h-12 rounded-2xl ${isLight ? 'bg-gray-50 border border-gray-100 text-gray-600' : 'bg-black/15 border border-white/10 text-white/90'}`}>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                              <path d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                            </svg>
+                          <p className={`mt-6 text-[14.5px] md:text-[15.5px] leading-relaxed font-medium max-w-[62ch] ${subTextClass}`}>
+                            {c.description}
+                          </p>
+
+                          <div className="mt-8 grid sm:grid-cols-2 xl:grid-cols-3 gap-3">
+                            {c.points.map((p) => (
+                              <div
+                                key={p}
+                                className={`rounded-2xl px-4 py-4 text-[13px] font-semibold leading-snug ${
+                                  isLight
+                                    ? 'bg-lightGrey text-gray-700 border border-gray-100'
+                                    : isDark
+                                      ? 'bg-[#001528] text-white/85 border border-white/10'
+                                      : 'bg-white/10 text-white/90 border border-white/15'
+                                }`}
+                              >
+                                {p}
+                              </div>
+                            ))}
                           </div>
                         </div>
 
-                        <p className={`mt-6 text-[14.5px] md:text-[15.5px] leading-relaxed font-medium max-w-[62ch] ${subTextClass}`}>
-                          {c.description}
-                        </p>
-
-                        <div className="mt-8 grid sm:grid-cols-3 gap-3">
-                          {c.points.map((p) => (
-                            <div
-                              key={p}
-                              className={`rounded-2xl px-4 py-4 text-[13px] font-semibold leading-snug ${
-                                isLight
-                                  ? 'bg-lightGrey text-gray-700 border border-gray-100'
-                                  : isDark
-                                    ? 'bg-[#001528] text-white/85 border border-white/10'
-                                    : 'bg-white/10 text-white/90 border border-white/15'
-                              }`}
-                            >
-                              {p}
-                            </div>
-                          ))}
+                        {/* Image Area */}
+                        <div className="hidden lg:flex flex-col justify-center w-full lg:w-2/5 xl:w-1/3 mt-6 lg:mt-0">
+                          <div className="relative w-full aspect-[4/3] lg:aspect-auto lg:h-full max-h-[400px] rounded-2xl overflow-hidden shadow-lg border border-white/10 group">
+                            <img 
+                              src={c.image} 
+                              alt={c.title} 
+                              loading="lazy"
+                              className="absolute inset-0 w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-700" 
+                            />
+                            {/* Inner gradient for nice blend */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                          </div>
                         </div>
+
                       </div>
 
                       <div className={`mt-auto h-2 ${isLight ? 'bg-gradient-to-r from-primary/30 via-primary/10 to-transparent' : isPrimary ? 'bg-gradient-to-r from-white/35 via-white/10 to-transparent' : 'bg-gradient-to-r from-primary/60 via-primary/20 to-transparent'}`} />

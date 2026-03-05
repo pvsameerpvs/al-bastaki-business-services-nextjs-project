@@ -94,17 +94,7 @@ export default function Services() {
         {/* Top Header Section with Slider Arrows */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 lg:mb-12 gap-8">
           <div className="max-w-3xl text-left">
-            <motion.div 
-              initial={{opacity:0, y:20}}
-              whileInView={{opacity:1, y:0}}
-              viewport={{once:true}}
-              transition={{duration:0.6}}
-              className="mb-6"
-            >
-              <span className="text-[12px] font-bold text-white/50 tracking-[0.2em] uppercase">
-                Al Bastaki Services
-              </span>
-            </motion.div>
+           
             
             <motion.h2 
               initial={{opacity:0, y:30}}
