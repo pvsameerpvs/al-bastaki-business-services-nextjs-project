@@ -19,6 +19,7 @@ export default function Page(){
       <WhyChooseUs />
       <Services />
       <Process />
+      
       <Portfolio />
       <Testimonials />
       <CTA />
