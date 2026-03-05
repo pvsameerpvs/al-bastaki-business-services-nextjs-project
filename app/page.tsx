@@ -14,8 +14,8 @@ export default function Page(){
       <Hero />
       <TimelineBar />
       <About />
-      <Services />
       <Stats />
+      <Services />
       <Process />
       <Portfolio />
       <Testimonials />
