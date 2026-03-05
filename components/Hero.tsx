@@ -50,7 +50,7 @@ export default function Hero(){
         >
           <h1 className="text-[3.5rem] md:text-[4rem] lg:text-[4.5rem] font-bold mb-6 leading-[1.1] tracking-tight text-white">
              Elevate Your <br/> Business Setup <br/>
-            <span className="text-green-300">In Dubai</span>
+            <span className="text-primary">In Dubai</span>
           </h1>
           
           
@@ -131,9 +131,9 @@ export default function Hero(){
             <p className="text-[15px] text-white/90 leading-relaxed font-medium">
               Tailored business setup and management strategies to optimize performance and reduce risks.
             </p>
-            <button className="flex items-center self-start gap-4 bg-white text-gray-900 pr-6 pl-2 py-2 rounded-full font-bold hover:bg-gray-100 transition shadow-xl text-sm group">
+            <button className="flex items-center self-start gap-4 bg-white text-primary pr-6 pl-2 py-2 rounded-full font-bold hover:bg-gray-100 transition shadow-xl text-sm group">
               <span className="flex items-center justify-center w-8 h-8 rounded-full border border-gray-200 transition-colors bg-white">
-                <svg className="w-4 h-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </span>

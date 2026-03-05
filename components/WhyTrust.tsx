@@ -1,12 +1,9 @@
 'use client'
 import { motion } from 'framer-motion'
-import { Rethink_Sans } from 'next/font/google'
-
-const rethink = Rethink_Sans({ subsets: ['latin'] })
 
 export default function WhyTrust() {
   return (
-    <section className={`relative w-full min-h-[700px] flex items-center py-20 md:py-32 overflow-hidden ${rethink.className}`}>
+    <section className="relative w-full min-h-[700px] flex items-center py-20 md:py-32 overflow-hidden">
       {/* Background Image & Overlay */}
       <div className="absolute inset-0 z-0">
         <img 

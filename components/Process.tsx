@@ -1,8 +1,3 @@
-
-import { Rethink_Sans } from 'next/font/google'
-
-const rethink = Rethink_Sans({ subsets: ['latin'] })
-
 const cards = [
   {
     step: '01',
@@ -86,7 +81,7 @@ function CardIcon({ tone }: { tone: 'light' | 'dark' | 'primary' }) {
 
 export default function Process() {
   return (
-    <section className={`relative bg-lightGrey py-24 md:py-32 ${rethink.className}`}>
+    <section className="relative bg-lightGrey py-24 md:py-32">
       <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
         <div className="absolute -top-24 -right-24 w-[520px] h-[520px] rounded-full bg-primary/10 blur-[60px]" />
         <div className="absolute bottom-[-120px] left-[-120px] w-[520px] h-[520px] rounded-full bg-[#00223E]/10 blur-[70px]" />

@@ -1,9 +1,6 @@
 'use client'
-import { Rethink_Sans } from 'next/font/google'
 import Link from 'next/link'
 import { useEffect, useState, useRef } from 'react'
-
-const rethink = Rethink_Sans({ subsets: ['latin'] })
 
 export default function Footer() {
   const [footerHeight, setFooterHeight] = useState(0)
@@ -28,7 +25,7 @@ export default function Footer() {
       {/* The actual footer sits fixed rigidly AT THE BOTTOM, hidden safely BEHIND the page */}
       <footer 
         ref={footerRef}
-        className={`fixed bottom-0 left-0 w-full -z-10 bg-[#001528] text-white pt-20 pb-8 px-6 md:px-12 lg:px-20 ${rethink.className}`}
+        className="fixed bottom-0 left-0 w-full -z-10 bg-[#001528] text-white pt-20 pb-8 px-6 md:px-12 lg:px-20"
       >
         <div className="max-w-[1400px] mx-auto opacity-100">
           

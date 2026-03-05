@@ -1,9 +1,6 @@
 'use client'
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
-import { Rethink_Sans } from 'next/font/google'
 import { useRef } from 'react'
-
-const rethink = Rethink_Sans({ subsets: ['latin'] })
 
 export default function About(){
   const containerRef = useRef<HTMLElement>(null)
@@ -24,7 +21,7 @@ export default function About(){
   const rotateMovement = useTransform(smoothProgress, [0, 1], [0, -720])
 
   return(
-    <section ref={containerRef} className={`bg-white py-24 md:py-36 relative overflow-hidden ${rethink.className}`}>
+    <section ref={containerRef} className="bg-white py-24 md:py-36 relative overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 xl:px-8 relative z-10">
         
         <div className="grid md:grid-cols-[200px_1fr] lg:grid-cols-[250px_1fr] gap-8 md:gap-12">

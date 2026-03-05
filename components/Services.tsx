@@ -1,9 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
-import { Rethink_Sans } from 'next/font/google'
 import { useRef } from 'react'
-
-const rethink = Rethink_Sans({ subsets: ['latin'] })
 
 const services = [
   {
@@ -76,7 +73,7 @@ export default function Services() {
   }
 
   return (
-    <section className={`relative pt-14 md:pt-20 pb-0 overflow-hidden ${rethink.className}`}>
+    <section className="relative pt-14 md:pt-20 pb-0 overflow-hidden">
       {/* Background Image & Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -198,7 +195,7 @@ export default function Services() {
       </div>
 
       {/* Brand-Themed Infinite Scrolling Marquee */}
-      <div className={`w-full relative z-20 bg-primary text-white py-4 lg:py-6 overflow-hidden flex border-t border-white/10 shadow-[0_-5px_25px_rgba(0,102,166,0.2)] -mt-4 lg:-mt-6 ${rethink.className}`}>
+      <div className="w-full relative z-20 bg-primary text-white py-4 lg:py-6 overflow-hidden flex border-t border-white/10 shadow-[0_-5px_25px_rgba(0,102,166,0.2)] -mt-4 lg:-mt-6">
         <motion.div
           animate={{ x: [0, "-50%"] }}
           transition={{ repeat: Infinity, duration: 35, ease: "linear" }}
@@ -230,4 +227,3 @@ export default function Services() {
     </section>
   )
 }
-

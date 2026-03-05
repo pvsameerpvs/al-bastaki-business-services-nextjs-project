@@ -1,13 +1,10 @@
 'use client'
 import CountUp from 'react-countup'
 import { motion } from 'framer-motion'
-import { Rethink_Sans } from 'next/font/google'
-
-const rethink = Rethink_Sans({ subsets: ['latin'] })
 
 export default function Stats(){
   return(
-    <section className={`bg-[#F9FAFB] py-24 md:py-32 overflow-hidden ${rethink.className}`}>
+    <section className="bg-[#F9FAFB] py-24 md:py-32 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 xl:px-8">
         
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-8 items-center">
