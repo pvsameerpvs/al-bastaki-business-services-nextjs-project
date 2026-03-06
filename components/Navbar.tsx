@@ -18,12 +18,12 @@ const navItems = [
     label: 'Services',
     href: '/services',
     dropdown: [
-      { label: 'Company Formation', href: '/services/company-formation' },
-      { label: 'Business Setup', href: '/services/business-setup' },
-      { label: 'Accounting Services', href: '/services/accounting' },
-      { label: 'Consultancy Services', href: '/services/consultancy' },
-      { label: 'Event Management', href: '/services/events' },
-      { label: 'IT Services', href: '/services/it' },
+      { label: 'Company Formation', href: '/company-formation' },
+      { label: 'Business Setup', href: '/business-setup' },
+      { label: 'Accounting Services', href: '/accounting' },
+      { label: 'Consultancy Services', href: '/consultancy' },
+      { label: 'Event Management', href: '/events' },
+      { label: 'IT Services', href: '/it' },
     ],
   },
   {

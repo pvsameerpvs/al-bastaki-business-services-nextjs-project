@@ -13,7 +13,7 @@ type CatalogItem = {
 const catalog: CatalogItem[] = [
   {
     title: 'Company Formation',
-    href: '/services/company-formation',
+    href: '/company-formation',
     items: [
       'Dubai Business Setup',
       'Freezone Company Setup',
@@ -23,7 +23,7 @@ const catalog: CatalogItem[] = [
   },
   {
     title: 'Business Setup',
-    href: '/services/business-setup',
+    href: '/business-setup',
     items: [
       'Company Setup',
       'Company Liquidation',
@@ -42,7 +42,7 @@ const catalog: CatalogItem[] = [
   },
   {
     title: 'Accounting Services',
-    href: '/services/accounting',
+    href: '/accounting',
     items: [
       'Accounting & Bookkeeping',
       'Payroll',
@@ -53,7 +53,7 @@ const catalog: CatalogItem[] = [
   },
   {
     title: 'IT Services',
-    href: '/services/it',
+    href: '/it',
     items: [
       'Web Designing',
       'Internet Content Provider',
@@ -66,7 +66,7 @@ const catalog: CatalogItem[] = [
   },
   {
     title: 'Consultancy Services',
-    href: '/services/consultancy',
+    href: '/consultancy',
     items: [
       'Marketing Management',
       'Feasibility Study Consultancies',
@@ -77,7 +77,7 @@ const catalog: CatalogItem[] = [
   },
   {
     title: 'Event Management',
-    href: '/services/events',
+    href: '/events',
     items: [
       'Events Organizing & Managing',
       'Public Relations Management',

@@ -7,7 +7,7 @@ const services = [
   {
     title: "Company Formation",
     description: "Setting up a new business or branch office in Dubai and the United Arab Emirates can be a complicated and expensive process. We help you establish your company under the correct legal framework by choosing the most cost-effective and time-saving option. We also evaluate the strengths and weaknesses of the available alternatives for your business.",
-    href: "/services/company-formation",
+    href: "/company-formation",
     icon: (
       <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M3 21h18"></path><path d="M9 8h1"></path><path d="M9 12h1"></path><path d="M9 16h1"></path><path d="M14 8h1"></path><path d="M14 12h1"></path><path d="M14 16h1"></path><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path>
@@ -17,7 +17,7 @@ const services = [
   {
     title: "Business Setup",
     description: "Al Bastaki Business Services takes responsibility for the registration aspects of new businesses. Our goal is to help create and grow businesses by providing the necessary support and management, including consultancy services, feasibility studies, financial projections, financial validation, and administrative and technical services.",
-    href: "/services/business-setup",
+    href: "/business-setup",
     icon: (
       <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2v20"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
@@ -27,7 +27,7 @@ const services = [
   {
     title: "Accounting Services",
     description: "Based on your requirements, we provide a complete range of accounting services. Payroll can be demanding for new businesses because local laws, practices, and procedures require trained, qualified staff. We support you while maintaining strict confidentiality and accuracy.",
-    href: "/services/accounting",
+    href: "/accounting",
     icon: (
       <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M7 15h0"></path><path d="M2 9.5h20"></path>
@@ -37,7 +37,7 @@ const services = [
   {
     title: "Consultancy Services",
     description: "Work with consultants who have a deep understanding of the region. We explain the investment context and challenges for your business and support you in assessing potential opportunities when considering investing abroad.",
-    href: "/services/consultancy",
+    href: "/consultancy",
     icon: (
       <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M16 3h5v5"></path><path d="M8 3H3v5"></path><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3"></path><path d="m15 9 6-6"></path>
@@ -47,7 +47,7 @@ const services = [
   {
     title: "Event Management",
     description: "Event management includes a variety of functions for executing large scale events, which might include conferences, conventions, concerts, trade shows, festivals, and ceremonies. It involves handling the overall logistics of the event, working with staff, and conducting project management of the event as a whole.",
-    href: "/services/events",
+    href: "/events",
     icon: (
       <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
@@ -57,7 +57,7 @@ const services = [
   {
     title: "IT Services",
     description: "We offer solutions under one roof to help grow your business. Our expertise includes website design, web development, branding, and digital marketing. We bring the passion, skills, and energy to deliver rewarding results with affordable, creative solutions.",
-    href: "/services/it",
+    href: "/it",
     icon: (
       <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line>

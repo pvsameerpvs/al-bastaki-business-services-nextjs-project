@@ -26,10 +26,10 @@ export default function AboutPage() {
         <div className="max-w-[1400px] mx-auto px-6 xl:px-8 relative">
           <div className="mb-12 md:mb-16 max-w-5xl mx-auto flex flex-col md:flex-row px-0 sm:px-4 items-start gap-4 md:gap-16">
             <div className="md:w-1/4 pt-1 md:pt-3 text-left">
-              <span className="inline-block text-[11px] md:text-[13px] font-medium tracking-[0.2em] text-gray-500 uppercase">
-                COMPANY OVERVIEW
-              </span>
-            </div>
+  <span className="inline-block text-sm md:text-lg font-semibold tracking-widest text-gray-500 uppercase">
+    COMPANY OVERVIEW
+  </span>
+</div>
             <div className="md:w-3/4 text-left">
               <FadeIn>
                 <h2 className="text-[24px] md:text-[32px] font-medium text-[#2d3748] leading-[1.4] tracking-tight">
