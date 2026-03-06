@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 
 // ─── Dropdown Data (project-based) ─────────────────────────────────────────────
@@ -109,6 +110,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => setScroll(window.scrollY > 50)
+    handleScroll()
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -140,17 +142,29 @@ export default function Navbar() {
 
           {/* ── Logo ── */}
           <div className="flex-shrink-0">
-            <Link href="/">
-              <h1
-                className={`font-bold text-3xl tracking-tight italic flex items-center gap-1 ${
-                  scroll ? 'text-primary' : 'text-white'
-                }`}
-              >
-                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18-.21 0-.41-.06-.57-.18l-7.9-4.44A.991.991 0 013 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18.21 0 .41.06.57.18l7.9 4.44c.32.17.53.5.53.88v9zM12 4.15L6.04 7.5 12 10.85l5.96-3.35L12 4.15zM5 15.91l6 3.38v-6.71L5 9.21v6.7zM19 15.91v-6.7l-6 3.37v6.71l6-3.38z" />
-                </svg>
-                Al Bastaki
-              </h1>
+            <Link href="/" aria-label="Al Bastaki">
+              <div className="relative h-11 w-[190px] sm:h-12 sm:w-[220px] lg:h-14 lg:w-[260px]">
+                <Image
+                  src="/white-logo.png"
+                  alt="Al Bastaki"
+                  fill
+                  sizes="(min-width: 1024px) 260px, (min-width: 640px) 220px, 190px"
+                  priority
+                  className={`object-contain transition-opacity duration-300 ${
+                    scroll ? 'opacity-0' : 'opacity-100'
+                  }`}
+                />
+                <Image
+                  src="/blue-logo.png"
+                  alt="Al Bastaki"
+                  fill
+                  sizes="(min-width: 1024px) 260px, (min-width: 640px) 220px, 190px"
+                  priority
+                  className={`object-contain transition-opacity duration-300 ${
+                    scroll ? 'opacity-100' : 'opacity-0'
+                  }`}
+                />
+              </div>
             </Link>
           </div>
 
