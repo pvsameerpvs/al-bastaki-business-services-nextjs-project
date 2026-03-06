@@ -2,6 +2,7 @@ import PageHero from '../../components/PageHero'
 import Process from '../../components/Process'
 import Services from '../../components/Services'
 import PageCTA from '../../components/PageCTA'
+import ServicesCatalog from '../../components/ServicesCatalog'
 
 export default function ServicesPage() {
   return (
@@ -13,6 +14,7 @@ export default function ServicesPage() {
         image="/hero-main1.jpg"
       />
 
+      <ServicesCatalog />
       <Process />
       <Services />
 

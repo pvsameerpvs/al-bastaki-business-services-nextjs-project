@@ -5,16 +5,20 @@ export type ServiceSlug =
   | 'consultancy'
   | 'events'
   | 'it'
+  | 'other'
 
 export type Service = {
   slug: ServiceSlug
   title: string
   coverImage: string
   subtitle: string
-  intro: string
+  intro: string[]
   keyPoints: string[]
   deliverables: string[]
 }
+
+const enterpriseServiceIntro =
+  'Focusing on providing enterprise-level services, we cater to the needs of our customers by creating customized solutions. We build long-standing trust relationships because we study carefully, implement fast, and support responsibly, even in the most demanding scenarios.'
 
 export const services: Service[] = [
   {
@@ -23,8 +27,10 @@ export const services: Service[] = [
     coverImage: '/hero-main1.jpg',
     subtitle:
       'Set up your business under the right legal framework with clear options, compliant execution, and end-to-end support.',
-    intro:
-      'Setting up a new business or branch office in Dubai and the United Arab Emirates can be a complicated and expensive process. We help you establish your company under the correct legal framework by identifying the most cost-effective and time-saving option for your activity and goals.',
+    intro: [
+      enterpriseServiceIntro,
+      'Setting up a new business or branch office in Dubai and the United Arab Emirates can be a complicated and expensive process. We help you establish your company under the correct legal framework by choosing the most cost-effective and time-saving option for your activity and goals.',
+    ],
     keyPoints: [
       'Dubai business setup guidance across common jurisdictions',
       'Option evaluation: strengths, trade-offs, and compliance',
@@ -33,7 +39,7 @@ export const services: Service[] = [
     ],
     deliverables: [
       'Dubai Business Setup',
-      'Free Zone Company Setup',
+      'Freezone Company Setup',
       'Offshore Company Setup',
       'Branch of Foreign Company Setup',
     ],
@@ -44,24 +50,30 @@ export const services: Service[] = [
     coverImage: '/hero-main2.jpg',
     subtitle:
       'Registration, PRO, and corporate services delivered with clarity, control, and reliable turnaround.',
-    intro:
-      'Al Bastaki Business Services holds responsibility for the registration aspects of new businesses. Our goal is to help evaluate, create, and grow businesses by providing the necessary support and management services, including feasibility and administrative coordination where needed.',
+    intro: [
+      enterpriseServiceIntro,
+      'Al Bastaki Business Services takes responsibility for the registration aspects of new businesses. We help you create and grow businesses by providing the necessary support across setup, licensing-related coordination, and corporate service requirements.',
+    ],
     keyPoints: [
-      'End-to-end registration and amendment support',
-      'Visa and PRO services with compliant documentation',
-      'Corporate services coordination to reduce operational friction',
-      'Structured guidance to help businesses grow with confidence',
+      'Customized solutions aligned to your business activity and goals',
+      'Fast implementation with clear documentation and follow-ups',
+      'Responsible support for demanding scenarios and timelines',
+      'Structured coordination to reduce friction and delays',
     ],
     deliverables: [
-      'Company Setup & Liquidation',
-      'Visa & PRO Services',
+      'Company Setup',
+      'Company Liquidation',
+      'Visa Processing',
       'Local Partner',
+      'PRO Services',
+      'Document Copying and Clearing Services',
       'Contracts & POA Services',
       'Amendments & Registration',
-      'Document Copying',
+      'Translation Services',
       'Trademark Registration',
       'Dubai Court Services',
       'Corporate Services Provider',
+      'Business Men & Women Services',
     ],
   },
   {
@@ -70,18 +82,20 @@ export const services: Service[] = [
     coverImage: '/stats-image.jpg',
     subtitle:
       'Practical accounting support with confidentiality, accuracy, and reliable reporting for decision-making.',
-    intro:
-      'Based on client requirements, we provide a complete range of accounting services. Payroll and accounting can be demanding for new businesses due to local requirements, practices, and compliance expectations. We support you while maintaining confidentiality and accuracy.',
+    intro: [
+      enterpriseServiceIntro,
+      'Based on your requirements, we provide a complete range of accounting services. Payroll and accounting can be demanding for new businesses due to local requirements, practices, and compliance expectations. We support you while maintaining strict confidentiality and accuracy.',
+    ],
     keyPoints: [
-      'Accounting and bookkeeping support aligned to business needs',
-      'Payroll handling with confidentiality and precision',
-      'Support for VAT and compliance-related requirements',
-      'Structured reporting to improve financial clarity and control',
+      'Accounting and bookkeeping aligned to business needs',
+      'Payroll support with confidentiality and precision',
+      'VAT registration support where required',
+      'Reliable reporting for clarity and control',
     ],
     deliverables: [
       'Accounting & Bookkeeping',
-      'Payroll Management',
-      'Auditing Services',
+      'Payroll',
+      'Auditing',
       'VAT Registration',
       'Bank Account Opening',
     ],
@@ -92,18 +106,20 @@ export const services: Service[] = [
     coverImage: '/hero-main1.jpg',
     subtitle:
       'Regional insight and structured advisory to assess opportunities, reduce risk, and support growth decisions.',
-    intro:
-      'Hire consultants with a deep understanding of the region. We provide insight into the investment context and challenges for businesses considering investing abroad, and support you in assessing potential opportunities.',
+    intro: [
+      enterpriseServiceIntro,
+      'Hire consultants with a deep understanding of the region. We provide insight into the investment context and challenges for your business and support you in assessing opportunities with practical, best-practice processes.',
+    ],
     keyPoints: [
       'Context-first advice grounded in regional business realities',
       'Feasibility and planning support for better decision-making',
-      'Management and facilities planning assistance',
+      'Facilities resource planning consultancy',
       'A practical approach to reduce risk and improve outcomes',
     ],
     deliverables: [
       'Marketing Management',
       'Feasibility Study Consultancies',
-      'Facilities Resource Planning',
+      'Facilities Resource Planning Consultancy',
       'Management Services',
       'Facilities Management Services',
     ],
@@ -114,8 +130,10 @@ export const services: Service[] = [
     coverImage: '/hero-main2.jpg',
     subtitle:
       'End-to-end event logistics and project management for conferences, exhibitions, ceremonies, and more.',
-    intro:
-      'Event management includes a variety of functions for executing large-scale events such as conferences, conventions, concerts, trade shows, festivals, and ceremonies. It involves handling overall logistics, coordinating staff, and managing delivery end to end.',
+    intro: [
+      enterpriseServiceIntro,
+      'Event management includes a variety of functions for executing large-scale events such as conferences, conventions, concerts, trade shows, festivals, and ceremonies. We support planning, logistics, coordination, and delivery end to end.',
+    ],
     keyPoints: [
       'Project management for planning through execution',
       'Logistics coordination with clear deliverables',
@@ -124,12 +142,13 @@ export const services: Service[] = [
     ],
     deliverables: [
       'Events Organizing & Managing',
+      'Public Relations Management',
       'Exhibition Organizing',
-      'Film, TV & Radio Production',
+      'Film, TV & Radio Production Services',
       'Wedding Parties Organizing',
-      'Parties Filming',
-      'Equipment Rental',
-      'Conferences & Seminars',
+      'Parties & Private Functions Filming',
+      'Film Equipment Rental',
+      'Conferences & Seminars Organizing',
     ],
   },
   {
@@ -138,8 +157,10 @@ export const services: Service[] = [
     coverImage: '/hero-main1.jpg',
     subtitle:
       'Website, branding, and digital solutions under one roof to grow your business with a stronger online presence.',
-    intro:
-      'We offer every solution under one roof to grow your business. Our expertise spans website design, web development, branding, and digital marketing. We deliver creative, affordable solutions to expand your business.',
+    intro: [
+      enterpriseServiceIntro,
+      'We offer solutions under one roof to grow your business. Our expertise includes web design, development, and practical digital support to strengthen your presence and support growth.',
+    ],
     keyPoints: [
       'Website design and development for modern businesses',
       'Branding and content support aligned to your positioning',
@@ -149,11 +170,34 @@ export const services: Service[] = [
     deliverables: [
       'Web Designing',
       'Internet Content Provider',
+      'Social Media App Development',
       'Social Media App Management',
+      'Computer Systems & Communication Equipment',
       'Software Design',
-      'Portal Systems',
+      'Portal',
+    ],
+  },
+  {
+    slug: 'other',
+    title: 'Other Services',
+    coverImage: '/hero-main2.jpg',
+    subtitle:
+      'Additional support services coordinated with the same structured approach: clear steps, fast turnaround, and responsible support.',
+    intro: [
+      enterpriseServiceIntro,
+      'Beyond our core services, we also provide additional support services based on client requirements, coordinated with the same focus on clarity and reliable execution.',
+    ],
+    keyPoints: [
+      'Customized solutions based on your requirements',
+      'Fast implementation with clear communication',
+      'Responsible support for time-sensitive scenarios',
+      'Structured coordination from request to delivery',
+    ],
+    deliverables: [
+      'Auto Services Broker',
       'Claim Settlement Services',
-      'CSR Initiatives Preparation',
+      'Medical Treatment Facilitation Services',
+      'Corporate Social Responsibility Initiatives Preparation',
     ],
   },
 ]

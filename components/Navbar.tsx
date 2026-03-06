@@ -11,35 +11,19 @@ const navItems = [
     dropdown: null,
   },
   {
-    label: 'Pages',
-    href: '/pages',
-    dropdown: [
-      { label: 'About Us', href: '/about' },
-      { label: 'Our Team', href: '/team' },
-      { label: 'Why Choose Us', href: '/why-choose-us' },
-      { label: 'Testimonials', href: '/testimonials' },
-    ],
+    label: 'About Us',
+    href: '/about',
   },
   {
     label: 'Services',
     href: '/services',
     dropdown: [
-      { label: 'Our Services', href: '/services' },
       { label: 'Company Formation', href: '/services/company-formation' },
       { label: 'Business Setup', href: '/services/business-setup' },
       { label: 'Accounting Services', href: '/services/accounting' },
       { label: 'Consultancy Services', href: '/services/consultancy' },
       { label: 'Event Management', href: '/services/events' },
       { label: 'IT Services', href: '/services/it' },
-    ],
-  },
-  {
-    label: 'Case Studies',
-    href: '/case-studies',
-    dropdown: [
-      { label: 'All Projects', href: '/case-studies' },
-      { label: 'Business Setup Cases', href: '/case-studies/business-setup' },
-      { label: 'Accounting Cases', href: '/case-studies/accounting' },
     ],
   },
   {
