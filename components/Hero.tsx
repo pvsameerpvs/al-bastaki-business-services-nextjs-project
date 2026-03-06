@@ -48,12 +48,26 @@ export default function Hero(){
           animate={{opacity:1,x:0}}
           transition={{duration:0.8, ease:"easeOut"}}
         >
-          <h1 className="text-[3.5rem] md:text-[4rem] lg:text-[4.5rem] font-bold mb-6 leading-[1.1] tracking-tight text-white">
-             Elevate Your <br/> Business Setup <br/>
+          <h1 className="text-[3.75rem] md:text-[4.25rem] lg:text-[5rem] font-bold mb-6 leading-[1.05] tracking-tight text-white">
+              Elevate Your <br/> Business Setup <br/>
             <span className="text-primary">In Dubai</span>
           </h1>
-          
-          
+
+          <p className="text-[16px] md:text-[18px] lg:text-[19px] leading-relaxed text-white/85 max-w-[36rem]">
+            From company formation to licensing and visa support, we guide you end-to-end with clear steps,
+            fast turnaround, and compliant execution.
+          </p>
+
+          <div className="mt-6 flex flex-wrap gap-2.5">
+            {['Mainland & Freezone', 'Bank Account Support', 'Visa & PRO Services'].map((item) => (
+              <span
+                key={item}
+                className="inline-flex items-center rounded-full bg-white/10 border border-white/15 px-3.5 py-2 text-[13px] md:text-[14px] font-semibold text-white/90 backdrop-blur"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
         </motion.div>
 
         {/* Right Column Glassmorphic Card (matching the UI reference) */}
@@ -64,7 +78,7 @@ export default function Hero(){
           className="justify-self-center md:justify-self-end mt-10 md:mt-0 w-full drop-shadow-2xl"
         >
           <div 
-            className="bg-white/10 backdrop-blur-[16px] border border-white/20 rounded-[2rem] rounded-tr-none p-7 md:p-8 max-w-[280px] w-full text-white relative overflow-hidden ml-auto hidden md:block"
+            className="bg-white/10 backdrop-blur-[16px] border border-white/20 rounded-[2rem] rounded-tr-none p-7 md:p-8 max-w-[460px] w-full text-white relative overflow-hidden mx-auto md:ml-auto"
             style={{ 
               WebkitMaskImage: 'linear-gradient(225deg, transparent 55px, black 56px)',
               maskImage: 'linear-gradient(225deg, transparent 55px, black 56px)'
@@ -73,29 +87,80 @@ export default function Hero(){
             {/* Subtle glow inside card */}
             <div className="absolute -top-10 -right-10 w-40 h-32 bg-white/10 blur-[50px] rounded-full pointer-events-none"></div>
 
-            <div className="text-[4rem] font-bold leading-none tracking-tight mb-2 relative z-10">20+</div>
-            <div className="text-[1.1rem] text-white/95 mb-6 font-medium relative z-10">Years Of Expertise</div>
-            
-            <div className="flex -space-x-3 mb-6 relative z-10">
-              {[
-                "https://i.pravatar.cc/100?img=11", 
-                "https://i.pravatar.cc/100?img=12", 
-                "https://i.pravatar.cc/100?img=13", 
-                "https://i.pravatar.cc/100?img=14"
-              ].map((src, i) => (
-                <img 
-                  key={i}
-                  src={src}
-                  alt={`Client ${i}`} 
-                  className="w-12 h-12 rounded-full border-[2px] border-white object-cover relative z-10" 
-                  style={{ zIndex: 10 - i }}
+            {/* Header */}
+            <div className="relative z-10">
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/15 px-3 py-1 text-[12px] font-semibold tracking-wide text-white/90">
+                <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_10px_rgba(255,255,255,0.25)]" />
+                Free consultation
+              </div>
+              <h3 className="mt-4 text-[1.35rem] md:text-[1.55rem] font-bold leading-tight tracking-tight">
+                Get in touch
+              </h3>
+              <p className="mt-2 text-[14px] leading-relaxed text-white/80">
+                Share your details and we will call you back.
+              </p>
+            </div>
+
+            {/* Form */}
+            <form className="relative z-10 mt-6 space-y-4" onSubmit={(e) => e.preventDefault()}>
+              <div>
+                <label className="block text-[13px] font-medium text-white/85 mb-1" htmlFor="heroContactName">
+                  Name
+                </label>
+                <input
+                  id="heroContactName"
+                  name="name"
+                  type="text"
+                  autoComplete="name"
+                  placeholder="Your full name"
+                  className="w-full rounded-xl bg-white/10 border border-white/20 px-4 py-3 text-[14px] text-white placeholder:text-white/45 focus:outline-none focus:border-white/45 focus:bg-white/15 transition-colors"
+                  required
                 />
-              ))}
-            </div>
-            
-            <div className="text-[1.1rem] font-normal leading-snug tracking-wide text-white/95 relative z-10">
-              2,250+ businesses are <br/> trusting us.
-            </div>
+              </div>
+
+              <div>
+                <label className="block text-[13px] font-medium text-white/85 mb-1" htmlFor="heroContactEmail">
+                  Email
+                </label>
+                <input
+                  id="heroContactEmail"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  inputMode="email"
+                  placeholder="name@company.com"
+                  className="w-full rounded-xl bg-white/10 border border-white/20 px-4 py-3 text-[14px] text-white placeholder:text-white/45 focus:outline-none focus:border-white/45 focus:bg-white/15 transition-colors"
+                  required
+                />
+              </div>
+
+              <div>
+                <label className="block text-[13px] font-medium text-white/85 mb-1" htmlFor="heroContactPhone">
+                  Contact number
+                </label>
+                <input
+                  id="heroContactPhone"
+                  name="phone"
+                  type="tel"
+                  autoComplete="tel"
+                  inputMode="tel"
+                  placeholder="+971 50 123 4567"
+                  className="w-full rounded-xl bg-white/10 border border-white/20 px-4 py-3 text-[14px] text-white placeholder:text-white/45 focus:outline-none focus:border-white/45 focus:bg-white/15 transition-colors"
+                  required
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full mt-2 rounded-full bg-white text-primary font-bold py-3.5 text-[14px] tracking-wide hover:bg-gray-100 transition-colors shadow-xl"
+              >
+                Request a callback
+              </button>
+
+              <div className="text-[12px] text-white/65 leading-relaxed">
+                By submitting, you agree to be contacted regarding your inquiry.
+              </div>
+            </form>
           </div>
         </motion.div>
         
@@ -107,13 +172,22 @@ export default function Hero(){
           
           {/* Left - Socials */}
           <div className="flex flex-col gap-3 text-[15px] font-medium hidden md:flex min-w-[150px]">
-            <div className="relative flex items-center">
-              <span className="absolute -left-4 w-[5px] h-[5px] rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]"></span>
-              <a href="#" className="text-white hover:text-white/80 transition-colors">Facebook</a>
+            <div className="relative flex items-center group">
+              <span className="absolute -left-4 w-[5px] h-[5px] rounded-full opacity-0 scale-75 bg-primary group-hover:opacity-100 group-hover:scale-100 group-hover:shadow-[0_0_10px_rgba(0,102,166,0.75)] transition-all pointer-events-none"></span>
+              <a href="#" className="text-white/50 hover:text-white transition-colors hover:underline hover:decoration-primary decoration-2 underline-offset-4">Facebook</a>
             </div>
-            <a href="#" className="text-white/50 hover:text-white transition-colors">Twitter</a>
-            <a href="#" className="text-white/50 hover:text-white transition-colors">Linkedin</a>
-            <a href="#" className="text-white/50 hover:text-white transition-colors">Instagram</a>
+            <div className="relative flex items-center group">
+              <span className="absolute -left-4 w-[5px] h-[5px] rounded-full opacity-0 scale-75 bg-primary group-hover:opacity-100 group-hover:scale-100 group-hover:shadow-[0_0_10px_rgba(0,102,166,0.75)] transition-all pointer-events-none"></span>
+              <a href="#" className="text-white/50 hover:text-white transition-colors hover:underline hover:decoration-primary decoration-2 underline-offset-4">Twitter</a>
+            </div>
+            <div className="relative flex items-center group">
+              <span className="absolute -left-4 w-[5px] h-[5px] rounded-full opacity-0 scale-75 bg-primary group-hover:opacity-100 group-hover:scale-100 group-hover:shadow-[0_0_10px_rgba(0,102,166,0.75)] transition-all pointer-events-none"></span>
+              <a href="#" className="text-white/50 hover:text-white transition-colors hover:underline hover:decoration-primary decoration-2 underline-offset-4">Linkedin</a>
+            </div>
+            <div className="relative flex items-center group">
+              <span className="absolute -left-4 w-[5px] h-[5px] rounded-full opacity-0 scale-75 bg-primary group-hover:opacity-100 group-hover:scale-100 group-hover:shadow-[0_0_10px_rgba(0,102,166,0.75)] transition-all pointer-events-none"></span>
+              <a href="#" className="text-white/50 hover:text-white transition-colors hover:underline hover:decoration-primary decoration-2 underline-offset-4">Instagram</a>
+            </div>
           </div>
 
           {/* Center - Slider Counter */}
