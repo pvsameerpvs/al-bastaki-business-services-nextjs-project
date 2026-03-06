@@ -51,13 +51,13 @@ export default function Footer() {
             <div className="lg:col-span-1 flex flex-col text-left lg:ml-12 shrink-0">
               <h3 className="text-[17px] font-bold mb-6 text-white tracking-wide">Quick Links</h3>
               <div className="grid grid-cols-2 gap-x-2 sm:gap-x-8 gap-y-3">
-                <Link href="#" className="text-[14px] text-[#9CA3AF] hover:text-primary transition-colors duration-300 font-medium whitespace-nowrap">Home</Link>
-                <Link href="#" className="text-[14px] text-[#9CA3AF] hover:text-primary transition-colors duration-300 font-medium whitespace-nowrap">Blog</Link>
-                <Link href="#" className="text-[14px] text-[#9CA3AF] hover:text-primary transition-colors duration-300 font-medium whitespace-nowrap">About Us</Link>
-                <Link href="#" className="text-[14px] text-[#9CA3AF] hover:text-primary transition-colors duration-300 font-medium whitespace-nowrap">Contact</Link>
-                <Link href="#" className="text-[14px] text-[#9CA3AF] hover:text-primary transition-colors duration-300 font-medium whitespace-nowrap">Services</Link>
-                <Link href="#" className="text-[14px] text-[#9CA3AF] hover:text-primary transition-colors duration-300 font-medium whitespace-nowrap">FAQs</Link>
-                <Link href="#" className="text-[14px] text-[#9CA3AF] hover:text-primary transition-colors duration-300 font-medium whitespace-nowrap">Case Studies</Link>
+                <Link href="/" className="text-[14px] text-[#9CA3AF] hover:text-primary transition-colors duration-300 font-medium whitespace-nowrap">Home</Link>
+                <Link href="/blog" className="text-[14px] text-[#9CA3AF] hover:text-primary transition-colors duration-300 font-medium whitespace-nowrap">Blog</Link>
+                <Link href="/about" className="text-[14px] text-[#9CA3AF] hover:text-primary transition-colors duration-300 font-medium whitespace-nowrap">About Us</Link>
+                <Link href="/contact" className="text-[14px] text-[#9CA3AF] hover:text-primary transition-colors duration-300 font-medium whitespace-nowrap">Contact</Link>
+                <Link href="/services" className="text-[14px] text-[#9CA3AF] hover:text-primary transition-colors duration-300 font-medium whitespace-nowrap">Services</Link>
+                <Link href="/faqs" className="text-[14px] text-[#9CA3AF] hover:text-primary transition-colors duration-300 font-medium whitespace-nowrap">FAQs</Link>
+                <Link href="/case-studies" className="text-[14px] text-[#9CA3AF] hover:text-primary transition-colors duration-300 font-medium whitespace-nowrap">Case Studies</Link>
               </div>
             </div>
 

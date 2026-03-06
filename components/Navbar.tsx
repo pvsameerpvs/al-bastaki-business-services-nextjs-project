@@ -12,19 +12,19 @@ const navItems = [
   },
   {
     label: 'Pages',
-    href: '#',
+    href: '/pages',
     dropdown: [
       { label: 'About Us', href: '/about' },
       { label: 'Our Team', href: '/team' },
-      { label: 'Why Choose Us', href: '#why-choose-us' },
-      { label: 'Testimonials', href: '#testimonials' },
+      { label: 'Why Choose Us', href: '/why-choose-us' },
+      { label: 'Testimonials', href: '/testimonials' },
     ],
   },
   {
     label: 'Services',
-    href: '#',
+    href: '/services',
     dropdown: [
-      { label: 'Our Services', href: '#services' },
+      { label: 'Our Services', href: '/services' },
       { label: 'Company Formation', href: '/services/company-formation' },
       { label: 'Business Setup', href: '/services/business-setup' },
       { label: 'Accounting Services', href: '/services/accounting' },
@@ -35,7 +35,7 @@ const navItems = [
   },
   {
     label: 'Case Studies',
-    href: '#',
+    href: '/case-studies',
     dropdown: [
       { label: 'All Projects', href: '/case-studies' },
       { label: 'Business Setup Cases', href: '/case-studies/business-setup' },
@@ -44,7 +44,7 @@ const navItems = [
   },
   {
     label: 'Blog',
-    href: '#',
+    href: '/blog',
     dropdown: [
       { label: 'Latest Articles', href: '/blog' },
       { label: 'Business Tips', href: '/blog/business-tips' },
@@ -199,7 +199,9 @@ export default function Navbar() {
                 >
                   {item.dropdown ? (
                     <>
-                      <span>{item.label}</span>
+                      <Link href={item.href} className="leading-none">
+                        {item.label}
+                      </Link>
                       <svg
                         className={`w-3.5 h-3.5 transition-transform duration-300 ${
                           activeDropdown === item.label ? 'rotate-180' : ''
@@ -314,19 +316,24 @@ export default function Navbar() {
           <div className="px-6 py-4 flex flex-col gap-1">
             {navItems.map((item) => (
               <div key={item.label}>
-                <div
-                  className="flex items-center justify-between py-3 text-[15px] font-medium text-gray-800 cursor-pointer rounded-lg px-2 hover:bg-[#EDF6FF] hover:text-[#0066A6] transition-colors"
-                  onClick={() =>
-                    item.dropdown
-                      ? setMobileExpanded(
-                          mobileExpanded === item.label ? null : item.label
-                        )
-                      : undefined
-                  }
-                >
-                  {item.dropdown ? (
-                    <>
-                      <span>{item.label}</span>
+                <div className="flex items-center justify-between py-3 text-[15px] font-medium text-gray-800 rounded-lg px-2 hover:bg-[#EDF6FF] hover:text-[#0066A6] transition-colors">
+                  <Link
+                    href={item.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="flex-1"
+                  >
+                    {item.label}
+                  </Link>
+
+                  {item.dropdown && (
+                    <button
+                      type="button"
+                      aria-label={`Toggle ${item.label} submenu`}
+                      onClick={() =>
+                        setMobileExpanded(mobileExpanded === item.label ? null : item.label)
+                      }
+                      className="ml-3 p-1.5 rounded-md hover:bg-white/60 transition-colors"
+                    >
                       <svg
                         className={`w-4 h-4 text-gray-400 transition-transform duration-300 ${
                           mobileExpanded === item.label ? 'rotate-180' : ''
@@ -335,13 +342,14 @@ export default function Navbar() {
                         viewBox="0 0 24 24"
                         stroke="currentColor"
                       >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2.5}
+                          d="M19 9l-7 7-7-7"
+                        />
                       </svg>
-                    </>
-                  ) : (
-                    <Link href={item.href} onClick={() => setMobileOpen(false)}>
-                      {item.label}
-                    </Link>
+                    </button>
                   )}
                 </div>
                 {/* Mobile Sub-items */}

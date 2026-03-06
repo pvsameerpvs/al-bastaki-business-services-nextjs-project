@@ -1,11 +1,13 @@
 'use client'
 import { motion } from 'framer-motion'
 import { useRef } from 'react'
+import Link from 'next/link'
 
 const services = [
   {
     title: "Company Formation",
-    description: "Setting up a new business or branch office in Dubai and the United Arab Emirates can be a complicated and expensive procedure. So We help to establish your company under the correct legal framework choosing the most cost effective and less time consuming alternative. Moreover Identify the strength and weakness of all the possible options related to your business is our commitment.",
+    description: "Setting up a new business or branch office in Dubai and the United Arab Emirates can be a complicated and expensive process. We help you establish your company under the correct legal framework by choosing the most cost-effective and time-saving option. We also evaluate the strengths and weaknesses of the available alternatives for your business.",
+    href: "/services/company-formation",
     icon: (
       <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M3 21h18"></path><path d="M9 8h1"></path><path d="M9 12h1"></path><path d="M9 16h1"></path><path d="M14 8h1"></path><path d="M14 12h1"></path><path d="M14 16h1"></path><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path>
@@ -14,7 +16,8 @@ const services = [
   },
   {
     title: "Business Setup",
-    description: "Al Bastaki Business Services hold responsibility for all the registration aspects of a new business. Also our goal is to help create and grow businesses by providing the necessary support and management, consultancy services, feasibility studies, financial projection, financial validation, administrative and technical services.",
+    description: "Al Bastaki Business Services takes responsibility for the registration aspects of new businesses. Our goal is to help create and grow businesses by providing the necessary support and management, including consultancy services, feasibility studies, financial projections, financial validation, and administrative and technical services.",
+    href: "/services/business-setup",
     icon: (
       <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2v20"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
@@ -23,7 +26,8 @@ const services = [
   },
   {
     title: "Accounting Services",
-    description: "Based on the requirements of our clients we can provide a complete range of accounting services. Still Payroll can be for many new business a heavy duty since the required knowledge of law, customs and local practices in United Arab Emirates necessitate training and highly qualified staff. So We can help you in this task maintaining the vital confidentiality and accuracy.",
+    description: "Based on your requirements, we provide a complete range of accounting services. Payroll can be demanding for new businesses because local laws, practices, and procedures require trained, qualified staff. We support you while maintaining strict confidentiality and accuracy.",
+    href: "/services/accounting",
     icon: (
       <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M7 15h0"></path><path d="M2 9.5h20"></path>
@@ -32,7 +36,8 @@ const services = [
   },
   {
     title: "Consultancy Services",
-    description: "Hire the Best Consultants who has a deep understanding of that specific region and provide a description of the investment context and challenges for your business considering investing abroad and support you in assessing the potential opportunities.",
+    description: "Work with consultants who have a deep understanding of the region. We explain the investment context and challenges for your business and support you in assessing potential opportunities when considering investing abroad.",
+    href: "/services/consultancy",
     icon: (
       <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M16 3h5v5"></path><path d="M8 3H3v5"></path><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3"></path><path d="m15 9 6-6"></path>
@@ -42,6 +47,7 @@ const services = [
   {
     title: "Event Management",
     description: "Event management includes a variety of functions for executing large scale events, which might include conferences, conventions, concerts, trade shows, festivals, and ceremonies. It involves handling the overall logistics of the event, working with staff, and conducting project management of the event as a whole.",
+    href: "/services/events",
     icon: (
       <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
@@ -50,7 +56,8 @@ const services = [
   },
   {
     title: "IT Services",
-    description: "We offer every solution under one roof to grow your business. Also we Expertise in Website Design, Web Development, Branding, Digital Marketing. In addition We have the passion, skills, and energy to deliver rewarding solutions. Also We offer the most affordable and creative solutions to expand your business.",
+    description: "We offer solutions under one roof to help grow your business. Our expertise includes website design, web development, branding, and digital marketing. We bring the passion, skills, and energy to deliver rewarding results with affordable, creative solutions.",
+    href: "/services/it",
     icon: (
       <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line>
@@ -139,57 +146,61 @@ export default function Services() {
           className="flex flex-row w-full relative z-10 gap-4 lg:gap-5 px-2 pt-8 overflow-x-auto snap-x snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']"
         >
           {services.map((svc, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 * idx }}
+            <Link
+              key={svc.title}
+              href={svc.href}
               className="group relative flex-shrink-0 w-[300px] sm:w-[320px] lg:w-[340px] h-[380px] sm:h-[400px] lg:h-[440px] cursor-pointer snap-center lg:snap-start"
             >
-              {/* Expanding Glass Background with gaps and rounded edges */}
-              {/* Unhovered: 110px bottom pill. Hovered: Full height glass card. */}
-              <div className="absolute bottom-0 inset-x-0 h-full lg:h-[110px] group-hover:h-full bg-white/5 group-hover:bg-[#00223E]/90 backdrop-blur-md transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] rounded-3xl z-0 group-hover:shadow-2xl border border-white/10 group-hover:border-white/20" />
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 * idx }}
+                className="absolute inset-0"
+              >
+                {/* Expanding Glass Background with gaps and rounded edges */}
+                {/* Unhovered: 110px bottom pill. Hovered: Full height glass card. */}
+                <div className="absolute bottom-0 inset-x-0 h-full lg:h-[110px] group-hover:h-full bg-white/5 group-hover:bg-[#00223E]/90 backdrop-blur-md transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] rounded-3xl z-0 group-hover:shadow-2xl border border-white/10 group-hover:border-white/20" />
 
-              {/* Icon - Leaps to top on hover */}
-              <div className="absolute left-6 lg:left-8 bottom-[55px] lg:bottom-[50px] group-hover:bottom-[65%] lg:group-hover:bottom-[72%] transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] text-[#bad5e8] group-hover:text-primary z-10">
-                <div className="bg-transparent group-hover:bg-white/10 p-0 group-hover:p-2 rounded-xl transition-all duration-[600ms]">
-                  {svc.icon}
+                {/* Icon - Leaps to top on hover */}
+                <div className="absolute left-6 lg:left-8 bottom-[55px] lg:bottom-[50px] group-hover:bottom-[65%] lg:group-hover:bottom-[72%] transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] text-[#bad5e8] group-hover:text-primary z-10">
+                  <div className="bg-transparent group-hover:bg-white/10 p-0 group-hover:p-2 rounded-xl transition-all duration-[600ms]">
+                    {svc.icon}
+                  </div>
                 </div>
-              </div>
 
-              {/* Content Container - Anchored to bottom, grid expands upwards on hover */}
-              <div className="absolute bottom-6 left-6 right-6 lg:left-8 lg:right-8 z-10 flex flex-col justify-end">
-                {/* Title */}
-                <h3 className="text-[17px] sm:text-[19px] font-bold text-white leading-snug mb-0 group-hover:mb-3 transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
-                  {svc.title}
-                </h3>
-                
-                {/* Expandable Description & Button */}
-                <div className="grid grid-rows-[1fr] lg:grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
-                  <div className="overflow-hidden opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-[600ms] lg:delay-100">
-                    <div className="pt-2 lg:pt-3 flex flex-col">
-                      <p className="text-[13.5px] lg:text-[14px] text-white/70 leading-[1.6] font-medium mb-6 line-clamp-4 lg:line-clamp-5">
-                        {svc.description}
-                      </p>
-                      
-                      {/* Interactive Button */}
-                      <button className="flex items-center group/btn cursor-pointer w-fit mt-auto lg:pb-2">
-                        <span className="flex items-center justify-center w-[36px] h-[36px] rounded-full bg-primary text-white z-10 relative transition-transform duration-300 group-hover/btn:scale-105">
-                          <svg className="w-4 h-4 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                          </svg>
-                        </span>
-                        <span className="flex items-center h-[36px] pl-6 pr-5 rounded-full bg-primary/20 text-white font-semibold text-[13px] -ml-4 relative transition-colors duration-300 group-hover/btn:bg-primary">
-                          Discover more
-                        </span>
-                      </button>
+                {/* Content Container - Anchored to bottom, grid expands upwards on hover */}
+                <div className="absolute bottom-6 left-6 right-6 lg:left-8 lg:right-8 z-10 flex flex-col justify-end">
+                  {/* Title */}
+                  <h3 className="text-[17px] sm:text-[19px] font-bold text-white leading-snug mb-0 group-hover:mb-3 transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
+                    {svc.title}
+                  </h3>
+
+                  {/* Expandable Description & Button */}
+                  <div className="grid grid-rows-[1fr] lg:grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
+                    <div className="overflow-hidden opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-[600ms] lg:delay-100">
+                      <div className="pt-2 lg:pt-3 flex flex-col">
+                        <p className="text-[13.5px] lg:text-[14px] text-white/70 leading-[1.6] font-medium mb-6 line-clamp-4 lg:line-clamp-5">
+                          {svc.description}
+                        </p>
+
+                        {/* Interactive Button (visual only; whole card navigates) */}
+                        <div className="flex items-center group/btn cursor-pointer w-fit mt-auto lg:pb-2">
+                          <span className="flex items-center justify-center w-[36px] h-[36px] rounded-full bg-primary text-white z-10 relative transition-transform duration-300 group-hover/btn:scale-105">
+                            <svg className="w-4 h-4 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                          </span>
+                          <span className="flex items-center h-[36px] pl-6 pr-5 rounded-full bg-primary/20 text-white font-semibold text-[13px] -ml-4 relative transition-colors duration-300 group-hover/btn:bg-primary">
+                            Discover more
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-
-            </motion.div>
+              </motion.div>
+            </Link>
           ))}
         </div>
       </div>
