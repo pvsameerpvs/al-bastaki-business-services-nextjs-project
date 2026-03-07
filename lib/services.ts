@@ -11,6 +11,7 @@ export type Service = {
   slug: ServiceSlug
   title: string
   coverImage: string
+  images: [string, string, string]
   subtitle: string
   intro: string[]
   keyPoints: string[]
@@ -24,7 +25,12 @@ export const services: Service[] = [
   {
     slug: 'company-formation',
     title: 'Company Formation',
-    coverImage: '/hero-main1.jpg',
+    coverImage: '/hero-company-formation.jpg',
+    images: [
+      '/company-formation-1.jpg',
+      '/company-formation-2.jpg',
+      '/company-formation-3.jpg',
+    ],
     subtitle:
       'Set up your business under the right legal framework with clear options, compliant execution, and end-to-end support.',
     intro: [
@@ -47,7 +53,12 @@ export const services: Service[] = [
   {
     slug: 'business-setup',
     title: 'Business Setup',
-    coverImage: '/hero-main2.jpg',
+    coverImage: '/business-setup-1.jpg',
+    images: [
+      '/business-setup-4.jpg',
+      '/business-setup-3.jpg',
+      '/business-setup-7.jpg',
+    ],
     subtitle:
       'Registration, PRO, and corporate services delivered with clarity, control, and reliable turnaround.',
     intro: [
@@ -79,7 +90,12 @@ export const services: Service[] = [
   {
     slug: 'accounting',
     title: 'Accounting Services',
-    coverImage: '/stats-image.jpg',
+    coverImage: '/accounting-4.jpg',
+    images: [
+      '/accounting-1.jpg',
+      '/accounting-2.jpg',
+      '/accounting-3.jpg',
+    ],
     subtitle:
       'Practical accounting support with confidentiality, accuracy, and reliable reporting for decision-making.',
     intro: [
@@ -103,7 +119,12 @@ export const services: Service[] = [
   {
     slug: 'consultancy',
     title: 'Consultancy Services',
-    coverImage: '/hero-main1.jpg',
+    coverImage: '/consultancy-3.jpg',
+    images: [
+      '/consultancy-1.jpg',
+      '/consultancy-2.jpg',
+      '/consultancy-5.jpg',
+    ],
     subtitle:
       'Regional insight and structured advisory to assess opportunities, reduce risk, and support growth decisions.',
     intro: [
@@ -127,7 +148,12 @@ export const services: Service[] = [
   {
     slug: 'events',
     title: 'Event Management',
-    coverImage: '/hero-main2.jpg',
+    coverImage: '/events-1.jpg',
+    images: [
+      '/events-1.jpg',
+      '/events-2.jpg',
+      '/events-3.jpg',
+    ],
     subtitle:
       'End-to-end event logistics and project management for conferences, exhibitions, ceremonies, and more.',
     intro: [
@@ -154,7 +180,12 @@ export const services: Service[] = [
   {
     slug: 'it',
     title: 'IT Services',
-    coverImage: '/hero-main1.jpg',
+    coverImage: '/it-4.jpg',
+    images: [
+      '/it-1.jpg',
+      '/it-2.jpg',
+      '/it-3.jpg',
+    ],
     subtitle:
       'Website, branding, and digital solutions under one roof to grow your business with a stronger online presence.',
     intro: [
@@ -181,6 +212,11 @@ export const services: Service[] = [
     slug: 'other',
     title: 'Other Services',
     coverImage: '/hero-main2.jpg',
+    images: [
+      '/other-1.jpg',
+      '/other-2.jpg',
+      '/other-3.jpg',
+    ],
     subtitle:
       'Additional support services coordinated with the same structured approach: clear steps, fast turnaround, and responsible support.',
     intro: [

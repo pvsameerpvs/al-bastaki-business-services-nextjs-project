@@ -1,8 +1,8 @@
 'use client'
 
 import { useMemo, useState } from 'react'
-import { motion } from 'framer-motion'
-
+import { motion, AnimatePresence } from 'framer-motion'
+import Image from 'next/image'
 import FadeIn from './FadeIn'
 
 type OptionKey = 'mainland' | 'freezone' | 'offshore' | 'branch'
@@ -11,10 +11,12 @@ type FormationOption = {
   key: OptionKey
   label: string
   kicker: string
+  image: string
   idealFor: string
   timeline: string
   highlights: string[]
   considerations: string[]
+  tag: string
 }
 
 const options: FormationOption[] = [
@@ -22,8 +24,11 @@ const options: FormationOption[] = [
     key: 'mainland',
     label: 'Mainland',
     kicker: 'Operate across the UAE',
-    idealFor: 'Companies that need broad operational flexibility, local market access, or multiple client types.',
-    timeline: 'Typically 7-15 working days (depends on activity and approvals).',
+    image: '/mainland.jpg',
+    tag: 'Most flexible',
+    idealFor:
+      'Companies that need broad operational flexibility, local market access, or multiple client types.',
+    timeline: 'Typically 7–15 working days',
     highlights: [
       'Flexible office and hiring options (subject to regulations)',
       'Suitable for many trading and professional activities',
@@ -38,11 +43,14 @@ const options: FormationOption[] = [
     key: 'freezone',
     label: 'Freezone',
     kicker: 'Fast setup, structured packages',
-    idealFor: 'Founders who want straightforward setup packages and a clear authority-led process.',
-    timeline: 'Typically 5-12 working days (varies by freezone and documents).',
+    image: '/freezone.jpg',
+    tag: 'Most popular',
+    idealFor:
+      'Founders who want straightforward setup packages and a clear authority-led process.',
+    timeline: 'Typically 5–12 working days',
     highlights: [
-      'Good for many services, trading, and digital-first businesses',
-      'Transparent package options (license, visa allocation, office)',
+      'Great for services, trading, and digital-first businesses',
+      'Transparent package options: license, visa allocation, office',
       'Predictable formation steps with authority coordination',
     ],
     considerations: [
@@ -54,8 +62,11 @@ const options: FormationOption[] = [
     key: 'offshore',
     label: 'Offshore',
     kicker: 'Holding and structuring',
-    idealFor: 'Ownership structures, asset holding, and scenarios where operations are not required locally.',
-    timeline: 'Typically 7-20 working days (depends on authority and KYC).',
+    image: '/company-formation-3.jpg',
+    tag: 'Asset holding',
+    idealFor:
+      'Ownership structures, asset holding, and scenarios where local operations are not required.',
+    timeline: 'Typically 7–20 working days',
     highlights: [
       'Often used for holding, investments, and international structuring',
       'Streamlined compliance and documentation with clear KYC',
@@ -68,27 +79,30 @@ const options: FormationOption[] = [
   },
   {
     key: 'branch',
-    label: 'Branch',
+    label: 'Branch Office',
     kicker: 'Extend an existing company',
-    idealFor: 'Foreign or local companies that want a UAE presence under the parent entity structure.',
-    timeline: 'Typically 10-25 working days (parent documents and approvals impact timing).',
+    image: '/branch.jpg',
+    tag: 'For established entities',
+    idealFor:
+      'Foreign or local companies that want a UAE presence under the parent entity structure.',
+    timeline: 'Typically 10–25 working days',
     highlights: [
       'Operate under the parent company name and structure',
-      'Good for expansion when the parent is established',
+      'Good for expansion when the parent entity is established',
       'Clear scope for registrations, amendments, and renewals',
     ],
     considerations: [
-      'Parent documentation must be complete and attested as required',
+      'Parent documentation must be complete and attested',
       'Authority approvals may be activity-specific',
     ],
   },
 ]
 
-function CheckIcon() {
+function CheckIcon({ size = 16 }: { size?: number }) {
   return (
     <svg
-      width="18"
-      height="18"
+      width={size}
+      height={size}
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -102,11 +116,11 @@ function CheckIcon() {
   )
 }
 
-function InfoIcon() {
+function AlertIcon({ size = 16 }: { size?: number }) {
   return (
     <svg
-      width="18"
-      height="18"
+      width={size}
+      height={size}
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -115,9 +129,9 @@ function InfoIcon() {
       strokeLinejoin="round"
       aria-hidden="true"
     >
-      <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z" />
-      <path d="M12 16v-4" />
-      <path d="M12 8h.01" />
+      <path d="M12 9v4" />
+      <path d="M12 17h.01" />
+      <path d="m10.29 3.86-8.6 14.88C1.11 20.04 2.21 22 3.86 22h16.28c1.65 0 2.75-1.96 2.17-3.26L13.71 3.86a2 2 0 0 0-3.42 0z" />
     </svg>
   )
 }
@@ -132,224 +146,220 @@ export default function CompanyFormationOptions() {
 
   return (
     <section className="py-20 md:py-28 bg-[#F9FAFB] relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-24 -right-24 h-[320px] w-[320px] rounded-full bg-primary/10 blur-3xl" />
-        <div className="absolute -bottom-28 -left-24 h-[360px] w-[360px] rounded-full bg-[#00223E]/10 blur-3xl" />
+      {/* background blobs */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <div className="absolute -top-24 -right-24 h-[380px] w-[380px] rounded-full bg-primary/8 blur-3xl" />
+        <div className="absolute -bottom-32 -left-24 h-[400px] w-[400px] rounded-full bg-[#00223E]/8 blur-3xl" />
       </div>
 
-      <div className="max-w-[1400px] mx-auto px-6 xl:px-8 relative">
-        <div className="grid lg:grid-cols-[0.95fr_1.05fr] gap-10 lg:gap-14 items-start">
-          <FadeIn>
-            <div>
-              <div className="text-[11px] md:text-[13px] font-medium tracking-[0.2em] text-gray-500 uppercase">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 xl:px-8 relative">
+
+        {/* ── Section header ── */}
+        <FadeIn>
+          <div className="mb-10 md:mb-14 max-w-3xl">
+            <div className="flex items-center gap-2 mb-3">
+              <div className="h-px w-6 bg-primary" />
+              <span className="text-[11px] font-bold tracking-[0.22em] text-gray-400 uppercase">
                 Formation options
-              </div>
-              <h2 className="mt-5 text-[28px] md:text-[36px] lg:text-[42px] font-medium text-[#2d3748] leading-[1.25] tracking-tight">
-                Choose the right route for your activity, timeline, and budget.
-              </h2>
-              <p className="mt-5 text-[14.5px] md:text-[15.5px] text-gray-600 leading-relaxed font-medium max-w-[70ch]">
-                We help you compare the practical trade-offs between mainland, freezone, offshore, and branch setups. The goal is a compliant structure that fits how you plan to operate.
-              </p>
-
-              <div className="mt-8 grid sm:grid-cols-2 gap-4">
-                {[
-                  {
-                    title: 'Clear recommendation',
-                    text: 'We map your activity and constraints to a realistic option and checklist.',
-                  },
-                  {
-                    title: 'Structured documentation',
-                    text: 'We keep submissions clean and reduce back-and-forth with authorities.',
-                  },
-                  {
-                    title: 'End-to-end coordination',
-                    text: 'Follow-ups, approvals, and handover managed with practical timelines.',
-                  },
-                  {
-                    title: 'Ongoing support',
-                    text: 'Renewals, amendments, and corporate services when you need them.',
-                  },
-                ].map((item) => (
-                  <div
-                    key={item.title}
-                    className="rounded-2xl bg-white border border-gray-100 px-5 py-5 shadow-sm"
-                  >
-                    <div className="text-[14.5px] font-bold text-gray-900 tracking-tight">
-                      {item.title}
-                    </div>
-                    <div className="mt-2 text-[13.5px] font-medium text-gray-600 leading-relaxed">
-                      {item.text}
-                    </div>
-                  </div>
-                ))}
-              </div>
+              </span>
             </div>
-          </FadeIn>
+            <h2 className="text-[28px] sm:text-[34px] md:text-[40px] font-bold text-[#1a2744] leading-[1.15] tracking-tight">
+              Choose the right route for your activity,<br className="hidden md:block" /> timeline, and budget
+            </h2>
+            <p className="mt-4 text-[14.5px] md:text-[15px] text-gray-500 leading-relaxed font-medium max-w-[68ch]">
+              We compare practical trade-offs between mainland, freezone, offshore, and branch setups
+              so you can pick the most compliant and cost-effective structure.
+            </p>
+          </div>
+        </FadeIn>
 
-          <FadeIn delay={0.1}>
-            <div className="rounded-[2rem] bg-white border border-gray-100 shadow-[0_30px_80px_rgba(0,0,0,0.06)] overflow-hidden">
-              <div className="p-6 md:p-8 border-b border-gray-100">
-                <div className="flex items-center justify-between gap-6 flex-wrap">
-                  <div className="min-w-0">
-                    <div className="text-[11px] md:text-[12px] font-bold tracking-[0.25em] text-gray-500 uppercase">
-                      Quick comparison
-                    </div>
-                    <div className="mt-3 text-[16px] md:text-[18px] font-bold text-gray-900 tracking-tight">
-                      Tap an option to see details
-                    </div>
-                  </div>
-
-                  <div
-                    className="w-full sm:w-auto min-w-0 flex items-center gap-2 rounded-full bg-[#F3F6FA] border border-gray-100 p-1 overflow-x-auto max-w-full"
-                    role="tablist"
-                    aria-label="Company formation options"
-                  >
-                    {options.map((o) => {
-                      const isActive = o.key === active
-                      return (
-                        <button
-                          key={o.key}
-                          type="button"
-                          role="tab"
-                          aria-selected={isActive}
-                          onClick={() => setActive(o.key)}
-                          className={
-                            'shrink-0 rounded-full px-4 py-2 text-[13px] font-semibold transition-all ' +
-                            (isActive
-                              ? 'bg-primary text-white shadow-[0_10px_30px_rgba(0,102,166,0.25)]'
-                              : 'text-gray-700 hover:text-gray-900 hover:bg-white')
-                          }
-                        >
-                          {o.label}
-                        </button>
-                      )
-                    })}
-                  </div>
-                </div>
-              </div>
-
-              <div className="p-6 md:p-8">
-                <motion.div
-                  key={activeOption.key}
-                  initial={{ opacity: 0, y: 14 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.35, ease: 'easeOut' }}
+        {/* ── Tab switcher ── */}
+        <FadeIn delay={0.05}>
+          <div
+            className="inline-flex items-center gap-1.5 rounded-full bg-white border border-gray-200 p-1.5 mb-8 shadow-sm overflow-x-auto max-w-full"
+            role="tablist"
+            aria-label="Company formation options"
+          >
+            {options.map((o) => {
+              const isActive = o.key === active
+              return (
+                <button
+                  key={o.key}
+                  type="button"
+                  role="tab"
+                  aria-selected={isActive}
+                  onClick={() => setActive(o.key)}
+                  className={
+                    'shrink-0 rounded-full px-5 py-2.5 text-[13px] font-semibold tracking-tight transition-all ' +
+                    (isActive
+                      ? 'bg-[#00223E] text-white shadow-[0_8px_24px_rgba(0,34,62,0.20)]'
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50')
+                  }
                 >
-                  <div className="rounded-[1.75rem] bg-[#00223E] text-white p-7 md:p-8 overflow-hidden relative">
-                    <div className="absolute inset-0 opacity-70">
-                      <div className="absolute -top-24 -right-24 h-[260px] w-[260px] rounded-full bg-primary/30 blur-3xl" />
-                      <div className="absolute -bottom-28 -left-24 h-[300px] w-[300px] rounded-full bg-white/10 blur-3xl" />
+                  {o.label}
+                </button>
+              )
+            })}
+          </div>
+        </FadeIn>
+
+        {/* ── Main content card ── */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeOption.key}
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.38, ease: 'easeOut' }}
+          >
+            <div className="rounded-[2rem] bg-white border border-gray-100 shadow-[0_24px_80px_rgba(0,0,0,0.07)] overflow-hidden">
+              <div className="grid lg:grid-cols-[1fr_420px] xl:grid-cols-[1fr_480px]">
+
+                {/* ── LEFT: details ── */}
+                <div className="p-7 sm:p-8 md:p-10">
+
+                  {/* header */}
+                  <div className="flex items-start gap-4 flex-wrap mb-7">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2.5 flex-wrap">
+                        <span className="inline-flex items-center rounded-full bg-primary/10 text-primary text-[11px] font-bold tracking-wide px-3 py-1 uppercase">
+                          {activeOption.tag}
+                        </span>
+                        <span className="text-[12px] font-medium text-gray-400 tracking-wide">
+                          {activeOption.kicker}
+                        </span>
+                      </div>
+                      <h3 className="mt-3 text-[26px] sm:text-[30px] font-bold text-[#1a2744] tracking-tight leading-snug">
+                        {activeOption.label}{' '}
+                        <span className="text-gray-400 font-semibold">company setup</span>
+                      </h3>
                     </div>
 
-                    <div className="relative">
-                      <div className="flex items-start justify-between gap-6 flex-wrap min-w-0">
-                        <div className="min-w-0">
-                          <div className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/15 px-3.5 py-2 text-[12px] font-semibold tracking-wide text-white/90 backdrop-blur">
-                            {activeOption.kicker}
-                          </div>
-                          <h3 className="mt-5 text-[24px] md:text-[28px] font-bold tracking-tight leading-[1.15]">
-                            {activeOption.label} company setup
-                          </h3>
-                        </div>
-
-                        <div className="w-full sm:w-auto sm:shrink-0 rounded-2xl bg-white/10 border border-white/15 px-4 py-3">
-                          <div className="text-[11px] font-bold tracking-[0.25em] text-white/70 uppercase">
-                            Timeline
-                          </div>
-                          <div className="mt-2 text-[13.5px] font-semibold text-white/90 leading-snug sm:max-w-[18rem] break-words">
-                            {activeOption.timeline}
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="mt-6 grid md:grid-cols-2 gap-6">
-                        <div className="rounded-2xl bg-white/10 border border-white/15 p-5">
-                          <div className="flex items-center gap-3 text-white/90">
-                            <span className="w-9 h-9 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-center">
-                              <CheckIcon />
-                            </span>
-                            <div className="text-[13px] font-bold tracking-[0.2em] uppercase">
-                              Ideal for
-                            </div>
-                          </div>
-                          <p className="mt-4 text-[14px] text-white/85 leading-relaxed font-medium break-words">
-                            {activeOption.idealFor}
-                          </p>
-                        </div>
-
-                        <div className="rounded-2xl bg-white/10 border border-white/15 p-5">
-                          <div className="flex items-center gap-3 text-white/90">
-                            <span className="w-9 h-9 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-center">
-                              <InfoIcon />
-                            </span>
-                            <div className="text-[13px] font-bold tracking-[0.2em] uppercase">
-                              Things to know
-                            </div>
-                          </div>
-                          <div className="mt-4 space-y-2">
-                            {activeOption.considerations.map((c) => (
-                              <div
-                                key={c}
-                                className="text-[13.5px] font-semibold text-white/85 leading-snug break-words"
-                              >
-                                {c}
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
+                    {/* timeline pill */}
+                    <div className="shrink-0 rounded-2xl bg-[#F7F9FC] border border-gray-100 px-4 py-3">
+                      <div className="text-[10px] font-bold tracking-[0.2em] text-gray-400 uppercase mb-1">Timeline</div>
+                      <div className="text-[13px] font-bold text-gray-800">{activeOption.timeline}</div>
                     </div>
                   </div>
 
-                  <div className="mt-6 grid md:grid-cols-2 gap-6">
-                    <div className="rounded-[1.75rem] bg-[#F9FAFB] border border-gray-100 p-6 md:p-7">
-                      <div className="text-[11px] md:text-[12px] font-bold tracking-[0.25em] text-gray-500 uppercase">
-                        Key benefits
+                  {/* ideal for */}
+                  <div className="rounded-2xl bg-[#F7F9FC] border border-gray-100 px-5 py-4 mb-6">
+                    <div className="text-[11px] font-bold tracking-[0.2em] text-gray-400 uppercase mb-2">Ideal for</div>
+                    <p className="text-[14px] text-gray-700 leading-relaxed font-medium">{activeOption.idealFor}</p>
+                  </div>
+
+                  {/* two columns: highlights + considerations */}
+                  <div className="grid sm:grid-cols-2 gap-5">
+                    {/* key benefits */}
+                    <div>
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="w-6 h-6 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center">
+                          <CheckIcon size={13} />
+                        </span>
+                        <span className="text-[11px] font-bold tracking-[0.2em] text-gray-500 uppercase">Key benefits</span>
                       </div>
-                      <div className="mt-4 space-y-2">
+                      <div className="space-y-2.5">
                         {activeOption.highlights.map((h) => (
                           <div key={h} className="flex items-start gap-3">
-                            <span className="mt-[2px] w-9 h-9 rounded-2xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
-                              <CheckIcon />
+                            <span className="mt-0.5 w-5 h-5 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center shrink-0">
+                              <CheckIcon size={11} />
                             </span>
-                            <div className="text-[14px] font-semibold text-gray-800 leading-snug">
-                              {h}
-                            </div>
+                            <span className="text-[13.5px] font-medium text-gray-700 leading-snug">{h}</span>
                           </div>
                         ))}
                       </div>
                     </div>
 
-                    <div className="rounded-[1.75rem] bg-white border border-gray-100 p-6 md:p-7 shadow-sm">
-                      <div className="text-[11px] md:text-[12px] font-bold tracking-[0.25em] text-gray-500 uppercase">
-                        Included with Al Bastaki
+                    {/* things to know */}
+                    <div>
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="w-6 h-6 rounded-full bg-amber-50 text-amber-500 flex items-center justify-center">
+                          <AlertIcon size={13} />
+                        </span>
+                        <span className="text-[11px] font-bold tracking-[0.2em] text-gray-500 uppercase">Things to know</span>
                       </div>
-                      <div className="mt-4 grid grid-cols-1 gap-2">
-                        {[
-                          'Option evaluation and checklist',
-                          'Document preparation and reviews',
-                          'Submission coordination and follow-ups',
-                          'Approval tracking and final handover',
-                        ].map((x) => (
-                          <div
-                            key={x}
-                            className="rounded-2xl bg-lightGrey border border-gray-100 px-5 py-4 text-[13.5px] font-semibold text-gray-700"
-                          >
-                            {x}
+                      <div className="space-y-2.5">
+                        {activeOption.considerations.map((c) => (
+                          <div key={c} className="flex items-start gap-3">
+                            <span className="mt-0.5 w-5 h-5 rounded-full bg-amber-50 text-amber-500 flex items-center justify-center shrink-0">
+                              <AlertIcon size={11} />
+                            </span>
+                            <span className="text-[13.5px] font-medium text-gray-700 leading-snug">{c}</span>
                           </div>
                         ))}
-                      </div>
-
-                      <div className="mt-5 text-[12.5px] text-gray-500 font-medium leading-relaxed">
-                        Timelines vary by activity, authority, and completeness of documentation.
                       </div>
                     </div>
                   </div>
-                </motion.div>
+
+                  {/* what's included strip */}
+                  <div className="mt-7 pt-6 border-t border-gray-100">
+                    <div className="text-[11px] font-bold tracking-[0.2em] text-gray-400 uppercase mb-3">
+                      Included with Al Bastaki
+                    </div>
+                    <div className="grid sm:grid-cols-2 gap-2">
+                      {[
+                        'Option evaluation & checklist',
+                        'Document preparation & reviews',
+                        'Submission coordination & follow-ups',
+                        'Approval tracking & final handover',
+                      ].map((x) => (
+                        <div
+                          key={x}
+                          className="flex items-center gap-2.5 rounded-xl bg-[#F7F9FC] border border-gray-100 px-4 py-2.5"
+                        >
+                          <span className="w-4 h-4 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                            <CheckIcon size={10} />
+                          </span>
+                          <span className="text-[13px] font-semibold text-gray-700">{x}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* ── RIGHT: image panel ── */}
+                <div className="relative hidden lg:block bg-[#00223E] min-h-[460px]">
+                  <Image
+                    src={activeOption.image}
+                    alt={`${activeOption.label} company formation`}
+                    fill
+                    className="object-cover opacity-70 mix-blend-luminosity"
+                    sizes="480px"
+                    priority
+                  />
+                  {/* overlay gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#00223E]/60 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#001530]/80 via-transparent to-transparent" />
+
+                  {/* overlay badge */}
+                  <div className="absolute bottom-8 left-7 right-7">
+                    <div className="rounded-2xl bg-white/10 backdrop-blur-sm border border-white/15 px-5 py-4">
+                      <div className="text-[11px] font-bold tracking-[0.2em] text-white/60 uppercase mb-1.5">
+                        {activeOption.label}
+                      </div>
+                      <div className="text-[17px] font-bold text-white leading-snug">
+                        {activeOption.kicker}
+                      </div>
+                      <div className="mt-2 text-[12.5px] text-white/70 font-medium">
+                        {activeOption.timeline}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
-          </FadeIn>
-        </div>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* ── Bottom note ── */}
+        <FadeIn delay={0.1}>
+          <p className="mt-6 text-center text-[12.5px] text-gray-400 font-medium">
+            Timelines vary by activity, authority, and completeness of documentation.
+            We will confirm the expected timeline during the discovery call.
+          </p>
+        </FadeIn>
+
       </div>
     </section>
   )

@@ -2,6 +2,7 @@ import PageHero from '../../components/PageHero'
 import PageCTA from '../../components/PageCTA'
 import ServiceDetailSections from '../../components/ServiceDetailSections'
 import ServiceFocusTabs from '../../components/ServiceFocusTabs'
+import ServiceLeadFormCard from '../../components/ServiceLeadFormCard'
 
 import { getService } from '../../lib/services'
 
@@ -25,6 +26,59 @@ export default function AccountingPage() {
         }
         image={service?.coverImage ?? '/stats-image.jpg'}
       />
+
+      {/* ── INTRO + FORM SECTION (after hero) ── */}
+      <section className="py-14 md:py-20 bg-white">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 xl:px-8">
+          <div className="grid md:grid-cols-[1fr_380px] lg:grid-cols-[1fr_420px] gap-10 lg:gap-16 items-start">
+
+            {/* LEFT — content */}
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <div className="h-px w-6 bg-primary" />
+                <span className="text-[11px] font-bold tracking-[0.22em] text-gray-400 uppercase">Why us</span>
+              </div>
+              <h2 className="text-[26px] sm:text-[32px] md:text-[38px] font-bold text-[#1a2744] tracking-tight leading-[1.2]">
+                Accurate books,<br className="hidden sm:block" /> reliable reporting
+              </h2>
+              <p className="mt-4 text-[14.5px] text-gray-500 leading-relaxed font-medium max-w-[58ch]">
+                We keep your records clean with consistent bookkeeping, structured reporting, and strict confidentiality so you can focus on running the business.
+              </p>
+              <div className="mt-7 grid sm:grid-cols-2 gap-3">
+                {[
+                  { title: 'Confidentiality', text: 'We treat financial data with care and discipline.' },
+                  { title: 'Accuracy', text: 'Processes designed to reduce mistakes and surprises.' },
+                  { title: 'Clarity', text: 'Reporting built for decisions, not just compliance.' },
+                  { title: 'Consistency', text: 'Repeatable monthly cycles and clean handovers.' },
+                ].map((item) => (
+                  <div key={item.title} className="rounded-2xl bg-[#F7F9FC] border border-gray-100 px-5 py-4">
+                    <div className="text-[13.5px] font-bold text-gray-900">{item.title}</div>
+                    <div className="mt-1 text-[13px] text-gray-500 font-medium leading-relaxed">{item.text}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RIGHT — compact form */}
+            <div className="md:sticky md:top-24">
+              <ServiceLeadFormCard
+                compact
+                title="Get accounting support"
+                description="Share your needs and we will respond with the right scope."
+                services={[
+                  'Accounting & Bookkeeping',
+                  'Payroll',
+                  'VAT Support',
+                  'Audit Support',
+                  'Bank Account Opening',
+                  'Other',
+                ]}
+              />
+            </div>
+
+          </div>
+        </div>
+      </section>
 
       <ServiceFocusTabs
         eyebrow="Accounting scope"
@@ -130,6 +184,7 @@ export default function AccountingPage() {
           intro={service.intro}
           keyPoints={service.keyPoints}
           deliverables={service.deliverables}
+          images={service.images}
         />
       )}
 
