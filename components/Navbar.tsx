@@ -190,17 +190,7 @@ export default function Navbar() {
 
           {/* ── Desktop Right Actions ── */}
           <div className="hidden lg:flex items-center gap-3">
-            <button
-              className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
-                scroll
-                  ? 'bg-gray-100 hover:bg-gray-200 text-gray-600'
-                  : 'bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/20'
-              }`}
-            >
-              <svg className="w-4.5 h-4.5" style={{width:'18px',height:'18px'}} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </button>
+            
             <Link
               href="/contact"
               className={`flex items-center pr-5 pl-1.5 py-1.5 rounded-full transition-all duration-300 shadow-md group ${

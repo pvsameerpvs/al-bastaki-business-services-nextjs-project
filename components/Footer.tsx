@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useEffect, useState, useRef } from 'react'
 
 export default function Footer() {
@@ -9,142 +10,220 @@ export default function Footer() {
   useEffect(() => {
     if (!footerRef.current) return
     const observer = new ResizeObserver((entries) => {
-      if (entries[0]) {
-        setFooterHeight(entries[0].target.getBoundingClientRect().height)
-      }
+      if (entries[0]) setFooterHeight(entries[0].target.getBoundingClientRect().height)
     })
     observer.observe(footerRef.current)
     return () => observer.disconnect()
   }, [])
 
+  const quickLinks = [
+    { label: 'Home', href: '/' },
+    { label: 'About Us', href: '/about' },
+    { label: 'Services', href: '/services' },
+    { label: 'Blog', href: '/blog' },
+    { label: 'Contact', href: '/contact' },
+    { label: 'FAQs', href: '/faqs' },
+    { label: 'Case Studies', href: '/case-studies' },
+  ]
+
+  const services = [
+    { label: 'Company Formation', href: '/company-formation' },
+    { label: 'Business Setup', href: '/business-setup' },
+    { label: 'Accounting Services', href: '/accounting' },
+    { label: 'Consultancy Services', href: '/consultancy' },
+    { label: 'Event Management', href: '/events' },
+    { label: 'IT Services', href: '/it' },
+  ]
+
   return (
     <>
-      {/* Invisible spacer allowing you to scroll past the content and 'reveal' the footer */}
+      {/* Spacer so the fixed footer is revealed on scroll */}
       <div style={{ height: footerHeight }} className="relative z-0 pointer-events-none w-full" />
-      
-      {/* The actual footer sits fixed rigidly AT THE BOTTOM, hidden safely BEHIND the page */}
-      <footer 
+
+      <footer
         ref={footerRef}
-        className="fixed bottom-0 left-0 w-full -z-10 bg-[#001528] text-white pt-20 pb-8 px-6 md:px-12 lg:px-20"
+        className="fixed bottom-0 left-0 w-full -z-10 bg-[#001528] text-white pt-16 pb-6 px-4 sm:px-6 md:px-12 lg:px-20"
       >
-        <div className="max-w-[1400px] mx-auto opacity-100">
-          
-          {/* Top Section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-12 flex-wrap">
-            
-            {/* Col 1: Logo and Contact */}
-            <div className="lg:col-span-1 flex flex-col items-start text-left shrink-0">
-              <h2 className="text-[32px] md:text-[36px] font-bold tracking-tight mb-8">
-                Al Bastaki
-              </h2>
-              <div className="space-y-4">
-                <a href="tel:+97141234567" className="block text-primary text-[19px] md:text-[22px] font-bold hover:text-white transition-colors duration-300 tracking-tight">
-                  +971 4 123 4567
-                </a>
-                <a href="mailto:hello@albastaki.com" className="block text-white text-[15px] md:text-[16px] font-medium hover:text-primary transition-colors duration-300">
-                  hello@albastaki.com
-                </a>
-              </div>
-            </div>
+        <div className="max-w-[1400px] mx-auto">
 
-            {/* Col 2 & 3: Quick Links */}
-            <div className="lg:col-span-1 flex flex-col text-left lg:ml-12 shrink-0">
-              <h3 className="text-[17px] font-bold mb-6 text-white tracking-wide">Quick Links</h3>
-              <div className="grid grid-cols-2 gap-x-2 sm:gap-x-8 gap-y-3">
-                <Link href="/" className="text-[14px] text-[#9CA3AF] hover:text-primary transition-colors duration-300 font-medium whitespace-nowrap">Home</Link>
-                <Link href="/blog" className="text-[14px] text-[#9CA3AF] hover:text-primary transition-colors duration-300 font-medium whitespace-nowrap">Blog</Link>
-                <Link href="/about" className="text-[14px] text-[#9CA3AF] hover:text-primary transition-colors duration-300 font-medium whitespace-nowrap">About Us</Link>
-                <Link href="/contact" className="text-[14px] text-[#9CA3AF] hover:text-primary transition-colors duration-300 font-medium whitespace-nowrap">Contact</Link>
-                <Link href="/services" className="text-[14px] text-[#9CA3AF] hover:text-primary transition-colors duration-300 font-medium whitespace-nowrap">Services</Link>
-                <Link href="/faqs" className="text-[14px] text-[#9CA3AF] hover:text-primary transition-colors duration-300 font-medium whitespace-nowrap">FAQs</Link>
-                <Link href="/case-studies" className="text-[14px] text-[#9CA3AF] hover:text-primary transition-colors duration-300 font-medium whitespace-nowrap">Case Studies</Link>
-              </div>
-            </div>
+          {/* ── Top 4-column grid ── */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[auto_1fr_1fr_auto] gap-10 lg:gap-8 mb-10 items-start">
 
-            {/* Col 4: Stay Connected */}
-            <div className="lg:col-span-2 flex flex-col text-left lg:pl-16">
-              <h3 className="text-[17px] font-bold mb-4 text-white tracking-wide">Stay Connected</h3>
-              <p className="text-[14.5px] text-[#9CA3AF] mb-6 font-medium leading-[1.6] max-w-sm">
-                Join our newsletter and stay updated on the latest news and business regulations.
-              </p>
-              
-              <form className="relative w-full max-w-md mb-8 lg:mb-12 group" onSubmit={(e) => e.preventDefault()}>
-                <input 
-                  type="email" 
-                  placeholder="Type your email" 
-                  className="w-full bg-[#00223E] border border-transparent group-hover:border-primary/50 text-white rounded-[6px] pl-5 pr-12 py-3.5 text-[14px] focus:outline-none focus:border-primary transition-colors duration-300 placeholder:text-gray-500"
-                  required
+            {/* Col 1 — Logo + tagline */}
+            <div className="flex flex-col items-start">
+              <Link href="/" aria-label="Al Bastaki" className="block mb-7">
+                <Image
+                  src="/white-logo.png"
+                  alt="Al Bastaki Business Services"
+                  width={280}
+                  height={80}
+                  className="h-20 w-auto object-contain"
                 />
-                <button 
-                  type="submit" 
-                  className="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center text-primary hover:text-white transition-colors duration-300"
-                  aria-label="Subscribe"
-                >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M22 2 11 13" />
-                    <path d="m22 2-7 20-4-9-9-4Z" />
-                  </svg>
-                </button>
-              </form>
+              </Link>
+              <h3 className="text-[13px] font-bold mb-3 text-white/50 tracking-[0.18em] uppercase">
+                Follow Us
+              </h3>
+              <p className="text-[13.5px] text-[#9CA3AF] font-medium leading-relaxed mb-5 max-w-[220px]">
+                Al Bastaki is a trusted corporate consulting firm helping businesses grow with clarity and control.
+              </p>
 
-              <div className="flex flex-col md:flex-row items-start lg:items-center gap-6 justify-between w-full max-w-[500px]">
-                <p className="text-[13.5px] text-[#9CA3AF] font-medium leading-[1.65] max-w-[280px]">
-                  Al Bastaki is a trusted corporate consulting firm helping businesses grow with clarity and control.
-                </p>
-                
-                <div className="flex gap-2.5 shrink-0">
-                  {['facebook', 'twitter', 'linkedin', 'instagram'].map((social, idx) => (
-                    <a key={idx} href={`#${social}`} className="w-[38px] h-[38px] rounded-full bg-[#00223E] text-white flex items-center justify-center hover:bg-primary transition-all duration-300 cursor-pointer group hover:-translate-y-0.5">
-                      {social === 'facebook' && (
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                        </svg>
-                      )}
-                      {social === 'twitter' && (
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M4 4l16 16m0-16L4 20" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-                        </svg>
-                      )}
-                      {social === 'linkedin' && (
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                          <rect x="2" y="9" width="4" height="12" />
-                          <circle cx="4" cy="4" r="2" />
-                        </svg>
-                      )}
-                      {social === 'instagram' && (
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                        </svg>
-                      )}
-                    </a>
-                  ))}
-                </div>
+              {/* Social icons */}
+             
+            </div>
+
+            {/* Col 2 — Quick Links */}
+            <div className="flex flex-col lg:pl-6">
+              <h3 className="text-[13px] font-bold mb-5 text-white/50 tracking-[0.18em] uppercase">
+                Quick Links
+              </h3>
+              <ul className="space-y-2.5">
+                {quickLinks.map((l) => (
+                  <li key={l.href}>
+                    <Link
+                      href={l.href}
+                      className="text-[14px] text-[#9CA3AF] hover:text-primary transition-colors duration-200 font-medium"
+                    >
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Col 3 — Services */}
+            <div className="flex flex-col">
+              <h3 className="text-[13px] font-bold mb-5 text-white/50 tracking-[0.18em] uppercase">
+                Services
+              </h3>
+              <ul className="space-y-2.5">
+                {services.map((s) => (
+                  <li key={s.href}>
+                    <Link
+                      href={s.href}
+                      className="text-[14px] text-[#9CA3AF] hover:text-primary transition-colors duration-200 font-medium"
+                    >
+                      {s.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Col 4 — Contact */}
+            <div className="flex flex-col max-w-[260px] gap-4">
+              <h3 className="text-[13px] font-bold text-white/50 tracking-[0.18em] uppercase">
+                Contact Us
+              </h3>
+
+              {/* Phone */}
+              <a
+                href="tel:+97141234567"
+                className="group flex items-center gap-3 hover:text-primary transition-colors duration-300"
+              >
+                <span className="w-9 h-9 rounded-full bg-[#00223E] flex items-center justify-center shrink-0 group-hover:bg-primary transition-colors duration-300">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3-8.59A2 2 0 0 1 3.71 1.5h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.14a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.574 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                </span>
+                <span className="text-[15px] font-bold text-primary group-hover:text-white tracking-tight transition-colors duration-300">
+                  +971 4 123 4567
+                </span>
+              </a>
+
+              {/* Email */}
+              <a
+                href="mailto:hello@albastaki.com"
+                className="group flex items-center gap-3 hover:text-primary transition-colors duration-300"
+              >
+                <span className="w-9 h-9 rounded-full bg-[#00223E] flex items-center justify-center shrink-0 group-hover:bg-primary transition-colors duration-300">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                </span>
+                <span className="text-[14px] font-medium text-white/70 group-hover:text-primary transition-colors duration-300">
+                  hello@albastaki.com
+                </span>
+              </a>
+              {/* Address */}
+              <div className="flex items-start gap-3">
+                <span className="w-9 h-9 rounded-full bg-[#00223E] flex items-center justify-center shrink-0 mt-0.5">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                  </svg>
+                </span>
+                <span className="text-[13.5px] font-medium text-white/70 leading-relaxed">
+                  Office 626, B Block,<br />Business Village Deira,<br />Dubai – 88831
+                </span>
               </div>
             </div>
+            
+             <div className="flex gap-2.5 self-end">
+                {[
+                  {
+                    id: 'facebook', href: '#facebook',
+                    icon: (
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                      </svg>
+                    ),
+                  },
+                  {
+                    id: 'twitter', href: '#twitter',
+                    icon: (
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                        <path d="M4 4l16 16m0-16L4 20" />
+                      </svg>
+                    ),
+                  },
+                  {
+                    id: 'linkedin', href: '#linkedin',
+                    icon: (
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
+                        <rect x="2" y="9" width="4" height="12" />
+                        <circle cx="4" cy="4" r="2" />
+                      </svg>
+                    ),
+                  },
+                  {
+                    id: 'instagram', href: '#instagram',
+                    icon: (
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" />
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                      </svg>
+                    ),
+                  },
+                ].map((s) => (
+                  <a
+                    key={s.id}
+                    href={s.href}
+                    aria-label={s.id}
+                    className="w-9 h-9 rounded-full bg-[#00223E] text-white flex items-center justify-center hover:bg-primary hover:-translate-y-0.5 transition-all duration-300"
+                  >
+                    {s.icon}
+                  </a>
+                ))}
+              </div>
 
           </div>
+          
 
-          {/* Huge Full Width Text Section */}
-          <div className="w-full mt-6 mb-8 md:mb-10 text-center flex justify-center pb-2 md:pb-6">
-            <h1 className="text-[13vw] sm:text-[14.5vw] font-bold text-white leading-[0.8] select-none tracking-tight">
+          {/* ── Divider ── */}
+          <div className="border-t border-white/[0.08] mb-4" />
+
+          {/* ── Big brand watermark ── */}
+          <div className="text-center overflow-hidden mb-4">
+            <span className="text-[13vw] sm:text-[14vw] font-bold text-white leading-none select-none tracking-tight block">
               AL BASTAKI
-            </h1>
+            </span>
           </div>
 
-          {/* Bottom Bar Section */}
-          <div className="flex flex-col md:flex-row items-center justify-between text-[13px] md:text-[14px] text-gray-500 font-medium">
-            <p className="mb-4 md:mb-0">
-              &copy; {new Date().getFullYear()} Al Bastaki Is Proudly Owned By <span className="text-[#9CA3AF]">Al Bastaki Business Services</span>
-            </p>
-            <div className="flex items-center gap-4 md:gap-6">
-              <a href="#terms" className="hover:text-primary transition-colors duration-300">Terms And Conditions</a>
-              <span className="w-[1px] h-3 bg-gray-700"></span>
-              <a href="#privacy" className="hover:text-primary transition-colors duration-300">Privacy Policy</a>
-            </div>
-          </div>
+          {/* ── Bottom bar ── */}
+         
 
         </div>
       </footer>
