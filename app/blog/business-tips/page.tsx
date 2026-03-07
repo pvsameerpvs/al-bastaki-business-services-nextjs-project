@@ -13,7 +13,7 @@ export default function BusinessTipsPage() {
         badge="Blog category"
         title="Business Tips"
         subtitle="Practical guidance for founders and teams building in the UAE — designed for clear decision-making and smoother execution."
-        image="/hero-main1.jpg"
+        image="/businesstips.jpg"
       />
 
       <BlogSection

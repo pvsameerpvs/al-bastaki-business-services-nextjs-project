@@ -11,7 +11,7 @@ export default function BlogPage() {
         badge="Insights"
         title="Blog"
         subtitle="Business insights, industry updates, and practical guidance — aligned to the same tone and design system as the homepage."
-        image="/hero-main2.jpg"
+        image="/Insights.jpg"
       />
 
       <BlogSection
