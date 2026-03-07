@@ -127,7 +127,7 @@ export default function Navbar() {
               width={180}
               height={44}
               priority
-              className={`h-10 sm:h-11 lg:h-12 w-auto object-contain transition-all duration-300 ${
+              className={`h-12 sm:h-14 lg:h-16 w-auto object-contain transition-all duration-300 ${
                 scroll ? 'opacity-0 absolute' : 'opacity-100 relative'
               }`}
             />
@@ -138,7 +138,7 @@ export default function Navbar() {
               width={180}
               height={44}
               priority
-              className={`h-10 sm:h-11 lg:h-12 w-auto object-contain transition-all duration-300 ${
+              className={`h-12 sm:h-14 lg:h-16 w-auto object-contain transition-all duration-300 ${
                 scroll ? 'opacity-100 relative' : 'opacity-0 absolute'
               }`}
             />
