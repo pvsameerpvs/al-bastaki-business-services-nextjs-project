@@ -2,68 +2,51 @@
 import { motion } from 'framer-motion'
 import { useRef } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const services = [
   {
-    title: "Company Formation",
-    description: "Setting up a new business or branch office in Dubai and the United Arab Emirates can be a complicated and expensive process. We help you establish your company under the correct legal framework by choosing the most cost-effective and time-saving option. We also evaluate the strengths and weaknesses of the available alternatives for your business.",
-    href: "/company-formation",
-    icon: (
-      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 21h18"></path><path d="M9 8h1"></path><path d="M9 12h1"></path><path d="M9 16h1"></path><path d="M14 8h1"></path><path d="M14 12h1"></path><path d="M14 16h1"></path><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path>
-      </svg>
-    )
+    title: 'Company Formation',
+    description:
+      'We help you establish your company under the correct legal framework by choosing the most cost-effective and time-saving option for your activity and goals.',
+    href: '/company-formation',
+    image: '/CompanyFormation.jpg',
   },
   {
-    title: "Business Setup",
-    description: "Al Bastaki Business Services takes responsibility for the registration aspects of new businesses. Our goal is to help create and grow businesses by providing the necessary support and management, including consultancy services, feasibility studies, financial projections, financial validation, and administrative and technical services.",
-    href: "/business-setup",
-    icon: (
-      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2v20"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-      </svg>
-    )
+    title: 'Business Setup',
+    description:
+      'Al Bastaki takes responsibility for the registration aspects of new businesses — from licensing and PRO services to visa processing and corporate amendments.',
+    href: '/business-setup',
+    image: '/BusinessSetup.jpg',
   },
   {
-    title: "Accounting Services",
-    description: "Based on your requirements, we provide a complete range of accounting services. Payroll can be demanding for new businesses because local laws, practices, and procedures require trained, qualified staff. We support you while maintaining strict confidentiality and accuracy.",
-    href: "/accounting",
-    icon: (
-      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M7 15h0"></path><path d="M2 9.5h20"></path>
-      </svg>
-    )
+    title: 'Accounting Services',
+    description:
+      'We provide a complete range of accounting services while maintaining strict confidentiality and accuracy — from bookkeeping and payroll to VAT support.',
+    href: '/accounting',
+    image: '/AccountingServices.jpg',
   },
   {
-    title: "Consultancy Services",
-    description: "Work with consultants who have a deep understanding of the region. We explain the investment context and challenges for your business and support you in assessing potential opportunities when considering investing abroad.",
-    href: "/consultancy",
-    icon: (
-      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M16 3h5v5"></path><path d="M8 3H3v5"></path><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3"></path><path d="m15 9 6-6"></path>
-      </svg>
-    )
+    title: 'Consultancy Services',
+    description:
+      'Work with consultants who have a deep understanding of the region. We support you in assessing opportunities with practical, best-practice processes.',
+    href: '/consultancy',
+    image: '/ConsultancyServices.jpg',
   },
   {
-    title: "Event Management",
-    description: "Event management includes a variety of functions for executing large scale events, which might include conferences, conventions, concerts, trade shows, festivals, and ceremonies. It involves handling the overall logistics of the event, working with staff, and conducting project management of the event as a whole.",
-    href: "/events",
-    icon: (
-      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-      </svg>
-    )
+    title: 'Event Management',
+    description:
+      'End-to-end event logistics and project management for conferences, exhibitions, ceremonies, and more — from planning through on-ground delivery.',
+    href: '/events',
+    image: '/events-1.jpg',
   },
   {
-    title: "IT Services",
-    description: "We offer solutions under one roof to help grow your business. Our expertise includes website design, web development, branding, and digital marketing. We bring the passion, skills, and energy to deliver rewarding results with affordable, creative solutions.",
-    href: "/it",
-    icon: (
-      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line>
-      </svg>
-    )
-  }
+    title: 'IT Services',
+    description:
+      'We offer solutions under one roof to help grow your business — website design, software, portals, and digital marketing with clear deliverables.',
+    href: '/it',
+    image: '/ITServices.jpg',
+  },
 ]
 
 export default function Services() {
@@ -71,133 +54,129 @@ export default function Services() {
 
   const slide = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
-      const scrollAmount = scrollRef.current.clientWidth * 0.8
+      const scrollAmount = scrollRef.current.clientWidth * 0.75
       scrollRef.current.scrollBy({
         left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth'
+        behavior: 'smooth',
       })
     }
   }
 
   return (
-    <section className="relative pt-14 md:pt-20 pb-0 overflow-hidden">
-      {/* Background Image & Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1920&q=80" 
-          alt="Team working" 
-          className="w-full h-full object-cover"
-        />
-        {/* Dark deep navy overlay to match theme */}
-        <div className="absolute inset-0 bg-[#001A30]/80 mix-blend-multiply"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#001528] via-[#001528]/80 to-transparent"></div>
-      </div>
+    <section className="relative pt-14 md:pt-20 pb-0 overflow-hidden bg-[#001528]">
 
-      <div className="max-w-[1400px] mx-auto px-6 xl:px-8 relative z-10 w-full flex flex-col">
-        
-        {/* Top Header Section with Slider Arrows */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 lg:mb-12 gap-8">
-          <div className="max-w-3xl text-left">
-           
-            
-            <motion.h2 
-              initial={{opacity:0, y:30}}
-              whileInView={{opacity:1, y:0}}
-              viewport={{once:true}}
-              transition={{duration:0.8, delay:0.2}}
-              className="text-[28px] md:text-[36px] lg:text-[42px] font-medium text-white leading-[1.3] tracking-tight"
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 xl:px-8 relative z-10 w-full flex flex-col">
+
+        {/* ── Header + arrows ── */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 lg:mb-12 gap-6">
+          <div className="max-w-3xl">
+            <motion.h2
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.15 }}
+              className="text-[26px] md:text-[34px] lg:text-[40px] font-bold text-white leading-[1.2] tracking-tight"
             >
-              Expert business setup and management. <br className="hidden md:block" />
-              <span className="text-white/60">Custom-crafted for the way your business works.</span>
+              Expert business setup and management.{' '}
+              <span className="text-white/50">
+                Custom-crafted for the way your business works.
+              </span>
             </motion.h2>
           </div>
 
-          <motion.div 
-            initial={{opacity:0, x:20}}
-            whileInView={{opacity:1, x:0}}
-            viewport={{once:true}}
-            transition={{duration:0.6, delay:0.4}}
-            className="flex items-center gap-3 shrink-0 pb-2"
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="flex items-center gap-3 shrink-0 pb-1"
           >
-            <button 
-              onClick={() => slide('left')} 
-              className="w-[50px] h-[50px] rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 hover:border-white/40 transition-all duration-300"
+            <button
+              onClick={() => slide('left')}
+              className="w-11 h-11 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 hover:border-white/40 transition-all duration-300"
               aria-label="Previous services"
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M15 18l-6-6 6-6"/>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M15 18l-6-6 6-6" />
               </svg>
             </button>
-            <button 
-              onClick={() => slide('right')} 
-              className="w-[50px] h-[50px] rounded-full border border-primary/40 bg-primary/10 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all duration-300 shadow-[0_0_20px_rgba(0,102,166,0.3)]"
+            <button
+              onClick={() => slide('right')}
+              className="w-11 h-11 rounded-full border border-primary/40 bg-primary/10 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all duration-300 shadow-[0_0_20px_rgba(0,102,166,0.25)]"
               aria-label="Next services"
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M9 18l6-6-6-6"/>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9 18l6-6-6-6" />
               </svg>
             </button>
           </motion.div>
         </div>
 
-        {/* Glass Cards Slider Layout with Native Snap */}
-        <div 
+        {/* ── Cards slider ── */}
+        <div
           ref={scrollRef}
-          className="flex flex-row w-full relative z-10 gap-4 lg:gap-5 px-2 pt-8 overflow-x-auto snap-x snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']"
+          className="flex flex-row w-full gap-4 lg:gap-5 pb-2 overflow-x-auto snap-x snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']"
         >
           {services.map((svc, idx) => (
             <Link
               key={svc.title}
               href={svc.href}
-              className="group relative flex-shrink-0 w-[300px] sm:w-[320px] lg:w-[340px] h-[380px] sm:h-[400px] lg:h-[440px] cursor-pointer snap-center lg:snap-start"
+              className="group relative flex-shrink-0 w-[280px] sm:w-[310px] lg:w-[340px] h-[400px] sm:h-[420px] lg:h-[460px] rounded-[1.75rem] overflow-hidden snap-center cursor-pointer"
             >
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 28 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 * idx }}
+                transition={{ duration: 0.55, delay: 0.08 * idx }}
                 className="absolute inset-0"
               >
-                {/* Expanding Glass Background with gaps and rounded edges */}
-                {/* Unhovered: 110px bottom pill. Hovered: Full height glass card. */}
-                <div className="absolute bottom-0 inset-x-0 h-full lg:h-[110px] group-hover:h-full bg-white/5 group-hover:bg-[#00223E]/90 backdrop-blur-md transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] rounded-3xl z-0 group-hover:shadow-2xl border border-white/10 group-hover:border-white/20" />
+                {/* ── Image ── */}
+                <Image
+                  src={svc.image}
+                  alt={svc.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 640px) 280px, (max-width: 1024px) 310px, 340px"
+                />
 
-                {/* Icon - Leaps to top on hover */}
-                <div className="absolute left-6 lg:left-8 bottom-[55px] lg:bottom-[50px] group-hover:bottom-[65%] lg:group-hover:bottom-[72%] transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] text-[#bad5e8] group-hover:text-primary z-10">
-                  <div className="bg-transparent group-hover:bg-white/10 p-0 group-hover:p-2 rounded-xl transition-all duration-[600ms]">
-                    {svc.icon}
-                  </div>
-                </div>
+                {/* ── Base gradient overlay (always visible) ── */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#001528]/90 via-[#001528]/30 to-transparent transition-opacity duration-500" />
 
-                {/* Content Container - Anchored to bottom, grid expands upwards on hover */}
-                <div className="absolute bottom-6 left-6 right-6 lg:left-8 lg:right-8 z-10 flex flex-col justify-end">
+                {/* ── Hover deep overlay ── */}
+                <div className="absolute inset-0 bg-[#00223E]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                {/* ── Hover border glow ── */}
+                <div className="absolute inset-0 rounded-[1.75rem] ring-1 ring-white/10 group-hover:ring-white/25 transition-all duration-500" />
+
+                {/* ── Content ── */}
+                <div className="absolute inset-0 flex flex-col justify-end p-6 lg:p-7">
+
                   {/* Title */}
-                  <h3 className="text-[17px] sm:text-[19px] font-bold text-white leading-snug mb-0 group-hover:mb-3 transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
+                  <h3 className="text-[18px] sm:text-[20px] font-bold text-white leading-snug mb-0 group-hover:mb-3 transition-all duration-500">
                     {svc.title}
                   </h3>
 
-                  {/* Expandable Description & Button */}
-                  <div className="grid grid-rows-[1fr] lg:grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
-                    <div className="overflow-hidden opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-[600ms] lg:delay-100">
-                      <div className="pt-2 lg:pt-3 flex flex-col">
-                        <p className="text-[13.5px] lg:text-[14px] text-white/70 leading-[1.6] font-medium mb-6 line-clamp-4 lg:line-clamp-5">
-                          {svc.description}
-                        </p>
+                  {/* Expandable description */}
+                  <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-out">
+                    <div className="overflow-hidden">
+                      <p className="pt-2 text-[13.5px] text-white/75 leading-relaxed font-medium line-clamp-4 mb-5">
+                        {svc.description}
+                      </p>
 
-                        {/* Interactive Button (visual only; whole card navigates) */}
-                        <div className="flex items-center group/btn cursor-pointer w-fit mt-auto lg:pb-2">
-                          <span className="flex items-center justify-center w-[36px] h-[36px] rounded-full bg-primary text-white z-10 relative transition-transform duration-300 group-hover/btn:scale-105">
-                            <svg className="w-4 h-4 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                            </svg>
-                          </span>
-                          <span className="flex items-center h-[36px] pl-6 pr-5 rounded-full bg-primary/20 text-white font-semibold text-[13px] -ml-4 relative transition-colors duration-300 group-hover/btn:bg-primary">
-                            Discover more
-                          </span>
-                        </div>
+                      {/* CTA */}
+                      <div className="flex items-center gap-0 w-fit">
+                        <span className="flex items-center justify-center w-9 h-9 rounded-full bg-primary text-white z-10 relative transition-transform duration-300 group-hover:scale-105 shadow-[0_8px_20px_rgba(0,102,166,0.35)]">
+                          <svg style={{ width: '15px', height: '15px' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                          </svg>
+                        </span>
+                        <span className="flex items-center h-9 pl-5 pr-4 rounded-full bg-white/10 backdrop-blur-sm text-white font-semibold text-[12.5px] -ml-3.5 relative hover:bg-white/20 transition-colors duration-300">
+                          Discover more
+                        </span>
                       </div>
                     </div>
                   </div>
+
                 </div>
               </motion.div>
             </Link>
@@ -205,30 +184,21 @@ export default function Services() {
         </div>
       </div>
 
-      {/* Brand-Themed Infinite Scrolling Marquee */}
-      <div className="w-full relative z-20 bg-primary text-white py-4 lg:py-6 overflow-hidden flex border-t border-white/10 shadow-[0_-5px_25px_rgba(0,102,166,0.2)] -mt-4 lg:-mt-6">
+      {/* ── Marquee strip ── */}
+      <div className="w-full relative z-20 bg-primary text-white py-4 lg:py-5 overflow-hidden flex border-t border-white/10 shadow-[0_-4px_20px_rgba(0,102,166,0.18)] mt-10">
         <motion.div
-          animate={{ x: [0, "-50%"] }}
-          transition={{ repeat: Infinity, duration: 35, ease: "linear" }}
+          animate={{ x: [0, '-50%'] }}
+          transition={{ repeat: Infinity, duration: 32, ease: 'linear' }}
           className="flex whitespace-nowrap w-fit items-center"
         >
-          {/* We duplicate the content twice to ensure seamless looping without snapping gaps */}
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex items-center w-max shrink-0">
-              {[
-                "REAL ESTATE",
-                "HEALTHCARE",
-                "MANUFACTURING",
-                "TECHNOLOGY",
-                "RETAIL",
-              ].map((item, j) => (
+              {['REAL ESTATE', 'HEALTHCARE', 'MANUFACTURING', 'TECHNOLOGY', 'RETAIL'].map((item, j) => (
                 <div key={j} className="flex items-center shrink-0">
-                  <span className="font-bold tracking-[0.2em] text-[15px] lg:text-[18px] px-8 lg:px-12 text-white/90">
+                  <span className="font-bold tracking-[0.2em] text-[14px] lg:text-[17px] px-8 lg:px-12 text-white/90">
                     {item}
                   </span>
-                  <span className="text-white/40 text-[20px] lg:text-[28px] font-normal mt-1">
-                    ❋
-                  </span>
+                  <span className="text-white/40 text-[20px] lg:text-[26px]">❋</span>
                 </div>
               ))}
             </div>
