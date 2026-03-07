@@ -1,8 +1,5 @@
 'use client'
 
-import { useMemo, useState } from 'react'
-import { motion } from 'framer-motion'
-
 import FadeIn from './FadeIn'
 
 type FocusTab = {
@@ -47,19 +44,14 @@ export default function ServiceFocusTabs({
   tabs,
   sideCards,
 }: ServiceFocusTabsProps) {
-  const defaultKey = tabs[0]?.key
-  const [active, setActive] = useState<string>(defaultKey)
-
-  const activeTab = useMemo(
-    () => tabs.find((t) => t.key === active) ?? tabs[0],
-    [active, tabs]
-  )
-
   if (!tabs.length) return null
 
+  const idFor = (key: string) => `focus-${key}`
+  const stepFor = (idx: number) => String(idx + 1).padStart(2, '0')
+
   return (
-    <section className="py-20 md:py-28 bg-[#F9FAFB] relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none">
+    <section className="py-20 md:py-28 bg-[#F9FAFB] relative">
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute -top-28 -right-24 h-[340px] w-[340px] rounded-full bg-primary/10 blur-3xl" />
         <div className="absolute -bottom-28 -left-24 h-[380px] w-[380px] rounded-full bg-[#00223E]/10 blur-3xl" />
       </div>
@@ -67,7 +59,7 @@ export default function ServiceFocusTabs({
       <div className="max-w-[1400px] mx-auto px-6 xl:px-8 relative">
         <div className="grid lg:grid-cols-[0.95fr_1.05fr] gap-10 lg:gap-14 items-start">
           <FadeIn>
-            <div>
+            <div className="lg:sticky lg:top-24">
               <div className="text-[11px] md:text-[13px] font-medium tracking-[0.2em] text-gray-500 uppercase">
                 {eyebrow}
               </div>
@@ -98,81 +90,83 @@ export default function ServiceFocusTabs({
             </div>
           </FadeIn>
 
-          <FadeIn delay={0.1}>
-            <div className="rounded-[2rem] bg-white border border-gray-100 shadow-[0_30px_80px_rgba(0,0,0,0.06)] overflow-hidden">
-              <div className="p-6 md:p-8 border-b border-gray-100">
-                <div className="flex items-center justify-between gap-6 flex-wrap">
-                  <div>
-                    <div className="text-[11px] md:text-[12px] font-bold tracking-[0.25em] text-gray-500 uppercase">
-                      Explore
+          <div>
+            <FadeIn delay={0.1}>
+              <div className="rounded-[2rem] bg-white border border-gray-100 shadow-[0_30px_80px_rgba(0,0,0,0.06)]">
+                <div className="p-6 md:p-8 border-b border-gray-100">
+                  <div className="flex items-center justify-between gap-6 flex-wrap">
+                    <div>
+                      <div className="text-[11px] md:text-[12px] font-bold tracking-[0.25em] text-gray-500 uppercase">
+                        Explore
+                      </div>
+                      <div className="mt-3 text-[16px] md:text-[18px] font-bold text-gray-900 tracking-tight">
+                        Scroll to explore focus areas
+                      </div>
                     </div>
-                    <div className="mt-3 text-[16px] md:text-[18px] font-bold text-gray-900 tracking-tight">
-                      Tap a tab to view details
-                    </div>
-                  </div>
 
-                  <div
-                    className="flex items-center gap-2 rounded-full bg-[#F3F6FA] border border-gray-100 p-1 overflow-x-auto max-w-full"
-                    role="tablist"
-                    aria-label="Service focus tabs"
-                  >
-                    {tabs.map((t) => {
-                      const isActive = t.key === active
-                      return (
-                        <button
+                    <nav
+                      className="flex items-center gap-2 rounded-full bg-[#F3F6FA] border border-gray-100 p-1 overflow-x-auto max-w-full"
+                      aria-label="Jump to a focus area"
+                    >
+                      {tabs.map((t) => (
+                        <a
                           key={t.key}
-                          type="button"
-                          role="tab"
-                          aria-selected={isActive}
-                          onClick={() => setActive(t.key)}
-                          className={
-                            'shrink-0 rounded-full px-4 py-2 text-[13px] font-semibold transition-all ' +
-                            (isActive
-                              ? 'bg-primary text-white shadow-[0_10px_30px_rgba(0,102,166,0.25)]'
-                              : 'text-gray-700 hover:text-gray-900 hover:bg-white')
-                          }
+                          href={`#${idFor(t.key)}`}
+                          className="shrink-0 rounded-full px-4 py-2 text-[13px] font-semibold transition-all text-gray-700 hover:text-gray-900 hover:bg-white"
                         >
                           {t.label}
-                        </button>
-                      )
-                    })}
+                        </a>
+                      ))}
+                    </nav>
                   </div>
                 </div>
-              </div>
 
-              <div className="p-6 md:p-8">
-                <motion.div
-                  key={activeTab.key}
-                  initial={{ opacity: 0, y: 14 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.35, ease: 'easeOut' }}
+                <div className="p-6 md:p-8 text-[13.5px] font-medium text-gray-600 leading-relaxed">
+                  Each card sticks to the top as you scroll. The next focus area slides in and replaces the previous one.
+                </div>
+              </div>
+            </FadeIn>
+
+            <div className="mt-8 relative">
+              {tabs.map((t, idx) => (
+                <div
+                  key={t.key}
+                  id={idFor(t.key)}
+                  className="scroll-mt-32 md:scroll-mt-36 sticky top-24 md:top-28 mb-10 md:mb-14"
+                  style={{ zIndex: idx + 10 }}
                 >
-                  <div className="rounded-[1.75rem] bg-[#00223E] text-white p-7 md:p-8 overflow-hidden relative">
+                  <div className="rounded-[1.75rem] bg-[#00223E] text-white p-7 md:p-8 overflow-hidden relative shadow-[0_30px_80px_rgba(0,0,0,0.10)] border border-white/10 min-h-[56vh] md:min-h-[58vh] lg:min-h-[64vh] flex flex-col">
                     <div className="absolute inset-0 opacity-70">
                       <div className="absolute -top-24 -right-24 h-[260px] w-[260px] rounded-full bg-primary/30 blur-3xl" />
                       <div className="absolute -bottom-28 -left-24 h-[300px] w-[300px] rounded-full bg-white/10 blur-3xl" />
                     </div>
 
-                    <div className="relative">
+                    <div className="relative flex-1 flex flex-col">
                       <div className="flex items-start justify-between gap-6 flex-wrap">
                         <div>
-                          {activeTab.kicker ? (
+                          <div className="flex items-center gap-3 flex-wrap">
                             <div className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/15 px-3.5 py-2 text-[12px] font-semibold tracking-wide text-white/90 backdrop-blur">
-                              {activeTab.kicker}
+                              Focus {stepFor(idx)}
                             </div>
-                          ) : null}
+                            {t.kicker ? (
+                              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/15 px-3.5 py-2 text-[12px] font-semibold tracking-wide text-white/90 backdrop-blur">
+                                {t.kicker}
+                              </div>
+                            ) : null}
+                          </div>
+
                           <h3 className="mt-5 text-[24px] md:text-[28px] font-bold tracking-tight leading-[1.15]">
-                            {activeTab.label}
+                            {t.label}
                           </h3>
                           <p className="mt-4 text-[14.5px] text-white/85 leading-relaxed font-medium max-w-[62ch]">
-                            {activeTab.description}
+                            {t.description}
                           </p>
                         </div>
 
-                        {activeTab.meta?.length ? (
+                        {t.meta?.length ? (
                           <div className="shrink-0 rounded-2xl bg-white/10 border border-white/15 px-4 py-3">
                             <div className="grid gap-3">
-                              {activeTab.meta.slice(0, 3).map((m) => (
+                              {t.meta.slice(0, 3).map((m) => (
                                 <div key={m.label} className="min-w-[14rem]">
                                   <div className="text-[11px] font-bold tracking-[0.25em] text-white/65 uppercase">
                                     {m.label}
@@ -188,7 +182,7 @@ export default function ServiceFocusTabs({
                       </div>
 
                       <div className="mt-6 grid md:grid-cols-2 gap-4">
-                        {activeTab.bullets.slice(0, 6).map((b) => (
+                        {t.bullets.slice(0, 6).map((b) => (
                           <div
                             key={b}
                             className="rounded-2xl bg-white/10 border border-white/15 px-5 py-4 flex items-start gap-3"
@@ -202,12 +196,18 @@ export default function ServiceFocusTabs({
                           </div>
                         ))}
                       </div>
+
+                      <div className="mt-auto pt-8">
+                        <div className="h-2 rounded-full bg-gradient-to-r from-primary/60 via-primary/20 to-transparent" />
+                      </div>
                     </div>
                   </div>
-                </motion.div>
-              </div>
+                </div>
+              ))}
+
+              <div className="h-24 md:h-32" />
             </div>
-          </FadeIn>
+          </div>
         </div>
       </div>
     </section>

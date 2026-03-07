@@ -190,7 +190,7 @@ export default function CompanyFormationOptions() {
             <div className="rounded-[2rem] bg-white border border-gray-100 shadow-[0_30px_80px_rgba(0,0,0,0.06)] overflow-hidden">
               <div className="p-6 md:p-8 border-b border-gray-100">
                 <div className="flex items-center justify-between gap-6 flex-wrap">
-                  <div>
+                  <div className="min-w-0">
                     <div className="text-[11px] md:text-[12px] font-bold tracking-[0.25em] text-gray-500 uppercase">
                       Quick comparison
                     </div>
@@ -200,7 +200,7 @@ export default function CompanyFormationOptions() {
                   </div>
 
                   <div
-                    className="flex items-center gap-2 rounded-full bg-[#F3F6FA] border border-gray-100 p-1 overflow-x-auto max-w-full"
+                    className="w-full sm:w-auto min-w-0 flex items-center gap-2 rounded-full bg-[#F3F6FA] border border-gray-100 p-1 overflow-x-auto max-w-full"
                     role="tablist"
                     aria-label="Company formation options"
                   >
@@ -242,8 +242,8 @@ export default function CompanyFormationOptions() {
                     </div>
 
                     <div className="relative">
-                      <div className="flex items-start justify-between gap-6">
-                        <div>
+                      <div className="flex items-start justify-between gap-6 flex-wrap min-w-0">
+                        <div className="min-w-0">
                           <div className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/15 px-3.5 py-2 text-[12px] font-semibold tracking-wide text-white/90 backdrop-blur">
                             {activeOption.kicker}
                           </div>
@@ -252,11 +252,11 @@ export default function CompanyFormationOptions() {
                           </h3>
                         </div>
 
-                        <div className="shrink-0 rounded-2xl bg-white/10 border border-white/15 px-4 py-3">
+                        <div className="w-full sm:w-auto sm:shrink-0 rounded-2xl bg-white/10 border border-white/15 px-4 py-3">
                           <div className="text-[11px] font-bold tracking-[0.25em] text-white/70 uppercase">
                             Timeline
                           </div>
-                          <div className="mt-2 text-[13.5px] font-semibold text-white/90 leading-snug max-w-[18rem]">
+                          <div className="mt-2 text-[13.5px] font-semibold text-white/90 leading-snug sm:max-w-[18rem] break-words">
                             {activeOption.timeline}
                           </div>
                         </div>
@@ -272,7 +272,7 @@ export default function CompanyFormationOptions() {
                               Ideal for
                             </div>
                           </div>
-                          <p className="mt-4 text-[14px] text-white/85 leading-relaxed font-medium">
+                          <p className="mt-4 text-[14px] text-white/85 leading-relaxed font-medium break-words">
                             {activeOption.idealFor}
                           </p>
                         </div>
@@ -290,7 +290,7 @@ export default function CompanyFormationOptions() {
                             {activeOption.considerations.map((c) => (
                               <div
                                 key={c}
-                                className="text-[13.5px] font-semibold text-white/85 leading-snug"
+                                className="text-[13.5px] font-semibold text-white/85 leading-snug break-words"
                               >
                                 {c}
                               </div>
