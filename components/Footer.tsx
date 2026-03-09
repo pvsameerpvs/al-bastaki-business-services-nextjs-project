@@ -38,11 +38,15 @@ export default function Footer() {
   return (
     <>
       {/* Spacer so the fixed footer is revealed on scroll */}
-      <div style={{ height: footerHeight }} className="relative z-0 pointer-events-none w-full" />
+      <div
+        style={{ height: footerHeight }}
+        className="hidden md:block relative z-0 pointer-events-none w-full"
+        aria-hidden="true"
+      />
 
       <footer
         ref={footerRef}
-        className="fixed bottom-0 left-0 w-full -z-10 bg-[#001528] text-white pt-16 pb-6 px-4 sm:px-6 md:px-12 lg:px-20"
+        className="relative w-full z-10 bg-[#001528] text-white pt-16 pb-[calc(1.5rem+env(safe-area-inset-bottom))] px-4 sm:px-6 md:px-12 lg:px-20 md:fixed md:bottom-0 md:left-0 md:-z-10"
       >
         <div className="max-w-[1400px] mx-auto">
 
