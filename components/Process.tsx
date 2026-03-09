@@ -126,6 +126,70 @@ export default function Process() {
                 const zMap = ['z-10', 'z-20', 'z-30', 'z-40', 'z-50', 'z-[60]']
                 const zClass = zMap[idx] || 'z-10'
 
+                const cardBody = (
+                  <>
+                    {/* Text and Info Area */}
+                    <div className="flex-1 flex flex-col">
+                      <div className="flex items-start justify-between gap-6">
+                        <div className="flex items-center gap-4">
+                          <CardIcon tone={c.tone} />
+                          <div className="flex flex-col">
+                            {/* <span className={`inline-flex w-fit px-3 py-1 rounded-full text-[12px] font-bold tracking-widest ${pillClass}`}>
+                              SERVICE {c.step}
+                            </span> */}
+                            <h3 className="mt-4 text-[22px] md:text-[26px] font-bold tracking-tight leading-snug">
+                              {c.title}
+                            </h3>
+                          </div>
+                        </div>
+
+                        <div
+                          className={`hidden sm:flex items-center justify-center w-12 h-12 rounded-2xl ${isLight ? 'bg-gray-50 border border-gray-100 text-gray-600' : 'bg-black/15 border border-white/10 text-white/90'}`}
+                        >
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                          </svg>
+                        </div>
+                      </div>
+
+                      <p className={`mt-6 text-[14.5px] md:text-[15.5px] leading-relaxed font-medium max-w-[62ch] ${subTextClass}`}>
+                        {c.description}
+                      </p>
+
+                      <div className="mt-8 grid sm:grid-cols-2 xl:grid-cols-3 gap-3">
+                        {c.points.map((p) => (
+                          <div
+                            key={p}
+                            className={`rounded-2xl px-4 py-4 text-[13px] font-semibold leading-snug ${
+                              isLight
+                                ? 'bg-lightGrey text-gray-700 border border-gray-100'
+                                : isDark
+                                  ? 'bg-[#001528] text-white/85 border border-white/10'
+                                  : 'bg-white/10 text-white/90 border border-white/15'
+                            }`}
+                          >
+                            {p}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Image Area */}
+                    <div className="hidden lg:flex flex-col justify-center w-full lg:w-2/5 xl:w-1/3 mt-6 lg:mt-0">
+                      <div className="relative w-full aspect-[4/3] lg:aspect-auto lg:h-full max-h-[400px] rounded-2xl overflow-hidden shadow-lg border border-white/10 group">
+                        <img
+                          src={c.image}
+                          alt={c.title}
+                          loading="lazy"
+                          className="absolute inset-0 w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-700"
+                        />
+                        {/* Inner gradient for nice blend */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                      </div>
+                    </div>
+                  </>
+                )
+
                 return (
                   <div key={c.step} className={`sticky top-24 md:top-28 ${zClass} mb-10 md:mb-14`}>
                     <div
@@ -133,67 +197,13 @@ export default function Process() {
                     >
                       <div
                         data-lenis-prevent
-                        className="no-scrollbar p-7 sm:p-8 md:p-10 flex flex-col lg:flex-row gap-8 lg:gap-12 flex-1 overflow-y-auto overscroll-auto [-webkit-overflow-scrolling:touch] md:overflow-visible"
+                        className="md:hidden no-scrollbar p-7 sm:p-8 flex flex-col gap-8 flex-1 overflow-y-auto overscroll-auto [-webkit-overflow-scrolling:touch]"
                       >
-                        
-                        {/* Text and Info Area */}
-                        <div className="flex-1 flex flex-col">
-                          <div className="flex items-start justify-between gap-6">
-                            <div className="flex items-center gap-4">
-                              <CardIcon tone={c.tone} />
-                              <div className="flex flex-col">
-                                {/* <span className={`inline-flex w-fit px-3 py-1 rounded-full text-[12px] font-bold tracking-widest ${pillClass}`}>
-                                  SERVICE {c.step}
-                                </span> */}
-                                <h3 className="mt-4 text-[22px] md:text-[26px] font-bold tracking-tight leading-snug">
-                                  {c.title}
-                                </h3>
-                              </div>
-                            </div>
+                        {cardBody}
+                      </div>
 
-                            <div className={`hidden sm:flex items-center justify-center w-12 h-12 rounded-2xl ${isLight ? 'bg-gray-50 border border-gray-100 text-gray-600' : 'bg-black/15 border border-white/10 text-white/90'}`}>
-                              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <path d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                              </svg>
-                            </div>
-                          </div>
-
-                          <p className={`mt-6 text-[14.5px] md:text-[15.5px] leading-relaxed font-medium max-w-[62ch] ${subTextClass}`}>
-                            {c.description}
-                          </p>
-
-                          <div className="mt-8 grid sm:grid-cols-2 xl:grid-cols-3 gap-3">
-                            {c.points.map((p) => (
-                              <div
-                                key={p}
-                                className={`rounded-2xl px-4 py-4 text-[13px] font-semibold leading-snug ${
-                                  isLight
-                                    ? 'bg-lightGrey text-gray-700 border border-gray-100'
-                                    : isDark
-                                      ? 'bg-[#001528] text-white/85 border border-white/10'
-                                      : 'bg-white/10 text-white/90 border border-white/15'
-                                }`}
-                              >
-                                {p}
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-
-                        {/* Image Area */}
-                        <div className="hidden lg:flex flex-col justify-center w-full lg:w-2/5 xl:w-1/3 mt-6 lg:mt-0">
-                          <div className="relative w-full aspect-[4/3] lg:aspect-auto lg:h-full max-h-[400px] rounded-2xl overflow-hidden shadow-lg border border-white/10 group">
-                            <img 
-                              src={c.image} 
-                              alt={c.title} 
-                              loading="lazy"
-                              className="absolute inset-0 w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-700" 
-                            />
-                            {/* Inner gradient for nice blend */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-                          </div>
-                        </div>
-
+                      <div className="hidden md:flex p-7 sm:p-8 md:p-10 flex flex-col lg:flex-row gap-8 lg:gap-12 flex-1 overflow-visible">
+                        {cardBody}
                       </div>
 
                       <div className={`mt-auto h-2 ${isLight ? 'bg-gradient-to-r from-primary/30 via-primary/10 to-transparent' : isPrimary ? 'bg-gradient-to-r from-white/35 via-white/10 to-transparent' : 'bg-gradient-to-r from-primary/60 via-primary/20 to-transparent'}`} />
