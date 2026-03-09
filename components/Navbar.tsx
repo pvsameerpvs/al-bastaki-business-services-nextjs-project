@@ -245,7 +245,7 @@ export default function Navbar() {
 
       {/* ── Mobile Full-Screen Menu ── */}
       <div
-        className={`fixed inset-0 z-40 lg:hidden transition-all duration-300 ${
+        className={`fixed inset-0 z-[200] lg:hidden transition-all duration-300 ${
           mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
