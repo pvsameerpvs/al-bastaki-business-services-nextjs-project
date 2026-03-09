@@ -128,8 +128,13 @@ export default function Process() {
 
                 return (
                   <div key={c.step} className={`sticky top-24 md:top-28 ${zClass} mb-10 md:mb-14`}>
-                    <div className={`rounded-[2.25rem] ${cardClass} shadow-[0_30px_80px_rgba(0,0,0,0.08)] overflow-hidden min-h-[64vh] md:min-h-[68vh] lg:min-h-[72vh] flex flex-col`}>
-                      <div className="p-7 sm:p-8 md:p-10 flex flex-col lg:flex-row gap-8 lg:gap-12 flex-1">
+                    <div
+                      className={`rounded-[2.25rem] ${cardClass} shadow-[0_30px_80px_rgba(0,0,0,0.08)] overflow-hidden h-[calc(100svh-7rem)] md:h-auto md:min-h-[68vh] lg:min-h-[72vh] flex flex-col`}
+                    >
+                      <div
+                        data-lenis-prevent
+                        className="no-scrollbar p-7 sm:p-8 md:p-10 flex flex-col lg:flex-row gap-8 lg:gap-12 flex-1 overflow-y-auto overscroll-auto [-webkit-overflow-scrolling:touch] md:overflow-visible"
+                      >
                         
                         {/* Text and Info Area */}
                         <div className="flex-1 flex flex-col">
