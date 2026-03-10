@@ -48,21 +48,21 @@ export default function Footer() {
 
       <footer
         ref={footerRef}
-        className="relative w-full z-10 bg-[#001528] text-white pt-16 pb-[calc(1.5rem+env(safe-area-inset-bottom))] px-4 sm:px-6 md:px-12 lg:px-20 md:fixed md:bottom-0 md:left-0 md:-z-10"
+        className="relative w-full z-10 bg-[#001528] text-white pt-10 md:pt-16 lg:pt-20 pb-[calc(1.5rem+env(safe-area-inset-bottom))] px-4 sm:px-6 md:px-12 lg:px-20 md:fixed md:bottom-0 md:left-0 md:-z-10"
       >
         <div className="max-w-[1400px] mx-auto">
 
           {/* ── Top 4-column grid ── */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[auto_1fr_1fr_auto] gap-10 lg:gap-8 mb-10 items-start">
+          <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[auto_1fr_1fr_auto] gap-10 lg:gap-8 mb-10 items-start">
 
             {/* Col 1 — Logo + tagline */}
-            <div className="flex flex-col items-start min-w-0">
+            <div className="flex flex-col items-start min-w-0 pt-2">
               <Link href="/" aria-label="Al Bastaki" className="block mb-8">
                 <Image
                   src="/white-logo.png"
                   alt="Al Bastaki Business Services"
-                  width={360}
-                  height={110}
+                  width={998}
+                  height={948}
                   className="h-24 md:h-28 w-auto object-contain"
                   priority
                 />
@@ -257,7 +257,7 @@ export default function Footer() {
 
           {/* ── Big brand watermark ── */}
           <div className="text-center overflow-hidden mb-4">
-            <span className="text-[13vw] sm:text-[14vw] font-bold text-white leading-none select-none tracking-tight block">
+            <span className="text-[9vw] sm:text-[10vw] font-bold text-white leading-none select-none tracking-tight block">
               AL BASTAKI
             </span>
           </div>
