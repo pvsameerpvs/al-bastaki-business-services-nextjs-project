@@ -50,7 +50,7 @@ export default function Hero(){
         >
           <h1 className="text-[3.75rem] md:text-[4.25rem] lg:text-[5rem] font-bold mb-6 leading-[1.05] tracking-tight text-white">
               Elevate Your <br/> Business Setup <br/>
-            <span className="text-primary">In Dubai</span>
+            <span className="text-primary">Requirements</span>
           </h1>
 
           <p className="text-[16px] md:text-[18px] lg:text-[19px] leading-relaxed text-white/85 max-w-[36rem]">
