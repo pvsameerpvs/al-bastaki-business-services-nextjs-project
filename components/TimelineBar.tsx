@@ -22,7 +22,7 @@ export default function TimelineBar() {
     },
     {
       year: "2022",
-      text: "Expanded operations into Oman to support GCC clients."
+      text: "Expanded services across the GCC to support regional clients."
     },
     {
       year: "2025",

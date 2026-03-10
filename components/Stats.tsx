@@ -2,6 +2,8 @@
 import CountUp from 'react-countup'
 import { motion } from 'framer-motion'
 
+import { contactInfo } from '../lib/contact'
+
 export default function Stats(){
   return(
     <section className="bg-[#F9FAFB] py-24 md:py-32 overflow-hidden">
@@ -101,7 +103,7 @@ export default function Stats(){
                 </div>
 
                 <div className="bg-primary hover:bg-primary/95 transition-colors text-white text-[12px] font-bold text-center py-[18px] uppercase tracking-[0.1em] mx-3 mb-3 rounded-[1.2rem] cursor-pointer shadow-md">
-                  CALL US: +971 4 123 4567
+                  CALL US: {contactInfo.phoneDisplay}
                 </div>
               </div>
             </motion.div>

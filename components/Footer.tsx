@@ -3,6 +3,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useEffect, useState, useRef } from 'react'
 
+import { contactInfo } from '../lib/contact'
+
 export default function Footer() {
   const [footerHeight, setFooterHeight] = useState(0)
   const footerRef = useRef<HTMLElement>(null)
@@ -54,14 +56,15 @@ export default function Footer() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[auto_1fr_1fr_auto] gap-10 lg:gap-8 mb-10 items-start">
 
             {/* Col 1 — Logo + tagline */}
-            <div className="flex flex-col items-start">
-              <Link href="/" aria-label="Al Bastaki" className="block mb-7">
+            <div className="flex flex-col items-start min-w-0">
+              <Link href="/" aria-label="Al Bastaki" className="block mb-8">
                 <Image
                   src="/white-logo.png"
                   alt="Al Bastaki Business Services"
-                  width={280}
-                  height={80}
-                  className="h-20 w-auto object-contain"
+                  width={360}
+                  height={110}
+                  className="h-24 md:h-28 w-auto object-contain"
+                  priority
                 />
               </Link>
               <h3 className="text-[13px] font-bold mb-3 text-white/50 tracking-[0.18em] uppercase">
@@ -76,7 +79,7 @@ export default function Footer() {
             </div>
 
             {/* Col 2 — Quick Links */}
-            <div className="flex flex-col lg:pl-6">
+            <div className="flex flex-col lg:pl-6 min-w-0">
               <h3 className="text-[13px] font-bold mb-5 text-white/50 tracking-[0.18em] uppercase">
                 Quick Links
               </h3>
@@ -95,7 +98,7 @@ export default function Footer() {
             </div>
 
             {/* Col 3 — Services */}
-            <div className="flex flex-col">
+            <div className="flex flex-col min-w-0">
               <h3 className="text-[13px] font-bold mb-5 text-white/50 tracking-[0.18em] uppercase">
                 Services
               </h3>
@@ -114,14 +117,14 @@ export default function Footer() {
             </div>
 
             {/* Col 4 — Contact */}
-            <div className="flex flex-col max-w-[260px] gap-4">
+            <div className="flex flex-col max-w-[260px] gap-4 min-w-0">
               <h3 className="text-[13px] font-bold text-white/50 tracking-[0.18em] uppercase">
                 Contact Us
               </h3>
 
-              {/* Phone */}
+              {/* Mobile */}
               <a
-                href="tel:+97141234567"
+                href={contactInfo.mobileHref}
                 className="group flex items-center gap-3 hover:text-primary transition-colors duration-300"
               >
                 <span className="w-9 h-9 rounded-full bg-[#00223E] flex items-center justify-center shrink-0 group-hover:bg-primary transition-colors duration-300">
@@ -130,13 +133,28 @@ export default function Footer() {
                   </svg>
                 </span>
                 <span className="text-[15px] font-bold text-primary group-hover:text-white tracking-tight transition-colors duration-300">
-                  +971 4 123 4567
+                  {contactInfo.mobileDisplay}
+                </span>
+              </a>
+
+              {/* Landline */}
+              <a
+                href={contactInfo.landlineHref}
+                className="group flex items-center gap-3 hover:text-primary transition-colors duration-300"
+              >
+                <span className="w-9 h-9 rounded-full bg-[#00223E] flex items-center justify-center shrink-0 group-hover:bg-primary transition-colors duration-300">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3-8.59A2 2 0 0 1 3.71 1.5h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.14a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.574 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                </span>
+                <span className="text-[15px] font-semibold text-white/75 group-hover:text-primary tracking-tight transition-colors duration-300">
+                  {contactInfo.landlineDisplay}
                 </span>
               </a>
 
               {/* Email */}
               <a
-                href="mailto:hello@albastaki.com"
+                href={`mailto:${contactInfo.email}`}
                 className="group flex items-center gap-3 hover:text-primary transition-colors duration-300"
               >
                 <span className="w-9 h-9 rounded-full bg-[#00223E] flex items-center justify-center shrink-0 group-hover:bg-primary transition-colors duration-300">
@@ -146,9 +164,27 @@ export default function Footer() {
                   </svg>
                 </span>
                 <span className="text-[14px] font-medium text-white/70 group-hover:text-primary transition-colors duration-300">
-                  hello@albastaki.com
+                  {contactInfo.email}
                 </span>
               </a>
+
+              {/* Website */}
+              <a
+                href={contactInfo.websiteHref}
+                className="group flex items-center gap-3 hover:text-primary transition-colors duration-300"
+              >
+                <span className="w-9 h-9 rounded-full bg-[#00223E] flex items-center justify-center shrink-0 group-hover:bg-primary transition-colors duration-300">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M2 12h20" />
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                  </svg>
+                </span>
+                <span className="text-[14px] font-medium text-white/70 group-hover:text-primary transition-colors duration-300">
+                  {contactInfo.websiteDisplay}
+                </span>
+              </a>
+
               {/* Address */}
               <div className="flex items-start gap-3">
                 <span className="w-9 h-9 rounded-full bg-[#00223E] flex items-center justify-center shrink-0 mt-0.5">
@@ -163,7 +199,7 @@ export default function Footer() {
               </div>
             </div>
             
-             <div className="flex gap-2.5 self-end">
+             <div className="flex gap-2.5 self-end sm:col-span-2 lg:col-span-4 lg:justify-end">
                 {[
                   {
                     id: 'facebook', href: '#facebook',

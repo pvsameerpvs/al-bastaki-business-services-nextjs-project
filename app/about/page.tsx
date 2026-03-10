@@ -6,6 +6,8 @@ import FadeIn from '../../components/FadeIn'
 import ClientsAndAgencies from '../../components/ClientsAndAgencies'
 import Link from 'next/link'
 
+import { contactInfo } from '../../lib/contact'
+
 export default function AboutPage() {
   return (
     <main>
@@ -248,7 +250,7 @@ export default function AboutPage() {
                   </div>
 
                   <div className="mt-6 bg-primary hover:bg-primary/95 transition-colors text-white text-[12px] font-bold text-center py-[16px] uppercase tracking-[0.1em] rounded-[1.2rem] cursor-pointer shadow-md">
-                    Call us: +971 4 123 4567
+                    Call us: {contactInfo.phoneDisplay}
                   </div>
                 </div>
               </div>

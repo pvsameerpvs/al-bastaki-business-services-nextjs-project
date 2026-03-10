@@ -3,6 +3,8 @@
 import CountUp from 'react-countup'
 import { motion } from 'framer-motion'
 
+import { contactInfo } from '../lib/contact'
+
 export default function AboutStats() {
   return (
     <section className="bg-[#F9FAFB] py-24 md:py-32 overflow-hidden">
@@ -99,21 +101,11 @@ export default function AboutStats() {
                     "We don't just process paperwork—we build better businesses."
                   </div>
 
-                  <div className="flex items-center gap-4">
-                    <img
-                      src="https://i.pravatar.cc/100?img=11"
-                      alt="CEO"
-                      className="w-[46px] h-[46px] rounded-full border-2 border-white shadow-sm object-cover"
-                    />
-                    <div>
-                      <div className="font-bold text-gray-900 text-[13.5px]">Ahmed Al Bastaki</div>
-                      <div className="text-[12.5px] text-gray-500 font-medium mt-0.5">Founder & CEO</div>
-                    </div>
-                  </div>
+                 
                 </div>
 
                 <div className="bg-primary hover:bg-primary/95 transition-colors text-white text-[12px] font-bold text-center py-[18px] uppercase tracking-[0.1em] mx-3 mb-3 rounded-[1.2rem] cursor-pointer shadow-md">
-                  Call us: +971 4 123 4567
+                  Call us: {contactInfo.phoneDisplay}
                 </div>
               </div>
             </motion.div>
