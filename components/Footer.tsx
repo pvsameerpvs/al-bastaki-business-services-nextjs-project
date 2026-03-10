@@ -53,7 +53,7 @@ export default function Footer() {
         <div className="max-w-[1400px] mx-auto">
 
           {/* ── Top 4-column grid ── */}
-          <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[auto_1fr_1fr_auto] gap-10 lg:gap-8 mb-10 items-start">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[auto_1fr_1fr_auto] gap-10 lg:gap-8 mb-10 items-start">
 
             {/* Col 1 — Logo + tagline */}
             <div className="flex flex-col items-start min-w-0 pt-2">
