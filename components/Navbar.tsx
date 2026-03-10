@@ -119,27 +119,27 @@ export default function Navbar() {
         <div className="max-w-[1400px] mx-auto flex items-center justify-between px-4 sm:px-6 xl:px-8">
 
           {/* ── Logo ── */}
-          <Link href="/" aria-label="Al Bastaki" className="flex-shrink-0">
+          <Link href="/" aria-label="Al Bastaki" className="relative block flex-shrink-0">
             {/* White logo (transparent hero) */}
             <Image
               src="/white-logo.png"
               alt="Al Bastaki Business Services"
-              width={180}
-              height={44}
+              width={220}
+              height={54}
               priority
-              className={`h-12 sm:h-14 lg:h-16 w-auto object-contain transition-all duration-300 ${
-                scroll ? 'opacity-0 absolute' : 'opacity-100 relative'
+              className={`h-14 sm:h-16 lg:h-20 w-auto object-contain transition-opacity duration-500 ease-out ${
+                scroll ? 'opacity-0' : 'opacity-100'
               }`}
             />
             {/* Blue logo (scrolled / solid header) */}
             <Image
               src="/blue-logo.png"
               alt="Al Bastaki Business Services"
-              width={180}
-              height={44}
+              width={220}
+              height={54}
               priority
-              className={`h-12 sm:h-14 lg:h-16 w-auto object-contain transition-all duration-300 ${
-                scroll ? 'opacity-100 relative' : 'opacity-0 absolute'
+              className={`absolute left-0 top-0 h-14 sm:h-16 lg:h-20 w-auto object-contain pointer-events-none transition-opacity duration-500 ease-out ${
+                scroll ? 'opacity-100' : 'opacity-0'
               }`}
             />
           </Link>
@@ -266,9 +266,9 @@ export default function Navbar() {
             <Image
               src="/blue-logo.png"
               alt="Al Bastaki"
-              width={140}
-              height={36}
-              className="h-9 w-auto object-contain"
+              width={170}
+              height={44}
+              className="h-11 w-auto object-contain"
             />
             <button
               className="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-gray-200 transition-colors"
