@@ -1,13 +1,19 @@
 const cards = [
-  {
+ {
     step: '01',
     title: 'Company Formation',
     description:
-      'Setting up a new business or branch office in Dubai and the UAE can be a complicated and expensive procedure. We help establish your company under the correct legal framework, choosing the most cost-effective and time-saving alternatives.',
-    points: ['Dubai Business Setup', 'Free Zone Company Setup', 'Offshore Company Setup', 'Branch of Foreign Company Setup'],
+      'Setting up a new business or branch office in Dubai, the UAE, and Oman can be a complicated and expensive procedure. We help establish your company under the correct legal framework, choosing the most cost-effective and time-saving alternatives.',
+    points: [
+      'Dubai Business Setup', 
+      'Free Zone Company Setup', 
+      'Offshore Company Setup', 
+      'Branch of Foreign Company Setup',
+      'Oman Business Setup' 
+    ],
     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop',
     tone: 'light' as const
-  },
+},
   {
     step: '02',
     title: 'Business Setup',

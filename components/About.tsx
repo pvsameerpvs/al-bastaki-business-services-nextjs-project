@@ -46,7 +46,7 @@ export default function About(){
             transition={{duration:0.8, delay:0.2}}
           >
             <h2 className="text-[32px] text-gray-700 leading-[1.45] font-medium mb-12 max-w-[1000px] tracking-tight">
-              <span className="font-bold text-gray-900">Al Bastaki</span> was founded in 2005 with a simple mission: to empower businesses with financial clarity and strategic direction. What began as a local PRO firm has evolved into a full-service consultancy serving 2,250+ clients across the UAE.
+              <span className="font-bold text-gray-900">Al Bastaki</span> was founded in 2000 with a simple mission: to empower businesses with financial clarity and strategic direction. What began as a local PRO firm has evolved into a full-service consultancy serving 2,250+ clients across the UAE.
             </h2>
             
             {/* Themed Split-Pill Button */}
