@@ -1,3 +1,5 @@
+const govtSvgLogos = new Set([1, 11, 12])
+
 export default function ClientsAndAgencies() {
   return (
     <section className="bg-lightGrey pt-10 md:pt-16 pb-24 md:pb-28">
@@ -12,13 +14,13 @@ export default function ClientsAndAgencies() {
             </span>
           </div>
 
-          {[1, 2, 3, 4, 5, 6].map((num) => (
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((num) => (
             <div
               key={`govt-${num}`}
               className="bg-white rounded-[1.25rem] border border-gray-100 aspect-[3/2] sm:aspect-[4/3] lg:aspect-[3/2] flex items-center justify-center p-6 sm:p-8 hover:shadow-[0_15px_30px_rgba(0,0,0,0.04)] hover:-translate-y-1 hover:border-white transition-all duration-300 cursor-pointer"
             >
               <img
-                src={`/govt${num}.png`}
+                src={`/govt${num}.${govtSvgLogos.has(num) ? 'svg' : 'png'}`}
                 alt={`Government Agency ${num}`}
                 loading="lazy"
                 className="w-full h-full object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
