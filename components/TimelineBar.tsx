@@ -25,8 +25,8 @@ export default function TimelineBar() {
       text: "Expanded services across the GCC to support regional clients."
     },
     {
-      year: "2025",
-      text: "Upcoming milestone — continuing regional expansion."
+      year: "2026",
+      text: "Current milestone continuing regional expansion."
     }
   ]
 
