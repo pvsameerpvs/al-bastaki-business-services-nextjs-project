@@ -2,6 +2,8 @@ import type { MetadataRoute } from 'next'
 
 import { services } from '../lib/services'
 
+export const dynamic = 'force-static'
+
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://albastakiuae.com'
 
 const staticRoutes = [
