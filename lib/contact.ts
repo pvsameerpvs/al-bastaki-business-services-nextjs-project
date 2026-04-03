@@ -5,6 +5,8 @@ export const contactInfo = {
 
   mobileDisplay: '+971 52 112 2959',
   mobileHref: 'tel:+971521122959',
+  whatsappDisplay: '+971 52 112 2959',
+  whatsappHref: 'https://wa.me/971521122959',
 
   landlineDisplay: '+971 4 2525 999',
   landlineHref: 'tel:+97142525999',

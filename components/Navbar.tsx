@@ -3,6 +3,18 @@ import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
+const whiteLogo = {
+  src: '/white-logo.png',
+  width: 998,
+  height: 948,
+}
+
+const blueLogo = {
+  src: '/blue-logo.png',
+  width: 890,
+  height: 770,
+}
+
 // ─── Nav Data ────────────────────────────────────────────────────────────────
 const navItems = [
   { label: 'Home', href: '/', dropdown: null },
@@ -122,23 +134,23 @@ export default function Navbar() {
           <Link href="/" aria-label="Al Bastaki" className="relative block flex-shrink-0">
             {/* White logo (transparent hero) */}
             <Image
-              src="/white-logo.png"
+              src={whiteLogo.src}
               alt="Al Bastaki Business Services"
-              width={220}
-              height={54}
+              width={whiteLogo.width}
+              height={whiteLogo.height}
               priority
-              className={`h-14 sm:h-16 lg:h-20 w-auto object-contain transition-opacity duration-500 ease-out ${
+              className={`h-16 sm:h-20 lg:h-24 w-auto object-contain drop-shadow-[0_10px_30px_rgba(0,0,0,0.28)] transition-opacity duration-500 ease-out ${
                 scroll ? 'opacity-0' : 'opacity-100'
               }`}
             />
             {/* Blue logo (scrolled / solid header) */}
             <Image
-              src="/blue-logo.png"
+              src={blueLogo.src}
               alt="Al Bastaki Business Services"
-              width={220}
-              height={54}
+              width={blueLogo.width}
+              height={blueLogo.height}
               priority
-              className={`absolute left-0 top-0 h-14 sm:h-16 lg:h-20 w-auto object-contain pointer-events-none transition-opacity duration-500 ease-out ${
+              className={`absolute left-0 top-0 h-16 sm:h-20 lg:h-24 w-auto object-contain pointer-events-none transition-opacity duration-500 ease-out ${
                 scroll ? 'opacity-100' : 'opacity-0'
               }`}
             />
@@ -264,11 +276,11 @@ export default function Navbar() {
           {/* Panel header */}
           <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
             <Image
-              src="/blue-logo.png"
+              src={blueLogo.src}
               alt="Al Bastaki"
-              width={170}
-              height={44}
-              className="h-11 w-auto object-contain"
+              width={blueLogo.width}
+              height={blueLogo.height}
+              className="h-14 w-auto object-contain"
             />
             <button
               className="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-gray-200 transition-colors"

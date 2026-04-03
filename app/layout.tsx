@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import SmoothScroller from '../components/SmoothScroller'
 import CustomCursor from '../components/CustomCursor'
+import WhatsAppFloat from '../components/WhatsAppFloat'
 import { rethinkSans } from './fonts'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://albastakiuae.com'
@@ -76,6 +77,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
           <Footer />
         </SmoothScroller>
+        <WhatsAppFloat />
       </body>
     </html>
   )
