@@ -174,20 +174,17 @@ export default function Hero(){
           <div className="flex flex-col gap-3 text-[15px] font-medium hidden md:flex min-w-[150px]">
             <div className="relative flex items-center group">
               <span className="absolute -left-4 w-[5px] h-[5px] rounded-full opacity-0 scale-75 bg-primary group-hover:opacity-100 group-hover:scale-100 group-hover:shadow-[0_0_10px_rgba(0,102,166,0.75)] transition-all pointer-events-none"></span>
-              <a href="#" className="text-white/50 hover:text-white transition-colors hover:underline hover:decoration-primary decoration-2 underline-offset-4">Facebook</a>
+              <a href="https://www.facebook.com/share/1A8pnntKft/" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors hover:underline hover:decoration-primary decoration-2 underline-offset-4">Facebook</a>
             </div>
             <div className="relative flex items-center group">
               <span className="absolute -left-4 w-[5px] h-[5px] rounded-full opacity-0 scale-75 bg-primary group-hover:opacity-100 group-hover:scale-100 group-hover:shadow-[0_0_10px_rgba(0,102,166,0.75)] transition-all pointer-events-none"></span>
-              <a href="#" className="text-white/50 hover:text-white transition-colors hover:underline hover:decoration-primary decoration-2 underline-offset-4">Twitter</a>
+              <a href="https://www.linkedin.com/company/al-bastaki-business-services-uae/" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors hover:underline hover:decoration-primary decoration-2 underline-offset-4">Linkedin</a>
             </div>
             <div className="relative flex items-center group">
               <span className="absolute -left-4 w-[5px] h-[5px] rounded-full opacity-0 scale-75 bg-primary group-hover:opacity-100 group-hover:scale-100 group-hover:shadow-[0_0_10px_rgba(0,102,166,0.75)] transition-all pointer-events-none"></span>
-              <a href="#" className="text-white/50 hover:text-white transition-colors hover:underline hover:decoration-primary decoration-2 underline-offset-4">Linkedin</a>
+              <a href="https://www.instagram.com/albastaki.b.s?igsh=dHhwMWZwNXYyYTc0" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors hover:underline hover:decoration-primary decoration-2 underline-offset-4">Instagram</a>
             </div>
-            <div className="relative flex items-center group">
-              <span className="absolute -left-4 w-[5px] h-[5px] rounded-full opacity-0 scale-75 bg-primary group-hover:opacity-100 group-hover:scale-100 group-hover:shadow-[0_0_10px_rgba(0,102,166,0.75)] transition-all pointer-events-none"></span>
-              <a href="#" className="text-white/50 hover:text-white transition-colors hover:underline hover:decoration-primary decoration-2 underline-offset-4">Instagram</a>
-            </div>
+           
           </div>
 
           {/* Center - Slider Counter */}
