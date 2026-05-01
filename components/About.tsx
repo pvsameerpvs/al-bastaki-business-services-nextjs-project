@@ -33,7 +33,7 @@ export default function About(){
             transition={{duration:0.6}}
             className="md:pt-4"
           >
-            <span className="text-[13px] font-semibold text-gray-500 tracking-widest uppercase mb-4 block">
+            <span className="text-[16px] font-bold text-gray-500 tracking-widest uppercase mb-4 block">
               About Us
             </span>
           </motion.div>

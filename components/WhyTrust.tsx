@@ -82,7 +82,7 @@ export default function WhyTrust() {
                   <path d="m12 5 7 7-7 7" />
                 </svg>
               </div>
-              <span className="font-bold text-[14px] pr-5 pb-[1px]">Schedule Free Consultation</span>
+              <span className="font-bold text-[14px] pr-5 pb-[1px]">Consultation</span>
             </button>
           </motion.div>
         </div>

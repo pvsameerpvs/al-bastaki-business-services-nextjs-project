@@ -14,7 +14,7 @@ export default function WhyChooseUs() {
           className="mb-14 lg:mb-20 grid md:grid-cols-[220px_1fr] lg:grid-cols-[250px_1fr] gap-6 md:gap-12 items-start"
         >
           <div className="md:pt-3">
-            <span className="text-[13px] font-semibold text-gray-500 tracking-widest uppercase block">
+            <span className="text-[16px] font-bold text-gray-500 tracking-widest uppercase block">
               UAE Business Advantage
             </span>
           </div>

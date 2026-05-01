@@ -83,7 +83,7 @@ export default function LatestArticles() {
           className="mb-12 md:mb-16 grid md:grid-cols-[220px_1fr] lg:grid-cols-[250px_1fr] gap-8 md:gap-12 items-start"
         >
           <div className="md:pt-3 text-left">
-            <span className="inline-block text-[13px] font-semibold text-gray-500 tracking-widest uppercase">
+            <span className="inline-block text-[16px] font-bold text-gray-500 tracking-widest uppercase">
               LATEST ARTICLES
             </span>
           </div>

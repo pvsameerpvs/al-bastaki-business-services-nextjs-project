@@ -74,7 +74,7 @@ export default function Services() {
           className="mb-16 lg:mb-24 grid md:grid-cols-[220px_1fr] lg:grid-cols-[250px_1fr] gap-8 md:gap-12 items-start"
         >
           <div className="md:pt-3 text-left">
-            <span className="inline-block text-[13px] font-semibold text-white/50 tracking-widest uppercase">
+            <span className="inline-block text-[16px] font-bold text-white/50 tracking-widest uppercase">
               OUR SERVICES
             </span>
           </div>

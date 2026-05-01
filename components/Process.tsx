@@ -113,7 +113,7 @@ export default function Process() {
             className="mb-16 lg:mb-24 grid md:grid-cols-[220px_1fr] lg:grid-cols-[250px_1fr] gap-8 md:gap-12 items-start"
           >
             <div className="md:pt-3 text-left">
-              <span className="inline-block text-[13px] font-semibold text-gray-500 tracking-widest uppercase">
+              <span className="inline-block text-[16px] font-bold text-gray-500 tracking-widest uppercase">
                 OUR SERVICES
               </span>
             </div>
@@ -244,7 +244,7 @@ export default function Process() {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
           {/* Header Block takes 2 columns on lg */}
           <div className="col-span-2 md:col-span-4 lg:col-span-2 flex items-center justify-center lg:justify-start py-8 lg:py-0 px-4">
-            <span className="text-[12px] sm:text-[13px] font-semibold tracking-[0.2em] text-gray-500 uppercase text-center lg:text-left leading-relaxed">
+            <span className="text-[14px] sm:text-[16px] font-bold tracking-[0.2em] text-gray-500 uppercase text-center lg:text-left leading-relaxed">
               We Work Closely with<br />Government Agencies &amp; Free Zones
             </span>
           </div>
@@ -271,7 +271,7 @@ export default function Process() {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 ">
           {/* Header Block takes 2 columns on lg */}
           <div className="col-span-2 md:col-span-4 lg:col-span-2 flex items-center justify-center lg:justify-start py-8 lg:py-0 px-4">
-            <span className="text-[12px] sm:text-[13px] font-semibold tracking-[0.2em] text-gray-500 uppercase text-center lg:text-left">
+            <span className="text-[14px] sm:text-[16px] font-bold tracking-[0.2em] text-gray-500 uppercase text-center lg:text-left">
               Our Esteemed Clients
             </span>
           </div>

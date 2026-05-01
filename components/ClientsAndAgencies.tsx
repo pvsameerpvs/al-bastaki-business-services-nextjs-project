@@ -12,7 +12,7 @@ export default function ClientsAndAgencies() {
         {/* Government Agencies & Free Zones */}
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
           <div className="col-span-2 md:col-span-4 lg:col-span-2 flex items-center justify-center lg:justify-start py-8 lg:py-0 px-4">
-            <span className="text-[12px] sm:text-[13px] font-semibold tracking-[0.2em] text-gray-500 uppercase text-center lg:text-left leading-relaxed">
+            <span className="text-[14px] sm:text-[16px] font-bold tracking-[0.2em] text-gray-500 uppercase text-center lg:text-left leading-relaxed">
               We Work Closely with
               <br />
               Government Agencies &amp; Free Zones
@@ -37,7 +37,7 @@ export default function ClientsAndAgencies() {
         {/* Esteemed Clients */}
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 mt-10 md:mt-14">
           <div className="col-span-2 md:col-span-4 lg:col-span-2 flex items-center justify-center lg:justify-start py-8 lg:py-0 px-4">
-            <span className="text-[12px] sm:text-[13px] font-semibold tracking-[0.2em] text-gray-500 uppercase text-center lg:text-left">
+            <span className="text-[14px] sm:text-[16px] font-bold tracking-[0.2em] text-gray-500 uppercase text-center lg:text-left">
               Our Esteemed Clients
             </span>
           </div>
