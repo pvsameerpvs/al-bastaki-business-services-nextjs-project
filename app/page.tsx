@@ -12,6 +12,7 @@ import CTA from '../components/CTA'
 import LatestArticles from '../components/LatestArticles'
 import ClientsAndAgencies from '../components/ClientsAndAgencies'
 import ServicesMarquee from '../components/ServicesMarquee'
+import AboutPillars from '../components/AboutPillars'
 
 export default function Page(){
   return(
@@ -21,7 +22,8 @@ export default function Page(){
       <About />
       {/* <Stats /> */}
        <WhyTrust />
-      <WhyChooseUs />
+       <AboutPillars />
+     
       <Services />
       <ClientsAndAgencies />
        <ServicesMarquee />

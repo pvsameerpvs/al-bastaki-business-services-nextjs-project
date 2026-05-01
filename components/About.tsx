@@ -1,6 +1,7 @@
 'use client'
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
 import { useRef } from 'react'
+import AboutPillars from './AboutPillars'
 
 export default function About(){
   const containerRef = useRef<HTMLElement>(null)
@@ -62,6 +63,8 @@ export default function About(){
             </button>
           </motion.div>
         </div>
+
+        
 
       </div>
 
