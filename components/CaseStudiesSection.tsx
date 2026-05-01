@@ -22,17 +22,17 @@ export default function CaseStudiesSection({
   return (
     <section className="py-20 md:py-28 bg-[#F9FAFB]">
       <div className="max-w-[1400px] mx-auto px-6 xl:px-8">
-        <div className="mb-12 md:mb-16 max-w-5xl mx-auto flex flex-col md:flex-row px-0 sm:px-4 items-start gap-4 md:gap-16">
-          <div className="md:w-1/4 pt-1 md:pt-3 text-left">
-            <span className="inline-block text-[11px] md:text-[13px] font-medium tracking-[0.2em] text-gray-500 uppercase">
+        <div className="mb-12 md:mb-16 grid md:grid-cols-[220px_1fr] lg:grid-cols-[250px_1fr] gap-8 md:gap-12 items-start">
+          <div className="md:pt-3 text-left">
+            <span className="inline-block text-[13px] font-semibold text-gray-500 tracking-widest uppercase">
               CASE STUDIES
             </span>
           </div>
-          <div className="md:w-3/4 text-left">
-            <h2 className="text-[24px] md:text-[32px] font-medium text-[#2d3748] leading-[1.35] tracking-tight">
+          <div className="text-left">
+            <h2 className="text-[28px] md:text-[36px] lg:text-[42px] font-medium text-gray-900 leading-[1.25] tracking-tight">
               {title}
             </h2>
-            <p className="mt-3 text-[14.5px] md:text-[15.5px] text-gray-600 leading-relaxed font-medium max-w-[78ch]">
+            <p className="mt-5 text-[15px] md:text-[16px] text-gray-500 leading-relaxed font-medium max-w-[720px]">
               {description}
             </p>
           </div>

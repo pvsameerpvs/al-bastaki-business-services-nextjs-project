@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import ServicesMarquee from './ServicesMarquee'
 
 const services = [
   {
@@ -63,9 +64,29 @@ export default function Services() {
   }
 
   return (
-    <section className="relative pt-14 md:pt-20 pb-0 overflow-hidden bg-[#001528]">
+    <section className="relative py-24 md:py-32 pb-0 overflow-hidden bg-[#001528]">
+      <div className="max-w-[1400px] mx-auto px-6 xl:px-8">
+        <motion.div 
+          initial={{opacity:0, y:20}}
+          whileInView={{opacity:1, y:0}}
+          viewport={{once:true}}
+          transition={{duration:0.6}}
+          className="mb-16 lg:mb-24 grid md:grid-cols-[220px_1fr] lg:grid-cols-[250px_1fr] gap-8 md:gap-12 items-start"
+        >
+          <div className="md:pt-3 text-left">
+            <span className="inline-block text-[13px] font-semibold text-white/50 tracking-widest uppercase">
+              OUR SERVICES
+            </span>
+          </div>
+          <div className="text-left">
+            <p className="text-[28px] md:text-[36px] lg:text-[42px] font-medium text-white/90 leading-[1.25] tracking-tight text-left">
+              From company formation to IT solutions, Al Bastaki Business Services provides everything you need to establish, manage, and grow your business seamlessly in the UAE.
+            </p>
+          </div>
+        </motion.div>
+      </div>
 
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 xl:px-8 relative z-10 w-full flex flex-col">
+      <div className="max-w-[1400px] mx-auto px-6 xl:px-8 relative z-10 w-full flex flex-col">
 
         {/* ── Header + arrows ── */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 lg:mb-12 gap-6">
@@ -184,27 +205,7 @@ export default function Services() {
         </div>
       </div>
 
-      {/* ── Marquee strip ── */}
-      <div className="w-full relative z-20 bg-primary text-white py-4 lg:py-5 overflow-hidden flex border-t border-white/10 shadow-[0_-4px_20px_rgba(0,102,166,0.18)] mt-10">
-        <motion.div
-          animate={{ x: [0, '-50%'] }}
-          transition={{ repeat: Infinity, duration: 32, ease: 'linear' }}
-          className="flex whitespace-nowrap w-fit items-center"
-        >
-          {[...Array(2)].map((_, i) => (
-            <div key={i} className="flex items-center w-max shrink-0">
-              {['REAL ESTATE', 'HEALTHCARE', 'MANUFACTURING', 'TECHNOLOGY', 'RETAIL'].map((item, j) => (
-                <div key={j} className="flex items-center shrink-0">
-                  <span className="font-bold tracking-[0.2em] text-[14px] lg:text-[17px] px-8 lg:px-12 text-white/90">
-                    {item}
-                  </span>
-                  <span className="text-white/40 text-[20px] lg:text-[26px]">❋</span>
-                </div>
-              ))}
-            </div>
-          ))}
-        </motion.div>
-      </div>
+      
     </section>
   )
 }

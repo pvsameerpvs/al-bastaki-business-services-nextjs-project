@@ -8,7 +8,7 @@ Ready to start your business in Dubai?
 </h2>
 
 <button className="bg-white text-primary px-8 py-3 rounded-lg">
-Get Free Consultation
+Consultation
 </button>
 
 </section>

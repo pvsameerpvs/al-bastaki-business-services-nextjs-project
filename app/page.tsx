@@ -10,6 +10,8 @@ import Portfolio from '../components/Portfolio'
 import Testimonials from '../components/Testimonials'
 import CTA from '../components/CTA'
 import LatestArticles from '../components/LatestArticles'
+import ClientsAndAgencies from '../components/ClientsAndAgencies'
+import ServicesMarquee from '../components/ServicesMarquee'
 
 export default function Page(){
   return(
@@ -17,14 +19,17 @@ export default function Page(){
       <Hero />
       <TimelineBar />
       <About />
-      <Stats />
+      {/* <Stats /> */}
+       <WhyTrust />
       <WhyChooseUs />
       <Services />
-      <Process />
-      <WhyTrust />
+      <ClientsAndAgencies />
+       <ServicesMarquee />
+      {/* <Process /> */}
+     
       {/* <Portfolio /> */}
       {/* <Testimonials /> */}
-      <LatestArticles />
+      {/* <LatestArticles /> */}
       {/* <CTA /> */}
     </main>
   )

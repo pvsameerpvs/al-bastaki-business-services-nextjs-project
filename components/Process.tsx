@@ -1,3 +1,5 @@
+import { motion } from "framer-motion"
+
 const cards = [
  {
     step: '01',
@@ -103,18 +105,24 @@ export default function Process() {
       <div className="max-w-[1400px] mx-auto px-6 xl:px-8 relative">
         <div className="">
           
-          <div className="mb-16 lg:mb-24 max-w-5xl mx-auto flex flex-col md:flex-row px-0 sm:px-4 items-start gap-4 md:gap-16">
-            <div className="md:w-1/4 pt-1 md:pt-3 text-left">
-              <span className="inline-block text-[11px] md:text-[13px] font-medium tracking-[0.2em] text-gray-500 uppercase">
+          <motion.div 
+            initial={{opacity:0, y:20}}
+            whileInView={{opacity:1, y:0}}
+            viewport={{once:true}}
+            transition={{duration:0.6}}
+            className="mb-16 lg:mb-24 grid md:grid-cols-[220px_1fr] lg:grid-cols-[250px_1fr] gap-8 md:gap-12 items-start"
+          >
+            <div className="md:pt-3 text-left">
+              <span className="inline-block text-[13px] font-semibold text-gray-500 tracking-widest uppercase">
                 OUR SERVICES
               </span>
             </div>
-            <div className="md:w-3/4 text-left">
-              <p className="text-[24px] md:text-[32px] font-medium text-[#2d3748] leading-[1.4] tracking-tight text-left">
+            <div className="text-left">
+              <p className="text-[28px] md:text-[36px] lg:text-[42px] font-medium text-gray-900 leading-[1.25] tracking-tight text-left">
                 From company formation to IT solutions, Al Bastaki Business Services provides everything you need to establish, manage, and grow your business seamlessly in the UAE.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           <div className="relative">
             <div className="relative">

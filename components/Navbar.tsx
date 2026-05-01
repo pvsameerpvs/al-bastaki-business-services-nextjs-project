@@ -216,7 +216,7 @@ export default function Navbar() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </div>
-              <span className="font-semibold text-[14px]">Free Consultation</span>
+              <span className="font-semibold text-[14px]">Consultation</span>
             </Link>
           </div>
 
@@ -365,7 +365,7 @@ export default function Navbar() {
               <svg style={{width:'15px',height:'15px'}} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
-              Get a Free Consultation
+              Consultation
             </Link>
             <p className="mt-3 text-center text-[12px] text-gray-400 font-medium">
               Fast, no-obligation call with our team

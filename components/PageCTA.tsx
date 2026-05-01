@@ -14,7 +14,7 @@ export default function PageCTA({
   title,
   description,
   href = '/contact',
-  buttonText = 'Request a free consultation',
+  buttonText = 'Request consultation',
 }: PageCTAProps) {
   return (
     <section className="py-16 md:py-20 bg-[#F9FAFB]">

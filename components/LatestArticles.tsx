@@ -75,18 +75,24 @@ export default function LatestArticles() {
       <div className="max-w-[1400px] mx-auto px-6 xl:px-8 overflow-hidden">
         
         {/* Header Section */}
-        <div className="mb-12 md:mb-16 max-w-5xl mx-auto flex flex-col md:flex-row px-0 sm:px-4 items-start md:items-start gap-4 md:gap-12">
-          <div className="md:w-[25%] pt-1 md:pt-3 text-left md:text-right">
-            <span className="inline-block text-[11px] md:text-[13px] font-medium tracking-[0.2em] text-gray-500 uppercase">
+        <motion.div 
+          initial={{opacity:0, y:20}}
+          whileInView={{opacity:1, y:0}}
+          viewport={{once:true}}
+          transition={{duration:0.6}}
+          className="mb-12 md:mb-16 grid md:grid-cols-[220px_1fr] lg:grid-cols-[250px_1fr] gap-8 md:gap-12 items-start"
+        >
+          <div className="md:pt-3 text-left">
+            <span className="inline-block text-[13px] font-semibold text-gray-500 tracking-widest uppercase">
               LATEST ARTICLES
             </span>
           </div>
-          <div className="md:w-[75%] text-left">
-            <h2 className="text-[28px] md:text-[36px] font-medium text-[#2d3748] leading-[1.35] tracking-tight">
+          <div className="text-left">
+            <h2 className="text-[28px] md:text-[36px] lg:text-[42px] font-medium text-gray-900 leading-[1.25] tracking-tight">
               Business insights, industry updates, and expert advice — all in one place
             </h2>
           </div>
-        </div>
+        </motion.div>
 
         {/* Cards Grid / Slider */}
         <div 

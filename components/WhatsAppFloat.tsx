@@ -22,9 +22,9 @@ export default function WhatsAppFloat() {
         rel="noopener noreferrer"
         aria-label={`Chat with us on WhatsApp at ${contactInfo.whatsappDisplay}`}
         title={`WhatsApp ${contactInfo.whatsappDisplay}`}
-        className="group flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_18px_45px_rgba(37,211,102,0.35)] ring-1 ring-black/5 transition-all duration-300 hover:scale-105 hover:bg-[#20bd5a]"
+        className="group flex h-14 w-14 items-center justify-center rounded-full bg-[#00223E] text-white shadow-[0_18px_45px_rgba(0,34,62,0.38)] ring-1 ring-white/10 transition-all duration-300 hover:scale-105 hover:bg-[#003560]"
       >
-        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/12 text-white">
+        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white transition-colors duration-300 group-hover:bg-white/15">
           <WhatsAppIcon />
         </span>
       </a>

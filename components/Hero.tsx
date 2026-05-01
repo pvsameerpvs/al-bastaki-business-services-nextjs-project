@@ -91,7 +91,7 @@ export default function Hero(){
             <div className="relative z-10">
               <div className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/15 px-3 py-1 text-[12px] font-semibold tracking-wide text-white/90">
                 <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_10px_rgba(255,255,255,0.25)]" />
-                Free consultation
+                consultation
               </div>
               <h3 className="mt-4 text-[1.35rem] md:text-[1.55rem] font-bold leading-tight tracking-tight">
                 Get in touch
