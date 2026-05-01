@@ -1,5 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
 
 const pillars = [
   { l: 'A', t: 'Accountability', d: 'Ensuring financial clarity and professional ownership in every project we undertake.' },
@@ -14,6 +15,15 @@ const pillars = [
 ]
 
 export default function AboutPillars() {
+  const [activeIndex, setActiveIndex] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % pillars.length)
+    }, 2000)
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <section className="py-24 md:py-32 bg-white relative z-10">
       <div className="max-w-[1400px] mx-auto px-6 xl:px-8">
@@ -25,28 +35,37 @@ export default function AboutPillars() {
           </div>
           <div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12">
-              {pillars.map((item, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: idx * 0.05 }}
-                  className="group"
-                >
-                  <div className="flex items-baseline gap-4 mb-4 border-b border-gray-100 pb-3 transition-colors group-hover:border-primary/30">
-                    <span className="text-[42px] font-black text-primary/20 group-hover:text-primary transition-colors leading-none">
-                      {item.l}
-                    </span>
-                    <h3 className="text-[18px] font-bold text-gray-900 uppercase tracking-tight">
-                      {item.t}
-                    </h3>
-                  </div>
-                  <p className="text-[14.5px] text-gray-500 leading-relaxed font-medium">
-                    {item.d}
-                  </p>
-                </motion.div>
-              ))}
+              {pillars.map((item, idx) => {
+                const isActive = activeIndex === idx
+                return (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: idx * 0.05 }}
+                    className="group"
+                  >
+                    <div className={`flex items-baseline gap-4 mb-4 border-b pb-3 transition-all duration-500 ${isActive ? 'border-primary' : 'border-gray-100 group-hover:border-primary/30'}`}>
+                      <motion.span 
+                        animate={{ 
+                          color: isActive ? '#0066A6' : 'rgba(0, 102, 166, 0.15)',
+                          scale: isActive ? 1.1 : 1,
+                        }}
+                        className="text-[42px] font-black leading-none"
+                      >
+                        {item.l}
+                      </motion.span>
+                      <h3 className={`text-[18px] font-bold uppercase tracking-tight transition-colors duration-500 ${isActive ? 'text-primary' : 'text-gray-900'}`}>
+                        {item.t}
+                      </h3>
+                    </div>
+                    <p className={`text-[14.5px] leading-relaxed font-medium transition-colors duration-500 ${isActive ? 'text-gray-900' : 'text-gray-500'}`}>
+                      {item.d}
+                    </p>
+                  </motion.div>
+                )
+              })}
             </div>
           </div>
         </div>
