@@ -7,7 +7,7 @@ export default function WhyTrust() {
       {/* Background Image & Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80" 
+          src="/why-trust.jpg" 
           alt="Team collaboration" 
           className="w-full h-full object-cover object-center"
         />

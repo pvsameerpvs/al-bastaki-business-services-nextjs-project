@@ -34,19 +34,19 @@ const services = [
     href: '/consultancy',
     image: '/ConsultancyServices.jpg',
   },
-  {
-    title: 'Event Management',
-    description:
-      'End-to-end event logistics and project management for conferences, exhibitions, ceremonies, and more — from planning through on-ground delivery.',
-    href: '/events',
-    image: '/events-1.jpg',
-  },
+  // {
+  //   title: 'Event Management',
+  //   description:
+  //     'End-to-end event logistics and project management for conferences, exhibitions, ceremonies, and more — from planning through on-ground delivery.',
+  //   href: '/events',
+  //   image: '/events-1.jpg',
+  // },
   {
     title: 'IT Services',
     description:
       'We offer solutions under one roof to help grow your business — website design, software, portals, and digital marketing with clear deliverables.',
     href: '/it',
-    image: '/ITServices.jpg',
+    image: '/it-services.jpg',
   },
 ]
 

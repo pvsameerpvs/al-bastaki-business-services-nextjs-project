@@ -43,22 +43,22 @@ const cards = [
     image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop',
     tone: 'light' as const
   },
-  {
-    step: '05',
-    title: 'Event Management',
-    description:
-      'Event management includes a variety of functions for executing large scale events, from handling the overall logistics to working with staff and conducting project management of the event as a whole.',
-    points: ['Events Organizing & Managing', 'Exhibition Organizing', 'Film, TV & Radio Production', 'Wedding Parties Organizing', 'Parties Filming', 'Equipment Rental', 'Conferences & Seminars'],
-    image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=800&auto=format&fit=crop',
-    tone: 'dark' as const
-  },
+  // {
+  //   step: '05',
+  //   title: 'Event Management',
+  //   description:
+  //     'Event management includes a variety of functions for executing large scale events, from handling the overall logistics to working with staff and conducting project management of the event as a whole.',
+  //   points: ['Events Organizing & Managing', 'Exhibition Organizing', 'Film, TV & Radio Production', 'Wedding Parties Organizing', 'Parties Filming', 'Equipment Rental', 'Conferences & Seminars'],
+  //   image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=800&auto=format&fit=crop',
+  //   tone: 'dark' as const
+  // },
   {
     step: '06',
     title: 'IT Services',
     description:
       'We offer every solution under one roof to grow your business. We expertise in Website Design, Web Development, Branding, and Digital Marketing, providing rewarding solutions for your digital presence.',
     points: ['Web Designing', 'Internet Content Provider', 'Social Media App Management', 'Software Design', 'Portal Systems', 'Claim Settlement Services', 'CSR Initiatives Preparation'],
-    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop',
+    image: '/it-services.jpg',
     tone: 'primary' as const
   }
 ]
