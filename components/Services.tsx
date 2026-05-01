@@ -11,14 +11,14 @@ const services = [
     description:
       'We help you establish your company under the correct legal framework by choosing the most cost-effective and time-saving option for your activity and goals.',
     href: '/company-formation',
-    image: '/CompanyFormation.jpg',
+    image: '/company-formation.jpg',
   },
   {
     title: 'Business Setup',
     description:
       'Al Bastaki takes responsibility for the registration aspects of new businesses — from licensing and PRO services to visa processing and corporate amendments.',
     href: '/business-setup',
-    image: '/BusinessSetup.jpg',
+    image: '/business-set-up.jpg',
   },
   {
     title: 'Accounting Services',
@@ -142,7 +142,7 @@ export default function Services() {
             <Link
               key={svc.title}
               href={svc.href}
-              className="group relative flex-shrink-0 w-[280px] sm:w-[310px] lg:w-[340px] h-[400px] sm:h-[420px] lg:h-[460px] rounded-[1.75rem] overflow-hidden snap-center cursor-pointer"
+              className="group relative flex-shrink-0 w-[300px] sm:w-[380px] lg:w-[480px] aspect-[4/5] rounded-[2.25rem] overflow-hidden snap-center cursor-pointer"
             >
               <motion.div
                 initial={{ opacity: 0, y: 28 }}
@@ -156,8 +156,8 @@ export default function Services() {
                   src={svc.image}
                   alt={svc.title}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 640px) 280px, (max-width: 1024px) 310px, 340px"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  sizes="(max-width: 640px) 300px, (max-width: 1024px) 380px, 480px"
                 />
 
                 {/* ── Base gradient overlay (always visible) ── */}
