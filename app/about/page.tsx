@@ -230,9 +230,7 @@ export default function AboutPage() {
             <div className="bg-[#E6F0F6] rounded-[2rem] p-8 md:p-10 border border-white shadow-[0_25px_70px_rgba(0,0,0,0.06)]">
               <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
                 <div className="flex-1">
-                  <div className="text-[11px] md:text-[12px] font-bold tracking-[0.25em] text-[#003B62] uppercase">
-                    Chairman message
-                  </div>
+
                   <h3 className="mt-5 text-[24px] md:text-[30px] font-bold tracking-tight text-[#003B62] leading-[1.25]">
                     “We do not just process paperwork — we build better businesses.”
                   </h3>
@@ -241,18 +239,7 @@ export default function AboutPage() {
                   </p>
                 </div>
 
-                <div className="shrink-0 bg-white rounded-[1.5rem] p-6 md:p-7 border border-white/70 shadow-sm w-full lg:w-[360px]">
-                  <div className="flex items-center gap-4">
-                    
-                    <div>
-                      <div className="text-[13px] text-gray-600 font-medium mt-0.5">Founder & CEO</div>
-                    </div>
-                  </div>
-
-                  <div className="mt-6 bg-primary hover:bg-primary/95 transition-colors text-white text-[12px] font-bold text-center py-[16px] uppercase tracking-[0.1em] rounded-[1.2rem] cursor-pointer shadow-md">
-                    Call us: {contactInfo.phoneDisplay}
-                  </div>
-                </div>
+                
               </div>
             </div>
           </FadeIn>
