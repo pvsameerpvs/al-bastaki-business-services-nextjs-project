@@ -142,7 +142,7 @@ export default function Services() {
             <Link
               key={svc.title}
               href={svc.href}
-              className="group relative flex-shrink-0 w-[300px] sm:w-[380px] lg:w-[480px] aspect-[4/5] rounded-[2.25rem] overflow-hidden snap-center cursor-pointer"
+              className="group relative flex-shrink-0 w-[320px] sm:w-[420px] lg:w-[550px] aspect-[4/3] rounded-[2rem] overflow-hidden snap-center cursor-pointer"
             >
               <motion.div
                 initial={{ opacity: 0, y: 28 }}
@@ -157,7 +157,7 @@ export default function Services() {
                   alt={svc.title}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  sizes="(max-width: 640px) 300px, (max-width: 1024px) 380px, 480px"
+                  sizes="(max-width: 640px) 320px, (max-width: 1024px) 420px, 550px"
                 />
 
                 {/* ── Base gradient overlay (always visible) ── */}
