@@ -1,6 +1,22 @@
 'use client'
+import { useState } from 'react'
+
+const languages = [
+  { name: 'English', flag: '🇺🇸', code: 'EN' },
+  { name: 'Arabic', flag: '🇦🇪', code: 'AR' },
+  { name: 'Hindi', flag: '🇮🇳', code: 'HI' },
+  { name: 'French', flag: '🇫🇷', code: 'FR' },
+  { name: 'Chinese', flag: '🇨🇳', code: 'ZH' },
+  { name: 'Italian', flag: '🇮🇹', code: 'IT' },
+  { name: 'Spanish', flag: '🇪🇸', code: 'ES' },
+  { name: 'Greece', flag: '🇬🇷', code: 'EL' },
+  { name: 'Russian', flag: '🇷🇺', code: 'RU' },
+]
 
 export default function ContactFormCard() {
+  const [selectedLang, setSelectedLang] = useState(languages[0])
+  const [showDropdown, setShowDropdown] = useState(false)
+
   return (
     <div className="bg-white rounded-[2rem] p-8 md:p-10 border border-gray-100 shadow-[0_30px_80px_rgba(0,0,0,0.06)]">
       <div className="text-[11px] md:text-[13px] font-medium tracking-[0.2em] text-gray-500 uppercase">
@@ -28,7 +44,7 @@ export default function ContactFormCard() {
               name="name"
               type="text"
               placeholder="Your full name"
-              className="w-full rounded-xl bg-lightGrey border border-gray-200 px-4 py-3 text-[14px] text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-primary/60 focus:bg-white transition-colors"
+              className="w-full rounded-xl bg-gray-50 border border-gray-200 px-4 py-3 text-[14px] text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-primary/60 focus:bg-white transition-colors"
               required
             />
           </div>
@@ -44,27 +60,71 @@ export default function ContactFormCard() {
               name="phone"
               type="tel"
               placeholder="+971 50 123 4567"
-              className="w-full rounded-xl bg-lightGrey border border-gray-200 px-4 py-3 text-[14px] text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-primary/60 focus:bg-white transition-colors"
+              className="w-full rounded-xl bg-gray-50 border border-gray-200 px-4 py-3 text-[14px] text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-primary/60 focus:bg-white transition-colors"
               required
             />
           </div>
         </div>
 
-        <div>
-          <label
-            className="block text-[13px] font-semibold text-gray-700 mb-1"
-            htmlFor="contactEmail"
-          >
-            Email
-          </label>
-          <input
-            id="contactEmail"
-            name="email"
-            type="email"
-            placeholder="name@company.com"
-            className="w-full rounded-xl bg-lightGrey border border-gray-200 px-4 py-3 text-[14px] text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-primary/60 focus:bg-white transition-colors"
-            required
-          />
+        <div className="grid md:grid-cols-2 gap-4">
+          <div>
+            <label
+              className="block text-[13px] font-semibold text-gray-700 mb-1"
+              htmlFor="contactEmail"
+            >
+              Email
+            </label>
+            <input
+              id="contactEmail"
+              name="email"
+              type="email"
+              placeholder="name@company.com"
+              className="w-full rounded-xl bg-gray-50 border border-gray-200 px-4 py-3 text-[14px] text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-primary/60 focus:bg-white transition-colors"
+              required
+            />
+          </div>
+          
+          <div className="relative">
+            <label className="block text-[13px] font-semibold text-gray-700 mb-1">
+              Language
+            </label>
+            <button
+              type="button"
+              onClick={() => setShowDropdown(!showDropdown)}
+              className="w-full flex items-center justify-between rounded-xl bg-gray-50 border border-gray-200 px-4 py-3 text-[14px] text-gray-900 focus:outline-none focus:border-primary/60 focus:bg-white transition-colors"
+            >
+              <span className="flex items-center gap-2">
+                <span className="text-xl leading-none">{selectedLang.flag}</span>
+                <span className="font-medium">{selectedLang.name}</span>
+              </span>
+              <svg className={`w-4 h-4 transition-transform ${showDropdown ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            {showDropdown && (
+              <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-gray-100 rounded-xl shadow-2xl z-50 max-h-[240px] overflow-y-auto py-2">
+                {languages.map((lang) => (
+                  <button
+                    key={lang.code}
+                    type="button"
+                    onClick={() => {
+                      setSelectedLang(lang)
+                      setShowDropdown(false)
+                    }}
+                    className="w-full flex items-center gap-3 px-4 py-2.5 hover:bg-primary/5 text-left transition-colors"
+                  >
+                    <span className="text-xl leading-none">{lang.flag}</span>
+                    <span className={`text-[14px] ${selectedLang.code === lang.code ? 'font-bold text-primary' : 'text-gray-700 font-medium'}`}>
+                      {lang.name}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            )}
+            {/* Hidden input for form submission */}
+            <input type="hidden" name="language" value={selectedLang.name} />
+          </div>
         </div>
 
         <div>
@@ -77,9 +137,9 @@ export default function ContactFormCard() {
           <textarea
             id="contactMessage"
             name="message"
-            rows={5}
+            rows={4}
             placeholder="Tell us what you need help with"
-            className="w-full rounded-xl bg-lightGrey border border-gray-200 px-4 py-3 text-[14px] text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-primary/60 focus:bg-white transition-colors resize-none"
+            className="w-full rounded-xl bg-gray-50 border border-gray-200 px-4 py-3 text-[14px] text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-primary/60 focus:bg-white transition-colors resize-none"
             required
           />
         </div>

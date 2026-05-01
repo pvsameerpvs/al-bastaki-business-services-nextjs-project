@@ -75,20 +75,7 @@ const catalog: CatalogItem[] = [
       'Facilities Management Services',
     ],
   },
-  {
-    title: 'Event Management',
-    href: '/events',
-    items: [
-      'Events Organizing & Managing',
-      'Public Relations Management',
-      'Exhibition Organizing',
-      'Film, TV & Radio Production Services',
-      'Wedding Parties Organizing',
-      'Parties & Private Functions Filming',
-      'Film Equipment Rental',
-      'Conferences & Seminars Organizing',
-    ],
-  },
+
   {
     title: 'Other Services',
     href: '/services/other',

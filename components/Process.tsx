@@ -43,15 +43,7 @@ const cards = [
     image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop',
     tone: 'light' as const
   },
-  // {
-  //   step: '05',
-  //   title: 'Event Management',
-  //   description:
-  //     'Event management includes a variety of functions for executing large scale events, from handling the overall logistics to working with staff and conducting project management of the event as a whole.',
-  //   points: ['Events Organizing & Managing', 'Exhibition Organizing', 'Film, TV & Radio Production', 'Wedding Parties Organizing', 'Parties Filming', 'Equipment Rental', 'Conferences & Seminars'],
-  //   image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=800&auto=format&fit=crop',
-  //   tone: 'dark' as const
-  // },
+
   {
     step: '06',
     title: 'IT Services',

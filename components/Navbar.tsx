@@ -27,7 +27,7 @@ const navItems = [
       { label: 'Business Setup', href: '/business-setup' },
       { label: 'Accounting Services', href: '/accounting' },
       { label: 'Consultancy Services', href: '/consultancy' },
-      { label: 'Event Management', href: '/events' },
+
       { label: 'IT Services', href: '/it' },
     ],
   },
@@ -232,6 +232,41 @@ export default function Navbar() {
             >
               Get in Touch
             </Link>
+            {/* Language Switcher */}
+            <div className="relative group mr-2">
+              <button
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[13px] font-bold tracking-tight uppercase transition-all duration-200
+                  ${scroll ? 'text-gray-600 hover:bg-gray-100' : 'text-white/80 hover:bg-white/10'}`}
+              >
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 002 2 2 2 0 012 2v.657m8-7.435v.13m-4 14.501l-1.123-1.123a2 2 0 01-.586-1.414V16a2 2 0 00-2-2h-1.5a2 2 0 01-2-2v-1.5a2 2 0 00-2-2H9a2 2 0 00-2 2v1.5a2 2 0 01-2 2h-1.5a2 2 0 00-2 2v1.5a2 2 0 01-2 2h.5" />
+                </svg>
+                EN
+              </button>
+              <div className="absolute top-full right-0 mt-1.5 opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0 transition-all duration-200 pointer-events-auto z-50">
+                <div className="bg-[#EDF6FF] rounded-xl shadow-xl border border-primary/10 overflow-hidden py-1.5 min-w-[160px]">
+                  {[
+                    { name: 'English', flag: '🇺🇸' },
+                    { name: 'Arabic', flag: '🇦🇪' },
+                    { name: 'Hindi', flag: '🇮🇳' },
+                    { name: 'French', flag: '🇫🇷' },
+                    { name: 'Chinese', flag: '🇨🇳' },
+                    { name: 'Italian', flag: '🇮🇹' },
+                    { name: 'Spanish', flag: '🇪🇸' },
+                    { name: 'Greek', flag: '🇬🇷' },
+                    { name: 'Russian', flag: '🇷🇺' },
+                  ].map((lang) => (
+                    <button
+                      key={lang.name}
+                      className="w-full text-left px-4 py-2 text-[13.5px] font-semibold text-[#0D2D4A] hover:bg-primary/10 hover:text-primary transition-colors flex items-center gap-2.5"
+                    >
+                      <span className="text-lg leading-none">{lang.flag}</span>
+                      <span>{lang.name}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
             <button
               className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${
                 scroll ? 'text-gray-800 hover:bg-gray-100' : 'text-white hover:bg-white/10'

@@ -34,13 +34,7 @@ const services = [
     href: '/consultancy',
     image: '/ConsultancyServices.jpg',
   },
-  // {
-  //   title: 'Event Management',
-  //   description:
-  //     'End-to-end event logistics and project management for conferences, exhibitions, ceremonies, and more — from planning through on-ground delivery.',
-  //   href: '/events',
-  //   image: '/events-1.jpg',
-  // },
+
   {
     title: 'IT Services',
     description:

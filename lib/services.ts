@@ -3,7 +3,6 @@ export type ServiceSlug =
   | 'business-setup'
   | 'accounting'
   | 'consultancy'
-  | 'events'
   | 'it'
   | 'other'
 
@@ -145,38 +144,7 @@ export const services: Service[] = [
       'Facilities Management Services',
     ],
   },
-  {
-    slug: 'events',
-    title: 'Event Management',
-    coverImage: '/events-1.jpg',
-    images: [
-      '/events-1.jpg',
-      '/events-2.jpg',
-      '/events-3.jpg',
-    ],
-    subtitle:
-      'End-to-end event logistics and project management for conferences, exhibitions, ceremonies, and more.',
-    intro: [
-      enterpriseServiceIntro,
-      'Event management includes a variety of functions for executing large-scale events such as conferences, conventions, concerts, trade shows, festivals, and ceremonies. We support planning, logistics, coordination, and delivery end to end.',
-    ],
-    keyPoints: [
-      'Project management for planning through execution',
-      'Logistics coordination with clear deliverables',
-      'Support across event formats and production needs',
-      'Structured approach for smooth, reliable delivery',
-    ],
-    deliverables: [
-      'Events Organizing & Managing',
-      'Public Relations Management',
-      'Exhibition Organizing',
-      'Film, TV & Radio Production Services',
-      'Wedding Parties Organizing',
-      'Parties & Private Functions Filming',
-      'Film Equipment Rental',
-      'Conferences & Seminars Organizing',
-    ],
-  },
+
   {
     slug: 'it',
     title: 'IT Services',

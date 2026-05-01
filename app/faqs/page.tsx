@@ -5,7 +5,7 @@ import PageCTA from '../../components/PageCTA'
 const faqs = [
   {
     q: 'What services do you provide?',
-    a: 'We support company formation and business setup, PRO and registration coordination, accounting services, consultancy services, event management, and IT services.',
+    a: 'We support company formation and business setup, PRO and registration coordination, accounting services, consultancy services, and IT services.',
   },
   {
     q: 'Can you help me choose the right setup option?',
@@ -35,7 +35,7 @@ export default function FAQsPage() {
       <PageHero
         badge="Help center"
         title="FAQs"
-        subtitle="Quick answers to common questions about business setup, PRO coordination, accounting support, consultancy, events, and IT services."
+        subtitle="Quick answers to common questions about business setup, PRO coordination, accounting support, consultancy, and IT services."
         image="/hero-main1.jpg"
       />
 

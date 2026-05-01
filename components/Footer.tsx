@@ -56,7 +56,7 @@ export default function Footer() {
     { label: 'Business Setup', href: '/business-setup' },
     { label: 'Accounting Services', href: '/accounting' },
     { label: 'Consultancy Services', href: '/consultancy' },
-    { label: 'Event Management', href: '/events' },
+
     { label: 'IT Services', href: '/it' },
   ]
 
