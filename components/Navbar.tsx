@@ -17,32 +17,43 @@ const blueLogo = {
 
 // ─── Nav Data ────────────────────────────────────────────────────────────────
 const navItems = [
-  { label: 'Home', href: '/', dropdown: null },
-  { label: 'About Us', href: '/about', dropdown: null },
+  { label: 'Home', href: '/', dropdown: null, external: false },
+  { label: 'About Us', href: '/about', dropdown: null, external: false },
   {
     label: 'Services',
     href: '/services',
+    external: false,
     dropdown: [
       { label: 'Company Formation', href: '/company-formation' },
       { label: 'Business Setup', href: '/business-setup' },
       { label: 'Accounting Services', href: '/accounting' },
       { label: 'Consultancy Services', href: '/consultancy' },
-
       { label: 'IT Services', href: '/it' },
     ],
   },
   {
     label: 'Blog',
     href: '/blog',
+    external: false,
     dropdown: [
       { label: 'Latest Articles', href: '/blog' },
       { label: 'Business Tips', href: '/blog/business-tips' },
       { label: 'Industry News', href: '/blog/news' },
     ],
   },
+  {
+    label: 'Our Partners',
+    href: '#',
+    external: true,
+    dropdown: [
+      { label: 'CLE Investments', href: 'https://www.cleinvestments.com' },
+      { label: 'CLE UAE', href: 'https://cleuae.com' },
+      { label: 'CLE Accounting', href: 'https://cle-accounting.com' },
+    ],
+  },
 ]
 
-// ─── Desktop Dropdown ────────────────────────────────────────────────────────
+// ─── Desktop Dropdown (internal links) ───────────────────────────────────────
 function DropdownPanel({
   items,
   visible,
@@ -68,6 +79,45 @@ function DropdownPanel({
           >
             {item.label}
           </Link>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+// ─── External Dropdown (partner links open in new tab) ───────────────────────
+function ExternalDropdownPanel({
+  items,
+  visible,
+}: {
+  items: { label: string; href: string }[]
+  visible: boolean
+}) {
+  return (
+    <div
+      className={`absolute top-full left-0 min-w-[230px] z-50 transition-all duration-200 ease-out
+        ${visible ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'}`}
+    >
+      <div className="h-3 w-full" />
+      <div className="rounded-xl overflow-hidden shadow-xl border border-[#0066A6]/10 bg-[#EDF6FF]">
+        <div className="px-5 py-2.5 border-b border-[#0066A6]/10 flex items-center gap-2">
+          <span className="text-[11px] font-semibold tracking-widest uppercase text-[#0066A6]/60">Our Partners</span>
+        </div>
+        {items.map((item, i) => (
+          <a
+            key={i}
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`flex items-center justify-between px-5 py-3.5 text-[14.5px] font-medium text-[#0D2D4A]
+              hover:bg-[#0066A6]/10 hover:text-[#0066A6] transition-colors duration-150 group
+              ${i !== 0 ? 'border-t border-[#0066A6]/10' : ''}`}
+          >
+            <span>{item.label}</span>
+            <svg className="w-3.5 h-3.5 opacity-40 group-hover:opacity-80 transition-opacity shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
         ))}
       </div>
     </div>
@@ -179,7 +229,11 @@ export default function Navbar() {
                 >
                   {item.dropdown ? (
                     <>
-                      <Link href={item.href} className="leading-none">{item.label}</Link>
+                      {item.external ? (
+                        <span className="leading-none">{item.label}</span>
+                      ) : (
+                        <Link href={item.href} className="leading-none">{item.label}</Link>
+                      )}
                       <Chevron open={activeDropdown === item.label} className={scroll ? 'text-gray-400' : 'text-white/70'} />
                     </>
                   ) : (
@@ -187,7 +241,9 @@ export default function Navbar() {
                   )}
                 </div>
                 {item.dropdown && (
-                  <DropdownPanel items={item.dropdown} visible={activeDropdown === item.label} />
+                  item.external
+                    ? <ExternalDropdownPanel items={item.dropdown} visible={activeDropdown === item.label} />
+                    : <DropdownPanel items={item.dropdown} visible={activeDropdown === item.label} />
                 )}
               </div>
             ))}

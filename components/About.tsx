@@ -1,6 +1,7 @@
 'use client'
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
 import { useRef } from 'react'
+import Link from 'next/link'
 import AboutPillars from './AboutPillars'
 
 export default function About(){
@@ -51,16 +52,18 @@ export default function About(){
             </h2>
             
             {/* Themed Split-Pill Button */}
-            <button className="flex items-center group cursor-pointer hover:scale-[1.02] active:scale-95 transition-transform">
-              <span className="flex items-center justify-center w-[52px] h-[52px] rounded-full bg-primary/10 text-primary z-10 relative group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                <svg className="w-5 h-5 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </span>
-              <span className="flex items-center h-[52px] pl-10 pr-8 rounded-full bg-primary/10 text-primary font-bold -ml-6 relative transition-colors duration-300 group-hover:bg-primary/20">
-                Discover More
-              </span>
-            </button>
+            <Link href="/about" className="inline-block">
+              <button className="flex items-center group cursor-pointer hover:scale-[1.02] active:scale-95 transition-transform">
+                <span className="flex items-center justify-center w-[52px] h-[52px] rounded-full bg-primary/10 text-primary z-10 relative group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                  <svg className="w-5 h-5 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </span>
+                <span className="flex items-center h-[52px] pl-10 pr-8 rounded-full bg-primary/10 text-primary font-bold -ml-6 relative transition-colors duration-300 group-hover:bg-primary/20">
+                  Discover More
+                </span>
+              </button>
+            </Link>
           </motion.div>
         </div>
 
