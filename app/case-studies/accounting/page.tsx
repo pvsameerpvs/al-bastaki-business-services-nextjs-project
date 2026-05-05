@@ -12,19 +12,19 @@ export default function AccountingCaseStudiesPage() {
       <PageHero
         badge="Case studies"
         title="Accounting Cases"
-        subtitle="Highlights across bookkeeping, payroll support, and VAT-related coordination — built around confidentiality and accuracy."
+        subtitle="Highlights across bookkeeping, payroll support, VAT-related coordination, audit preparation, and reporting, built around confidentiality and accuracy."
         image="/stats-image.jpg"
       />
 
       <CaseStudiesSection
         title="Accounting highlights"
-        description="Examples of the accounting support we provide based on business requirements — with accuracy and confidentiality as a priority."
+        description="Examples of accounting support shaped around business requirements, with accuracy, confidentiality, and reporting discipline as priorities."
         items={items}
       />
 
       <PageCTA
-        title="Need accounting support that stays precise?"
-        description="Share your requirements and we will recommend a practical accounting scope for your business."
+        title="Need accounting support with stronger control?"
+        description="Share your requirements and we will recommend a practical accounting, payroll, VAT, or reporting scope for your business."
       />
     </main>
   )

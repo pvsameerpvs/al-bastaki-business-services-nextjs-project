@@ -10,7 +10,7 @@ export default function ServicesPage() {
       <PageHero
         badge="What we do"
         title="Services"
-        subtitle="From company formation and business setup to accounting, consultancy, events, and IT — Al Bastaki provides structured support to help you establish, manage, and grow your business in the UAE."
+        subtitle="From company formation and business setup to accounting, consultancy, and IT, Al Bastaki provides structured support to help you establish, manage, and grow in the UAE and across the wider region."
         image="/hero-main1.jpg"
       />
 
@@ -20,7 +20,7 @@ export default function ServicesPage() {
 
       <PageCTA
         title="Get the right service mix"
-        description="Tell us what you are building. We will recommend a practical scope across formation, licensing, PRO, and ongoing support."
+        description="Tell us what you are building. We will recommend a practical scope across formation, licensing, PRO, accounting, consultancy, and ongoing support."
       />
     </main>
   )

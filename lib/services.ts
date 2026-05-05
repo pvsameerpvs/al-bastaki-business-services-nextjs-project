@@ -17,9 +17,6 @@ export type Service = {
   deliverables: string[]
 }
 
-const enterpriseServiceIntro =
-  'Focusing on providing enterprise-level services, we cater to the needs of our customers by creating customized solutions. We build long-standing trust relationships because we study carefully, implement fast, and support responsibly, even in the most demanding scenarios.'
-
 export const services: Service[] = [
   {
     slug: 'company-formation',
@@ -31,20 +28,20 @@ export const services: Service[] = [
       '/company-formation-3.jpg',
     ],
     subtitle:
-      'Set up your business under the right legal framework with clear options, compliant execution, and end-to-end support.',
+      'Establish the right legal structure in the UAE with jurisdiction guidance, compliant documentation, and end-to-end authority coordination.',
     intro: [
-      enterpriseServiceIntro,
-      'Setting up a new business or branch office in Dubai and the United Arab Emirates can be a complicated and expensive process. We help you establish your company under the correct legal framework by choosing the most cost-effective and time-saving option for your activity and goals.',
+      'Al Bastaki has guided entrepreneurs, SMEs, family offices, and international companies through company formation in Dubai and the UAE since 2000. Our team brings direct authority knowledge, jurisdiction clarity, and precise documentation discipline to every engagement — so you begin with the right structure, not a corrected one.',
+      'We compare mainland, free zone, offshore, and branch options against your ownership requirements, target activities, market access needs, and long-term growth plan. Every route is evaluated with transparency before a single document is prepared.',
     ],
     keyPoints: [
-      'Dubai business setup guidance across common jurisdictions',
-      'Option evaluation: strengths, trade-offs, and compliance',
-      'Documentation support and submission coordination',
-      'Clear steps and timelines from first call to final delivery',
+      'Jurisdiction guidance across mainland, free zone, offshore, and branch — matched to your specific activity and ownership model',
+      'Comprehensive cost, compliance, and expansion review before any submission begins',
+      'Structured document preparation, authority coordination, and real-time approval tracking',
+      'Clear milestone timeline from first consultation through to final trade licence handover',
     ],
     deliverables: [
       'Dubai Business Setup',
-      'Freezone Company Setup',
+      'Free Zone Company Setup',
       'Offshore Company Setup',
       'Branch of Foreign Company Setup',
     ],
@@ -59,16 +56,16 @@ export const services: Service[] = [
       '/business-setup-7.jpg',
     ],
     subtitle:
-      'Registration, PRO, and corporate services delivered with clarity, control, and reliable turnaround.',
+      'End-to-end business setup in Dubai and the UAE — registration, licensing, PRO, visa, and corporate services executed with authority-facing discipline.',
     intro: [
-      enterpriseServiceIntro,
-      'Al Bastaki Business Services takes responsibility for the registration aspects of new businesses. We help you create and grow businesses by providing the necessary support across setup, licensing-related coordination, and corporate service requirements.',
+      'Al Bastaki manages the complete operational cycle of business setup so founders and management teams can focus on building their business. We handle registration, licensing, PRO coordination, visa processing, amendments, translation, trademark, and corporate services with structured follow-through and clear accountability.',
+      'Our process is built around authority-facing execution: clean documentation, disciplined submissions, accurate follow-ups, and predictable turnaround. We have handled thousands of transactions across Dubai and the UAE — and that depth of experience means fewer surprises for our clients.',
     ],
     keyPoints: [
-      'Customized solutions aligned to your business activity and goals',
-      'Fast implementation with clear documentation and follow-ups',
-      'Responsible support for demanding scenarios and timelines',
-      'Structured coordination to reduce friction and delays',
+      'Customized setup plans aligned to your activity, jurisdiction, ownership structure, and growth timeline',
+      'Authority-facing coordination with organized documentation and relentless follow-up discipline',
+      'Visa, PRO, amendment, renewal, and corporate services managed under a single point of contact',
+      'A structured process designed to eliminate friction and protect your time at every stage',
     ],
     deliverables: [
       'Company Setup',
@@ -96,16 +93,16 @@ export const services: Service[] = [
       '/accounting-3.jpg',
     ],
     subtitle:
-      'Practical accounting support with confidentiality, accuracy, and reliable reporting for decision-making.',
+      'Confidential accounting, bookkeeping, payroll, VAT, and audit support — giving owners and managers complete financial clarity.',
     intro: [
-      enterpriseServiceIntro,
-      'Based on your requirements, we provide a complete range of accounting services. Payroll and accounting can be demanding for new businesses due to local requirements, practices, and compliance expectations. We support you while maintaining strict confidentiality and accuracy.',
+      'Al Bastaki delivers accounting support that is accurate, confidential, and built around how UAE businesses actually operate. Whether you need consistent monthly bookkeeping, payroll management, VAT compliance, audit preparation, or banking documentation, we apply the same disciplined process every cycle.',
+      'Owners and managers rely on us for financial information that is organized, reliable, and decision-ready. We treat financial data with the strictest confidentiality and ensure records are always structured for both management visibility and regulatory compliance.',
     ],
     keyPoints: [
-      'Accounting and bookkeeping aligned to business needs',
-      'Payroll support with confidentiality and precision',
-      'VAT registration support where required',
-      'Reliable reporting for clarity and control',
+      'Bookkeeping and monthly reporting aligned precisely to your business model and operating rhythm',
+      'Payroll support with strict confidentiality, process accuracy, and repeatable monthly controls',
+      'VAT registration, documentation, and compliance support managed with full authority alignment',
+      'Audit-ready financial records and clear reporting that owners, managers, and auditors can rely on',
     ],
     deliverables: [
       'Accounting & Bookkeeping',
@@ -125,16 +122,16 @@ export const services: Service[] = [
       '/consultancy-5.jpg',
     ],
     subtitle:
-      'Regional insight and structured advisory to assess opportunities, reduce risk, and support growth decisions.',
+      'Senior-led advisory for market entry, feasibility, management, and growth decisions — grounded in UAE and regional business reality.',
     intro: [
-      enterpriseServiceIntro,
-      'Hire consultants with a deep understanding of the region. We provide insight into the investment context and challenges for your business and support you in assessing opportunities with practical, best-practice processes.',
+      'Al Bastaki provides consultancy services built on direct experience across the UAE, GCC, and wider Middle East. Our advisors bring context-first thinking to every engagement: understanding the regulatory environment, market dynamics, and business culture before recommending a strategy or path forward.',
+      'We work with companies assessing new markets, evaluating expansion routes, structuring operations, or making critical management decisions. Our deliverables are designed to support action — not produce reports that sit on a shelf. Every engagement ends with clarity, not ambiguity.',
     ],
     keyPoints: [
-      'Context-first advice grounded in regional business realities',
-      'Feasibility and planning support for better decision-making',
-      'Facilities resource planning consultancy',
-      'A practical approach to reduce risk and improve outcomes',
+      'Context-first advisory grounded in UAE and regional business law, market dynamics, and authority requirements',
+      'Feasibility, market-entry, and expansion planning that identifies risk early and frames decisions with confidence',
+      'Facilities resource planning and management consultancy aligned to operational continuity and growth',
+      'Risk-aware, senior-led recommendations that translate analysis into decisive, actionable next steps',
     ],
     deliverables: [
       'Marketing Management',
@@ -155,16 +152,16 @@ export const services: Service[] = [
       '/it-3.jpg',
     ],
     subtitle:
-      'Website, branding, and digital solutions under one roof to grow your business with a stronger online presence.',
+      'Website design, portals, software, and digital content built to strengthen your business credibility, reach, and operational efficiency.',
     intro: [
-      enterpriseServiceIntro,
-      'We offer solutions under one roof to grow your business. Our expertise includes web design, development, and practical digital support to strengthen your presence and support growth.',
+      'Al Bastaki delivers IT services with clear business intent. Every project starts with a defined scope, measurable objectives, and delivery milestones — so clients know exactly what they are getting, when they will receive it, and how it will serve their goals.',
+      'From corporate websites and customer portals to software scopes and content platforms, we align every digital solution to your brand, audience, and operating model. We build what businesses actually need: credible, functional, and maintainable digital infrastructure.',
     ],
     keyPoints: [
-      'Website design and development for modern businesses',
-      'Branding and content support aligned to your positioning',
-      'Digital marketing and platform support where needed',
-      'Affordable, creative solutions with clear deliverables',
+      'Website design and development built for brand credibility, user clarity, and measurable conversion performance',
+      'Portal and software planning structured around real user journeys, role-based access, and operational workflows',
+      'Social media and content platform support for consistent, on-brand digital communication at scale',
+      'Defined deliverables, structured handover, and improvement planning that keeps your digital presence current',
     ],
     deliverables: [
       'Web Designing',
@@ -186,16 +183,16 @@ export const services: Service[] = [
       '/other-3.jpg',
     ],
     subtitle:
-      'Additional support services coordinated with the same structured approach: clear steps, fast turnaround, and responsible support.',
+      'Specialist support services coordinated with the same structured process, clear communication, and accountable delivery you expect from Al Bastaki.',
     intro: [
-      enterpriseServiceIntro,
-      'Beyond our core services, we also provide additional support services based on client requirements, coordinated with the same focus on clarity and reliable execution.',
+      'Beyond our core service lines, Al Bastaki coordinates selected specialist services for clients with specific operational requirements. Each request is approached with the same rigour: clear scope definition, structured coordination, and accountable follow-through from instruction to completion.',
+      'We handle time-sensitive and specialized requests with the same discipline we apply across all engagements — ensuring nothing falls through the cracks and every deliverable meets the standard our clients depend on.',
     ],
     keyPoints: [
-      'Customized solutions based on your requirements',
-      'Fast implementation with clear communication',
-      'Responsible support for time-sensitive scenarios',
-      'Structured coordination from request to delivery',
+      'Customized support scoped precisely to the requirement, jurisdiction, and client timeline',
+      'Clear deliverable definition agreed before work begins — no ambiguity, no scope creep',
+      'Responsible, senior-accountable coordination for time-sensitive and specialist requests',
+      'Structured follow-up and documented handover from initial request through to completion',
     ],
     deliverables: [
       'Auto Services Broker',

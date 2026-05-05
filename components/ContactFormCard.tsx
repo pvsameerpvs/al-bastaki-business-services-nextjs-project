@@ -9,7 +9,7 @@ const languages = [
   { name: 'Chinese', flag: '🇨🇳', code: 'ZH' },
   { name: 'Italian', flag: '🇮🇹', code: 'IT' },
   { name: 'Spanish', flag: '🇪🇸', code: 'ES' },
-  { name: 'Greece', flag: '🇬🇷', code: 'EL' },
+  { name: 'Greek', flag: '🇬🇷', code: 'EL' },
   { name: 'Russian', flag: '🇷🇺', code: 'RU' },
 ]
 
@@ -27,7 +27,7 @@ export default function ContactFormCard() {
         Request a callback
       </h2>
       <p className="mt-3 text-[14.5px] md:text-[15.5px] text-gray-600 leading-relaxed font-medium max-w-[70ch]">
-        Share your details and we will contact you with a clear set of next steps.
+        Share your details and we will contact you with clear next steps for your business requirement.
       </p>
 
       <form className="mt-8 space-y-4" onSubmit={(e) => e.preventDefault()}>
@@ -132,13 +132,13 @@ export default function ContactFormCard() {
             className="block text-[13px] font-semibold text-gray-700 mb-1"
             htmlFor="contactMessage"
           >
-            Message
+            Requirement
           </label>
           <textarea
             id="contactMessage"
             name="message"
             rows={4}
-            placeholder="Tell us what you need help with"
+            placeholder="Tell us what you need help with, the country involved, and your timeline"
             className="w-full rounded-xl bg-gray-50 border border-gray-200 px-4 py-3 text-[14px] text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-primary/60 focus:bg-white transition-colors resize-none"
             required
           />
@@ -152,7 +152,7 @@ export default function ContactFormCard() {
         </button>
 
         <div className="text-[12.5px] text-gray-500 leading-relaxed font-medium">
-          By submitting, you agree to be contacted regarding your inquiry.
+          By submitting, you agree to be contacted about your inquiry.
         </div>
       </form>
     </div>

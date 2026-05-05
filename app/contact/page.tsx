@@ -11,7 +11,7 @@ export default function ContactPage() {
       <PageHero
         badge="Contact"
         title="Get in touch"
-        subtitle="Share your requirements and we will respond with clear next steps for setup, licensing, PRO support, accounting, or consultancy."
+        subtitle="Share your requirements and our team will respond with clear next steps for company formation, licensing, PRO support, accounting, consultancy, IT, or regional expansion."
         image="/hero-main2.jpg"
       />
 
@@ -98,7 +98,7 @@ export default function ContactPage() {
                         {contactInfo.locationShort}
                       </div>
                       <div className="mt-1 text-[13.5px] text-gray-600 font-medium leading-relaxed">
-                        Share your exact location details and we will update this page with your full address.
+                        Office 626, B Block, Business Village Deira, Dubai - 88831.
                       </div>
                     </div>
                   </div>
@@ -144,7 +144,7 @@ export default function ContactPage() {
                   Map
                 </div>
                 <h2 className="mt-3 text-[22px] md:text-[26px] font-bold tracking-tight">
-                  Find us in Dubai
+                  Visit our Dubai office
                 </h2>
               </div>
               <div className="w-full aspect-[16/8] bg-gray-200">
@@ -163,7 +163,7 @@ export default function ContactPage() {
 
       <PageCTA
         title="Prefer a quick call?"
-        description="Reach out now and we will guide you through the next steps for your business setup or support request."
+        description="Reach out now and we will guide you through the next steps for your business setup, accounting, advisory, or support request."
       />
     </main>
   )

@@ -13,9 +13,9 @@ export default function ClientsAndAgencies() {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
           <div className="col-span-2 md:col-span-4 lg:col-span-2 flex items-center justify-center lg:justify-start py-8 lg:py-0 px-4">
             <span className="text-[14px] sm:text-[16px] font-bold tracking-[0.2em] text-gray-500 uppercase text-center lg:text-left leading-relaxed">
-              We Work Closely with
+              Government Agencies,
               <br />
-              Government Agencies &amp; Free Zones
+              Authorities &amp; Free Zones
             </span>
           </div>
 
@@ -38,11 +38,11 @@ export default function ClientsAndAgencies() {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 mt-10 md:mt-14">
           <div className="col-span-2 md:col-span-4 lg:col-span-2 flex items-center justify-center lg:justify-start py-8 lg:py-0 px-4">
             <span className="text-[14px] sm:text-[16px] font-bold tracking-[0.2em] text-gray-500 uppercase text-center lg:text-left">
-              Our Esteemed Clients
+              Trusted by Esteemed Clients
             </span>
           </div>
 
-          {[1, 2, 3, 4, 5, 6, 7, 8,9,10,11].map((num) => (
+          {[1, 2, 3, 4, 5, 6, 7, 8,9,10].map((num) => (
             <div
               key={`client-${num}`}
               className="bg-white rounded-[1.25rem] border border-gray-100 aspect-[3/2] sm:aspect-[4/3] lg:aspect-[3/2] flex items-center justify-center p-6 sm:p-8 hover:shadow-[0_15px_30px_rgba(0,0,0,0.04)] hover:-translate-y-1 hover:border-white transition-all duration-300 cursor-pointer"

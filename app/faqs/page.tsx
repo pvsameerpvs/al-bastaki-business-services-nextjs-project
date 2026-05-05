@@ -5,27 +5,27 @@ import PageCTA from '../../components/PageCTA'
 const faqs = [
   {
     q: 'What services do you provide?',
-    a: 'We support company formation and business setup, PRO and registration coordination, accounting services, consultancy services, and IT services.',
+    a: 'We support company formation, business setup, licensing coordination, PRO services, visas, accounting, consultancy, IT services, and selected corporate support requirements.',
   },
   {
     q: 'Can you help me choose the right setup option?',
-    a: 'Yes. We help identify the strengths and weaknesses of the available options and guide you toward the most cost-effective and time-saving route that fits your activity and goals.',
+    a: 'Yes. We compare mainland, free zone, offshore, and branch options against your activity, ownership needs, budget, market access, and timeline so you can choose a practical route.',
   },
   {
     q: 'Do you support visas and PRO services?',
-    a: 'Yes. We coordinate visa and PRO services as part of business setup support, including documentation handling and structured follow-ups.',
+    a: 'Yes. We coordinate visa and PRO services as part of business setup support, including document preparation, submission tracking, authority follow-ups, and handover support.',
   },
   {
     q: 'Do you provide accounting and payroll support?',
-    a: 'Yes. Based on your requirements, we can provide a complete range of accounting services, including payroll support while maintaining confidentiality and accuracy.',
+    a: 'Yes. Based on your requirements, we can support bookkeeping, payroll, VAT readiness, audit preparation, reporting, and banking documentation while maintaining confidentiality and accuracy.',
   },
   {
-    q: 'Do you offer consultancy for businesses investing abroad?',
-    a: 'Yes. We provide consultancy support with regional understanding to help you assess the investment context, challenges, and potential opportunities.',
+    q: 'Do you support businesses expanding across the region?',
+    a: 'Yes. As a UAE-rooted business services partner, we support clients assessing opportunities across the GCC and wider Middle East, including Egypt, with country-aware planning and practical advisory support.',
   },
   {
     q: 'How do I request a consultation?',
-    a: 'Use the contact form on our Contact page or call us directly. Share your goals and timeline and we will respond with the next practical steps.',
+    a: 'Use the contact form on our Contact page or call us directly. Share your goals, current stage, and timeline and we will respond with practical next steps.',
   },
 ]
 
@@ -35,7 +35,7 @@ export default function FAQsPage() {
       <PageHero
         badge="Help center"
         title="FAQs"
-        subtitle="Quick answers to common questions about business setup, PRO coordination, accounting support, consultancy, and IT services."
+        subtitle="Quick answers to common questions about company formation, business setup, PRO coordination, accounting support, consultancy, regional expansion, and IT services."
         image="/hero-main1.jpg"
       />
 
@@ -73,7 +73,7 @@ export default function FAQsPage() {
 
       <PageCTA
         title="Still have questions?"
-        description="Share your requirement and we will respond with a clear recommendation and next steps."
+        description="Share your requirement and we will respond with a clear recommendation, document checklist, and next steps."
       />
     </main>
   )

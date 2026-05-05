@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 
-const industries = ['REAL ESTATE', 'HEALTHCARE', 'MANUFACTURING', 'TECHNOLOGY', 'RETAIL']
+const industries = ['REAL ESTATE', 'HEALTHCARE', 'MANUFACTURING', 'TECHNOLOGY', 'TRADING', 'PROFESSIONAL SERVICES', 'REGIONAL EXPANSION']
 
 export default function ServicesMarquee() {
   return (

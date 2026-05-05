@@ -76,8 +76,8 @@ export default function ServiceLeadFormCard({
             </svg>
           </div>
           <div>
-            <div className="text-[15px] font-bold text-gray-900">Request sent!</div>
-            <p className="mt-1 text-[12.5px] text-gray-500 font-medium">We&apos;ll be in touch shortly.</p>
+            <div className="text-[15px] font-bold text-gray-900">Request received</div>
+            <p className="mt-1 text-[12.5px] text-gray-500 font-medium">We&apos;ll be in touch shortly with the next steps.</p>
           </div>
         </div>
       ) : (
@@ -123,7 +123,7 @@ export default function ServiceLeadFormCard({
                 className={`${inputCls} appearance-none pr-9`}
                 required
               >
-                <option value="" disabled>Select a service…</option>
+                <option value="" disabled>Select a service...</option>
                 {serviceOptions.map((s) => (
                   <option key={s} value={s}>{s}</option>
                 ))}
@@ -145,7 +145,7 @@ export default function ServiceLeadFormCard({
           </button>
 
           <p className="text-center text-[11px] text-gray-400 font-medium">
-            By submitting, you agree to be contacted.
+            By submitting, you agree to be contacted about your inquiry.
           </p>
         </form>
       )}

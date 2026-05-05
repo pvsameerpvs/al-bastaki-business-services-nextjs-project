@@ -14,13 +14,15 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: 'Al Bastaki Business Services LLC',
   description:
-    'Business setup, company formation, accounting, consultancy, events, and IT support services in Dubai and across the UAE.',
+    'Premier corporate services partner in Dubai for company formation, business setup, PRO, accounting, consultancy, and IT support across the UAE and wider Middle East.',
   keywords: [
     'business setup dubai',
     'company formation uae',
+    'premier business services',
     'accounting services dubai',
     'consultancy services uae',
     'PRO services dubai',
+    'middle east business setup',
     'al bastaki business services',
   ],
   alternates: {
@@ -37,7 +39,7 @@ export const metadata: Metadata = {
     siteName: 'Al Bastaki Business Services LLC',
     title: 'Al Bastaki Business Services LLC',
     description:
-      'Business setup and advisory services in Dubai and the UAE with structured, end-to-end support.',
+      'UAE-rooted business setup, company formation, accounting, consultancy, and corporate support with structured execution across the region.',
     images: [
       {
         url: '/fevic.png',
@@ -51,7 +53,7 @@ export const metadata: Metadata = {
     card: 'summary',
     title: 'Al Bastaki Business Services LLC',
     description:
-      'Business setup and advisory services in Dubai and the UAE with structured support.',
+      'Leading business setup and advisory support in Dubai, the UAE, and the wider region.',
     images: ['/fevic.png'],
   },
   robots: {

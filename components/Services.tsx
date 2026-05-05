@@ -9,28 +9,28 @@ const services = [
   {
     title: 'Company Formation',
     description:
-      'We help you establish your company under the correct legal framework by choosing the most cost-effective and time-saving option for your activity and goals.',
+      'We help you establish the right legal structure by comparing mainland, free zone, offshore, and branch routes against your activity, ownership needs, and growth plan.',
     href: '/company-formation',
     image: '/company-formation.jpg',
   },
   {
     title: 'Business Setup',
     description:
-      'Al Bastaki takes responsibility for the registration aspects of new businesses — from licensing and PRO services to visa processing and corporate amendments.',
+      'Al Bastaki coordinates the practical requirements behind business setup, including licensing support, PRO services, visa processing, amendments, and corporate services.',
     href: '/business-setup',
     image: '/business-set-up.jpg',
   },
   {
     title: 'Accounting Services',
     description:
-      'We provide a complete range of accounting services while maintaining strict confidentiality and accuracy — from bookkeeping and payroll to VAT support.',
+      'We provide confidential accounting support across bookkeeping, payroll, VAT readiness, reporting, audit preparation, and banking documentation.',
     href: '/accounting',
     image: '/AccountingServices.jpg',
   },
   {
     title: 'Consultancy Services',
     description:
-      'Work with consultants who have a deep understanding of the region. We support you in assessing opportunities with practical, best-practice processes.',
+      'Work with consultants who understand the UAE and regional business environment, helping you assess opportunities, reduce risk, and plan next steps.',
     href: '/consultancy',
     image: '/ConsultancyServices.jpg',
   },
@@ -38,7 +38,7 @@ const services = [
   {
     title: 'IT Services',
     description:
-      'We offer solutions under one roof to help grow your business — website design, software, portals, and digital marketing with clear deliverables.',
+      'We support websites, portals, software scope, content workflows, and digital platforms with clear deliverables and practical handover.',
     href: '/it',
     image: '/it-services.jpg',
   },
@@ -74,7 +74,7 @@ export default function Services() {
           </div>
           <div className="text-left">
             <p className="text-[28px] md:text-[36px] lg:text-[42px] font-medium text-white/90 leading-[1.25] tracking-tight text-left">
-              From company formation to IT solutions, Al Bastaki Business Services provides everything you need to establish, manage, and grow your business seamlessly in the UAE.
+              From company formation to IT solutions, Al Bastaki Business Services provides structured support to establish, manage, and grow your business across the UAE and wider region.
             </p>
           </div>
         </motion.div>
@@ -92,9 +92,9 @@ export default function Services() {
               transition={{ duration: 0.7, delay: 0.15 }}
               className="text-[26px] md:text-[34px] lg:text-[40px] font-bold text-white leading-[1.2] tracking-tight"
             >
-              Expert business setup and management.{' '}
+              Expert business setup and management support.{' '}
               <span className="text-white/50">
-                Custom-crafted for the way your business works.
+                Built around your activity, country, timeline, and goals.
               </span>
             </motion.h2>
           </div>

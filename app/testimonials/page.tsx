@@ -5,25 +5,25 @@ import FadeIn from '../../components/FadeIn'
 const testimonials = [
   {
     quote:
-      '"Excellent consulting services and a smooth company setup process."',
+      '"Clear guidance, careful documentation, and a smooth company setup process."',
     name: 'Dubai Client',
     meta: 'Business setup engagement',
   },
   {
     quote:
-      '"Clear steps, fast turnaround, and compliant execution from start to finish."',
+      '"The team kept every step visible, from authority coordination to final handover."',
     name: 'UAE SME Owner',
     meta: 'Formation and PRO support',
   },
   {
     quote:
-      '"Confidential, accurate support that made our accounting and payroll easier to manage."',
+      '"Confidential, accurate support that made our accounting, payroll, and reporting easier to manage."',
     name: 'Operations Manager',
     meta: 'Accounting services',
   },
   {
     quote:
-      '"They listen first — our goals shaped the strategy and the execution was consistent."',
+      '"They listened first, understood our goals, and turned the strategy into a practical plan."',
     name: 'Founder',
     meta: 'Consultancy services',
   },
@@ -35,7 +35,7 @@ export default function TestimonialsPage() {
       <PageHero
         badge="Client feedback"
         title="Testimonials"
-        subtitle="Client experiences that reflect our focus: clarity, compliance, and dependable delivery across setup and support services."
+        subtitle="Client experiences that reflect our focus: clarity, compliance, confidentiality, and dependable delivery across setup and corporate support services."
         image="/hero-main2.jpg"
       />
 
@@ -49,7 +49,7 @@ export default function TestimonialsPage() {
             </div>
             <div className="md:w-3/4 text-left">
               <p className="text-[24px] md:text-[32px] font-medium text-[#2d3748] leading-[1.4] tracking-tight">
-                We aim for straightforward communication, structured execution, and outcomes you can rely on.
+                We aim for straightforward communication, senior ownership, structured execution, and outcomes clients can rely on.
               </p>
             </div>
           </div>
@@ -81,8 +81,8 @@ export default function TestimonialsPage() {
       </section>
 
       <PageCTA
-        title="Want a similar experience?"
-        description="Share your requirements and we will respond with a clear plan and the next practical steps."
+        title="Want the same clarity for your business?"
+        description="Share your requirements and we will respond with a clear plan, document checklist, and the next practical steps."
       />
     </main>
   )

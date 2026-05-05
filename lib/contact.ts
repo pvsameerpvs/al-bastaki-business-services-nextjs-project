@@ -14,5 +14,5 @@ export const contactInfo = {
   email: 'info@albastakiuae.com',
   websiteDisplay: 'albastakiuae.com',
   websiteHref: 'https://albastakiuae.com',
-  locationShort: 'Dubai, United Arab Emirates',
+  locationShort: 'Business Village Deira, Dubai, UAE',
 }

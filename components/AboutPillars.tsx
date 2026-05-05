@@ -3,15 +3,15 @@ import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 
 const pillars = [
-  { l: 'A', t: 'Accountability', d: 'Ensuring financial clarity and professional ownership in every project we undertake.' },
-  { l: 'L', t: 'Local Expertise', d: 'Deep-rooted understanding of UAE business regulations and authority processes.' },
-  { l: 'B', t: 'Business Setup', d: 'Comprehensive support from formation to operational state across the GCC.' },
-  { l: 'A', t: 'Authority Approvals', d: 'Seamless coordination with government bodies, free zones, and mainland authorities.' },
-  { l: 'S', t: 'Strategic Growth', d: 'Providing the tactical direction and support needed to scale your business.' },
-  { l: 'T', t: 'Transparency', d: 'Honest and clear communication in every transaction and consultation.' },
-  { l: 'A', t: 'Accuracy', d: 'Maintaining strict confidentiality and precise documentation for all our clients.' },
-  { l: 'K', t: 'Knowledge', d: 'Leveraging 25+ years of regional service experience to your advantage.' },
-  { l: 'I', t: 'Integrity', d: 'Building long-term trust through ethical business practices and reliable delivery.' },
+  { l: 'A', t: 'Accountability', d: 'Clear ownership, careful follow-up, and responsible delivery across every engagement.' },
+  { l: 'L', t: 'Local Expertise', d: 'Deep understanding of UAE regulations, authority processes, and business culture.' },
+  { l: 'B', t: 'Business Setup', d: 'Complete support from structure selection to operational readiness across key markets.' },
+  { l: 'A', t: 'Authority Approvals', d: 'Coordinated submissions with government bodies, free zones, and mainland authorities.' },
+  { l: 'S', t: 'Strategic Growth', d: 'Practical direction for owners expanding across the UAE, GCC, and wider Middle East.' },
+  { l: 'T', t: 'Transparency', d: 'Clear communication on requirements, timelines, responsibilities, and next steps.' },
+  { l: 'A', t: 'Accuracy', d: 'Precise documentation, confidential handling, and disciplined review before submission.' },
+  { l: 'K', t: 'Knowledge', d: '25+ years of regional service experience applied to real business decisions.' },
+  { l: 'I', t: 'Integrity', d: 'Long-term trust built through ethical practice, discretion, and reliable delivery.' },
 ]
 
 export default function AboutPillars() {

@@ -31,16 +31,16 @@ const navItems = [
       { label: 'IT Services', href: '/it' },
     ],
   },
-  {
-    label: 'Blog',
-    href: '/blog',
-    external: false,
-    dropdown: [
-      { label: 'Latest Articles', href: '/blog' },
-      { label: 'Business Tips', href: '/blog/business-tips' },
-      { label: 'Industry News', href: '/blog/news' },
-    ],
-  },
+  // {
+  //   label: 'Blog',
+  //   href: '/blog',
+  //   external: false,
+  //   dropdown: [
+  //     { label: 'Latest Articles', href: '/blog' },
+  //     { label: 'Business Tips', href: '/blog/business-tips' },
+  //     { label: 'Industry News', href: '/blog/news' },
+  //   ],
+  // },
   {
     label: 'Our Partners',
     href: '#',

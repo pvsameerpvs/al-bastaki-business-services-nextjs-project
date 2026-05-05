@@ -9,7 +9,7 @@ export default function WhyChooseUsPage() {
       <PageHero
         badge="Our difference"
         title="Why Choose Al Bastaki"
-        subtitle="A service model built around expertise, client-first execution, and dependable delivery — from formation to ongoing operational support."
+        subtitle="A service model built around profound UAE expertise, client-first execution, and dependable delivery from formation to ongoing operational support."
         image="/hero-main1.jpg"
       />
 
@@ -18,7 +18,7 @@ export default function WhyChooseUsPage() {
 
       <PageCTA
         title="Get a clear setup plan"
-        description="Tell us your business activity and goals. We will recommend the most practical route and support you through each step."
+        description="Tell us your business activity, goals, and target market. We will recommend the most practical route and support you through each step."
       />
     </main>
   )

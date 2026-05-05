@@ -20,10 +20,10 @@ export default function WhyChooseUs() {
           </div>
           <div>
             <h2 className="text-[28px] md:text-[36px] lg:text-[42px] font-medium text-gray-900 leading-[1.25] tracking-tight max-w-[900px]">
-              Local UAE expertise with the strength to move business forward.
+              Premier UAE expertise with the strength to move business forward.
             </h2>
             <p className="mt-5 text-[15px] md:text-[16px] text-gray-500 leading-relaxed font-medium max-w-[720px]">
-              Al Bastaki supports entrepreneurs, SMEs, and corporate clients with practical government-facing execution, licensing knowledge, and reliable day-to-day business services.
+              Al Bastaki supports entrepreneurs, SMEs, family businesses, and corporate clients with practical authority-facing execution, licensing knowledge, accounting discipline, and reliable day-to-day business services.
             </p>
           </div>
         </motion.div>
@@ -56,7 +56,7 @@ export default function WhyChooseUs() {
                   </svg>
                 </div>
                 <p className="text-[14.5px] text-gray-500 leading-relaxed font-medium">
-                  <strong className="text-gray-900">Local Experience:</strong> Long-standing understanding of Dubai and UAE business setup requirements, authority processes, and documentation standards.
+                  <strong className="text-gray-900">Local Experience:</strong> Long-standing understanding of Dubai and UAE business setup requirements, authority processes, documentation standards, and business culture.
                 </p>
               </li>
               <li className="flex items-start gap-4">
@@ -66,7 +66,7 @@ export default function WhyChooseUs() {
                   </svg>
                 </div>
                 <p className="text-[14.5px] text-gray-500 leading-relaxed font-medium">
-                  <strong className="text-gray-900">Complete Setup Coverage:</strong> Mainland, free zone, offshore, branch office, licensing, PRO, visa, and corporate amendment support.
+                  <strong className="text-gray-900">Complete Setup Coverage:</strong> Mainland, free zone, offshore, branch office, licensing, PRO, visa, accounting, and corporate amendment support.
                 </p>
               </li>
               <li className="flex items-start gap-4">
@@ -76,7 +76,7 @@ export default function WhyChooseUs() {
                   </svg>
                 </div>
                 <p className="text-[14.5px] text-gray-500 leading-relaxed font-medium">
-                  <strong className="text-gray-900">Practical Direction:</strong> Clear recommendations based on business activity, ownership needs, budget, timeline, and future expansion.
+                  <strong className="text-gray-900">Practical Direction:</strong> Clear recommendations based on business activity, ownership needs, country, budget, timeline, and future expansion.
                 </p>
               </li>
             </ul>
@@ -93,11 +93,11 @@ export default function WhyChooseUs() {
             <h3 className="text-[22px] font-bold text-gray-900 mb-5 tracking-tight">Senior-Led Execution</h3>
             
             <p className="text-primary font-semibold mb-5 text-[15px] leading-relaxed">
-              Experienced advisors manage the process with clear ownership from first consultation to final approval.
+              Experienced advisors manage the process with clear ownership from first consultation to final approval and handover.
             </p>
             
             <p className="text-gray-500 text-[14.5px] mb-8 leading-relaxed font-medium">
-              Clients receive structured guidance, responsive coordination, and careful follow-up across documentation, authority submissions, renewals, and operational requirements.
+              Clients receive structured guidance, responsive coordination, and careful follow-up across documentation, authority submissions, renewals, accounting handovers, and operational requirements.
             </p>
 
             <div className="mt-auto grid grid-cols-2 gap-3">
@@ -139,7 +139,7 @@ export default function WhyChooseUs() {
                     2000
                   </div>
                   <p className="mt-4 text-[12px] text-white/65 leading-relaxed">
-                    Years of UAE business service experience.
+                    Years of UAE business services experience.
                   </p>
                 </div>
               </div>
@@ -153,7 +153,7 @@ export default function WhyChooseUs() {
                     2,250+
                   </div>
                   <p className="mt-4 text-[12px] text-white/65 leading-relaxed">
-                    Businesses supported across core corporate services.
+                    Client engagements across core corporate services.
                   </p>
                 </div>
               </div>
@@ -163,13 +163,13 @@ export default function WhyChooseUs() {
               <div className="flex items-start gap-2">
                 <div className="w-1 h-1 mt-2.5 rounded-full bg-primary flex-shrink-0"></div>
                 <p className="text-[13px] text-white/80 leading-snug">
-                  2,250+ clients supported across business setup, PRO services, accounting, consultancy, IT, and event services.
+                  2,250+ client engagements supported across business setup, PRO services, accounting, consultancy, IT, and project services.
                 </p>
               </div>
               <div className="flex items-start gap-2">
                 <div className="w-1 h-1 mt-2.5 rounded-full bg-primary flex-shrink-0"></div>
                 <p className="text-[13px] text-white/80 leading-snug">
-                  Strong local coordination for approvals, documentation, compliance, renewals, and long-term corporate support.
+                  Strong local coordination for approvals, documentation, compliance, renewals, and long-term corporate support across the UAE and wider region.
                 </p>
               </div>
             </div>

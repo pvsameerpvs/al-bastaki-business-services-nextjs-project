@@ -25,7 +25,7 @@ export default function OtherServicesPage() {
 
       <PageCTA
         title="Need a custom support scope?"
-        description="Tell us what you need and we will recommend the most practical next steps and the right service mix."
+        description="Tell us what you need, where it needs to be handled, and your timeline. We will recommend the most practical next steps and the right service mix."
       />
     </main>
   )

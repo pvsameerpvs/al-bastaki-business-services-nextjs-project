@@ -14,19 +14,19 @@ export default function TimelineBar() {
   const milestones = [
     {
       year: "2000",
-      text: "Founded to guide business setup and advisory in the UAE."
+      text: "Founded in Dubai to guide business setup and corporate advisory."
     },
     {
       year: "2012",
-      text: "Secured key licensing to broaden compliance and corporate services."
+      text: "Broadened licensing, PRO, compliance, and corporate service capabilities."
     },
     {
       year: "2022",
-      text: "Expanded services across the GCC to support regional clients."
+      text: "Expanded regional support across the GCC and wider Middle East."
     },
     {
       year: "2026",
-      text: "Current milestone continuing regional expansion."
+      text: "Continuing to support UAE-based and regional growth with disciplined delivery."
     }
   ]
 

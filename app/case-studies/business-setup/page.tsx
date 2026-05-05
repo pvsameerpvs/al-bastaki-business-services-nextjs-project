@@ -12,19 +12,19 @@ export default function BusinessSetupCaseStudiesPage() {
       <PageHero
         badge="Case studies"
         title="Business Setup Cases"
-        subtitle="Highlights across formation support, registration coordination, amendments, and PRO-related workflows."
+        subtitle="Highlights across company formation support, registration coordination, amendments, visas, and PRO-related workflows."
         image="/hero-main1.jpg"
       />
 
       <CaseStudiesSection
         title="Business setup highlights"
-        description="Examples of the workflows we support through clear documentation, structured submissions, and coordinated follow-ups."
+        description="Examples of workflows we support through clear documentation, structured submissions, coordinated authority follow-ups, and clean handovers."
         items={items}
       />
 
       <PageCTA
         title="Planning a setup in the UAE?"
-        description="Tell us your activity and timeline. We will guide you through the most practical route and steps."
+        description="Tell us your activity, current stage, and timeline. We will guide you through the most practical route, documents, and steps."
       />
     </main>
   )

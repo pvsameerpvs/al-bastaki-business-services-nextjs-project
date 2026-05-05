@@ -44,11 +44,11 @@ export default function Stats(){
               <div className="space-y-6">
                 <div className="flex justify-between items-center">
                    <span className="font-bold text-[#1A1E23] text-[14.5px]">Formation &amp; Licensing</span>
-                   <span className="font-bold text-[#1A1E23] text-[14.5px]">Clear route</span>
+                   <span className="font-bold text-[#1A1E23] text-[14.5px]">Right route</span>
                 </div>
                 <div className="flex justify-between items-center">
                    <span className="font-bold text-[#1A1E23] text-[14.5px]">PRO &amp; Registration</span>
-                   <span className="font-bold text-[#1A1E23] text-[14.5px]">Fast follow-ups</span>
+                   <span className="font-bold text-[#1A1E23] text-[14.5px]">Tracked follow-ups</span>
                 </div>
                 <div className="flex justify-between items-center">
                    <span className="font-bold text-[#1A1E23] text-[14.5px]">Accounting Support</span>
@@ -62,7 +62,7 @@ export default function Stats(){
           <div className="flex flex-col relative z-20 lg:pl-8 xl:pl-4 mt-20 lg:mt-0">
             
             <p className="font-medium text-[16px] text-gray-600 leading-relaxed mb-12 max-w-[500px]">
-              <span className="font-bold text-gray-900">Al Bastaki</span> is a forward-thinking business setup and management consulting firm committed to helping businesses thrive with clarity, confidence, and control.
+              <span className="font-bold text-gray-900">Al Bastaki</span> is a premier business setup and management consulting firm committed to helping companies thrive with clarity, confidence, and control.
             </p>
 
             {/* Stats row directly aligned like the image */}
@@ -71,13 +71,13 @@ export default function Stats(){
                 <h3 className="text-[2.2rem] md:text-[2.8rem] font-bold text-gray-900 leading-none tracking-tighter mb-4">
                   <CountUp end={99} duration={2} enableScrollSpy={true} scrollSpyOnce={true}/>%
                 </h3>
-                <p className="text-[12px] text-gray-400 font-semibold tracking-wide">Professional Advisors</p>
+                <p className="text-[12px] text-gray-400 font-semibold tracking-wide">Advisor-Led Support</p>
               </div>
               <div>
                 <h3 className="text-[2.2rem] md:text-[2.8rem] font-bold text-gray-900 leading-none tracking-tighter mb-4">
                   <CountUp end={2.2} decimals={1} duration={2} enableScrollSpy={true} scrollSpyOnce={true}/>K+
                 </h3>
-                <p className="text-[12px] text-gray-400 font-semibold tracking-wide">Completed Projects</p>
+                <p className="text-[12px] text-gray-400 font-semibold tracking-wide">Client Engagements</p>
               </div>
               <div>
                 <h3 className="text-[2.2rem] md:text-[2.8rem] font-bold text-gray-900 leading-none tracking-tighter mb-4">
@@ -98,7 +98,7 @@ export default function Stats(){
               <div className="bg-[#E6F0F6] rounded-[2rem] shadow-sm flex flex-col overflow-hidden">
                 <div className="p-8 pb-6">
                   <div className="text-[17px] leading-[1.4] font-bold text-[#003B62] mb-8 tracking-tight">
-                    "We don't just process paperwork—we build better businesses."
+                    "We don't just process paperwork - we help build stronger businesses."
                   </div>
                 </div>
 

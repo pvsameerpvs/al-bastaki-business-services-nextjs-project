@@ -23,14 +23,14 @@ const options: FormationOption[] = [
   {
     key: 'mainland',
     label: 'Mainland',
-    kicker: 'Operate across the UAE',
+    kicker: 'Operate across the UAE market',
     image: '/mainland.jpg',
     tag: 'Most flexible',
     idealFor:
-      'Companies that need broad operational flexibility, local market access, or multiple client types.',
+      'Companies that need broad operational flexibility, UAE market access, or the ability to serve multiple client types.',
     timeline: 'Typically 7–15 working days',
     highlights: [
-      'Flexible office and hiring options (subject to regulations)',
+      'Flexible office and hiring options, subject to regulations',
       'Suitable for many trading and professional activities',
       'Clear path for ongoing corporate services and amendments',
     ],
@@ -41,20 +41,20 @@ const options: FormationOption[] = [
   },
   {
     key: 'freezone',
-    label: 'Freezone',
+    label: 'Free Zone',
     kicker: 'Fast setup, structured packages',
     image: '/freezone.jpg',
     tag: 'Most popular',
     idealFor:
-      'Founders who want straightforward setup packages and a clear authority-led process.',
+      'Founders and international teams that want straightforward setup packages and a clear authority-led process.',
     timeline: 'Typically 5–12 working days',
     highlights: [
       'Great for services, trading, and digital-first businesses',
-      'Transparent package options: license, visa allocation, office',
+      'Transparent package options for license, visa allocation, and office needs',
       'Predictable formation steps with authority coordination',
     ],
     considerations: [
-      'Each freezone has its own rules and activity scope',
+      'Each free zone has its own rules and activity scope',
       'Banking and operational needs should be planned early',
     ],
   },
@@ -65,11 +65,11 @@ const options: FormationOption[] = [
     image: '/company-formation-3.jpg',
     tag: 'Asset holding',
     idealFor:
-      'Ownership structures, asset holding, and scenarios where local operations are not required.',
+      'Ownership structures, asset holding, and scenarios where UAE local operations are not required.',
     timeline: 'Typically 7–20 working days',
     highlights: [
       'Often used for holding, investments, and international structuring',
-      'Streamlined compliance and documentation with clear KYC',
+      'Streamlined documentation with clear KYC and compliance requirements',
       'Practical for specific use cases when aligned with goals',
     ],
     considerations: [
@@ -84,7 +84,7 @@ const options: FormationOption[] = [
     image: '/branch.jpg',
     tag: 'For established entities',
     idealFor:
-      'Foreign or local companies that want a UAE presence under the parent entity structure.',
+      'Foreign or local companies that want a UAE presence under an existing parent entity structure.',
     timeline: 'Typically 10–25 working days',
     highlights: [
       'Operate under the parent company name and structure',
@@ -164,11 +164,11 @@ export default function CompanyFormationOptions() {
               </span>
             </div>
             <h2 className="text-[28px] sm:text-[34px] md:text-[40px] font-bold text-[#1a2744] leading-[1.15] tracking-tight">
-              Choose the right route for your activity,<br className="hidden md:block" /> timeline, and budget
+              Choose the right UAE route for your activity,<br className="hidden md:block" /> timeline, and budget
             </h2>
             <p className="mt-4 text-[14.5px] md:text-[15px] text-gray-500 leading-relaxed font-medium max-w-[68ch]">
-              We compare practical trade-offs between mainland, freezone, offshore, and branch setups
-              so you can pick the most compliant and cost-effective structure.
+              We compare practical trade-offs between mainland, free zone, offshore, and branch setups
+              so you can select a compliant, cost-aware, and growth-ready structure.
             </p>
           </div>
         </FadeIn>
@@ -298,10 +298,10 @@ export default function CompanyFormationOptions() {
                     </div>
                     <div className="grid sm:grid-cols-2 gap-2">
                       {[
-                        'Option evaluation & checklist',
-                        'Document preparation & reviews',
-                        'Submission coordination & follow-ups',
-                        'Approval tracking & final handover',
+                        'Option evaluation and checklist',
+                        'Document preparation and reviews',
+                        'Submission coordination and follow-ups',
+                        'Approval tracking and final handover',
                       ].map((x) => (
                         <div
                           key={x}
@@ -356,7 +356,7 @@ export default function CompanyFormationOptions() {
         <FadeIn delay={0.1}>
           <p className="mt-6 text-center text-[12.5px] text-gray-400 font-medium">
             Timelines vary by activity, authority, and completeness of documentation.
-            We will confirm the expected timeline during the discovery call.
+            We will confirm the expected timeline after reviewing your activity, authority, and document readiness.
           </p>
         </FadeIn>
 

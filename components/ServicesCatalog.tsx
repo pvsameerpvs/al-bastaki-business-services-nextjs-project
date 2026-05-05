@@ -16,7 +16,7 @@ const catalog: CatalogItem[] = [
     href: '/company-formation',
     items: [
       'Dubai Business Setup',
-      'Freezone Company Setup',
+      'Free Zone Company Setup',
       'Offshore Company Setup',
       'Branch of Foreign Company Setup',
     ],
@@ -100,11 +100,11 @@ export default function ServicesCatalog() {
           </div>
           <div className="md:w-3/4 text-left">
             <h2 className="text-[24px] md:text-[32px] font-medium text-[#2d3748] leading-[1.35] tracking-tight">
-              Enterprise-level delivery, customized to your needs
+              Enterprise-level delivery, customized to your business needs
             </h2>
             <p className="mt-4 text-[14.5px] md:text-[15.5px] text-gray-600 leading-relaxed font-medium max-w-[78ch]">
-              Focusing on providing enterprise-level services, we cater to the needs of our customers by creating customized solutions.
-              We build long-standing trust relationships because we study carefully, implement fast, and support responsibly, even in the most demanding scenarios.
+              As a UAE-rooted corporate services partner, we create customized solutions for owners, SMEs, and international companies.
+              We study requirements carefully, implement with discipline, and support responsibly across demanding setup, accounting, advisory, and digital scenarios.
             </p>
           </div>
         </div>

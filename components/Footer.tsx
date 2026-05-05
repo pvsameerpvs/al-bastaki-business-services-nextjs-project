@@ -93,7 +93,7 @@ export default function Footer() {
                 Follow Us
               </h3>
               <p className="text-sm sm:text-[13.5px] text-[#9CA3AF] font-medium leading-relaxed mb-4 sm:mb-5 max-w-[240px]">
-                Al Bastaki is a trusted corporate consulting firm helping businesses grow with clarity and control.
+                Al Bastaki is a premier corporate services partner helping businesses grow with clarity, compliance, and control.
               </p>
 
               {/* Social icons */}

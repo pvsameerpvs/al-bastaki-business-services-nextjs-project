@@ -32,28 +32,28 @@ export default function WhyTrust() {
           <div className="space-y-6 md:space-y-8">
             <div className="flex flex-col">
               <h3 className="font-bold text-[16px] mb-1.5 flex items-center gap-2">
-                Certified Experts
+                Experienced Advisors
               </h3>
               <p className="text-white/70 text-[13.5px] leading-relaxed font-medium">
-                All consultants hold active expertise and legal licenses with 10+ years of corporate experience.
+                Senior team members bring practical experience across UAE company formation, PRO coordination, accounting, advisory, and corporate support.
               </p>
             </div>
             <div className="flex flex-col">
-              <h3 className="font-bold text-[16px] mb-1.5">Industry Leaders</h3>
+              <h3 className="font-bold text-[16px] mb-1.5">Professional Standards</h3>
               <p className="text-white/70 text-[13.5px] leading-relaxed font-medium">
-                Adhering to the highest professional and ethical standards in the UAE.
+                Work is handled with discretion, ethical conduct, clear communication, and respect for UAE requirements.
               </p>
             </div>
             <div className="flex flex-col">
               <h3 className="font-bold text-[16px] mb-1.5">25+ Years</h3>
               <p className="text-white/70 text-[13.5px] leading-relaxed font-medium">
-                Combined experience in mainland, freezone setup, and specialized financial consulting.
+                Regional experience across mainland, free zone, offshore, branch, accounting, and specialized consulting requirements.
               </p>
             </div>
             <div className="flex flex-col">
-              <h3 className="font-bold text-[16px] mb-1.5">100% Compliant</h3>
+              <h3 className="font-bold text-[16px] mb-1.5">Compliance-First</h3>
               <p className="text-white/70 text-[13.5px] leading-relaxed font-medium">
-                Enterprise-grade data security, strict privacy, and full UAE legal compliance.
+                Documentation, privacy, and submissions are handled with a careful, compliance-focused process.
               </p>
             </div>
           </div>
@@ -72,7 +72,7 @@ export default function WhyTrust() {
             className="bg-primary rounded-t-[1.5rem] md:rounded-t-[2rem] px-6 py-5 md:px-10 md:py-5 flex flex-col md:flex-row items-center justify-between gap-6 shadow-[0_-15px_40px_rgba(0,102,166,0.3)] border border-white/10 border-b-0"
           >
             <p className="text-white font-medium text-[15px] md:text-[16px] text-center md:text-left leading-relaxed max-w-2xl">
-              Join hundreds of satisfied clients who trust Al Bastaki with their financial and business setup strategy.
+              Join clients who trust Al Bastaki with business setup, accounting, advisory, and regional support.
             </p>
             
             <button className="bg-white text-[#00223E] rounded-full p-[6px] flex items-center gap-4 hover:bg-gray-100 hover:scale-105 transition-all duration-300 shrink-0 group">

@@ -6,7 +6,7 @@ const roles = [
   {
     title: 'Company Formation Specialists',
     description:
-      'Support for selecting the right legal framework and moving through formation steps with clear documentation and timelines.',
+      'Support for selecting the right UAE legal framework and moving through formation steps with clear documentation, authority coordination, and timelines.',
     icon: (
       <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M3 21h18" />
@@ -23,7 +23,7 @@ const roles = [
   {
     title: 'Visa & PRO Coordination',
     description:
-      'Structured support for registration-related tasks with consistent follow-ups, submissions, and compliance handling.',
+      'Structured support for registration, visa, and PRO tasks with consistent follow-ups, submissions, and compliance-focused handling.',
     icon: (
       <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M7 7h10" />
@@ -36,7 +36,7 @@ const roles = [
   {
     title: 'Accounting & Payroll Support',
     description:
-      'Accurate accounting services and payroll handling with confidentiality and reliable reporting for decision-making.',
+      'Accurate accounting, bookkeeping, payroll, VAT, and reporting support handled with confidentiality and disciplined controls.',
     icon: (
       <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -48,7 +48,7 @@ const roles = [
   {
     title: 'Business Consultants',
     description:
-      'Advisory support grounded in regional understanding, feasibility context, and practical planning for growth.',
+      'Advisory support grounded in UAE and regional understanding, feasibility context, and practical planning for growth.',
     icon: (
       <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z" />
@@ -58,9 +58,9 @@ const roles = [
     ),
   },
   {
-    title: 'Event Operations',
+    title: 'Project & Event Operations',
     description:
-      'End-to-end coordination for logistics, staffing, and project delivery across conferences and events.',
+      'Coordination support for logistics, staffing, project delivery, conferences, and event-related operational requirements.',
     icon: (
       <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M8 2v4" />
@@ -76,7 +76,7 @@ const roles = [
   {
     title: 'Digital & IT Team',
     description:
-      'Website and digital solutions to support business growth: design, development, branding, and marketing support.',
+      'Website, portal, software, content, and digital solutions that support credibility, operations, and growth.',
     icon: (
       <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="3" width="20" height="14" rx="2" />
@@ -93,7 +93,7 @@ export default function TeamPage() {
       <PageHero
         badge="People behind delivery"
         title="Our Team"
-        subtitle="A coordinated team across company formation, PRO services, accounting, consultancy, events, and IT — built to support your setup and ongoing operations in the UAE."
+        subtitle="A coordinated team across company formation, PRO services, accounting, consultancy, project support, and IT, built to support your setup and ongoing operations in the UAE and wider region."
         image="/hero-main2.jpg"
       />
 
@@ -107,7 +107,7 @@ export default function TeamPage() {
             </div>
             <div className="md:w-3/4 text-left">
               <p className="text-[24px] md:text-[32px] font-medium text-[#2d3748] leading-[1.4] tracking-tight">
-                Built for fast coordination, clear execution, and compliant delivery — without the overhead.
+                Built for fast coordination, clear ownership, and compliant delivery without unnecessary complexity.
               </p>
             </div>
           </div>
@@ -135,8 +135,8 @@ export default function TeamPage() {
       </section>
 
       <PageCTA
-        title="Work with a team that moves fast"
-        description="Share your setup requirements and we will align the right specialists for formation, PRO, accounting, and ongoing support."
+        title="Work with a team that moves with ownership"
+        description="Share your requirements and we will align the right specialists for formation, PRO, accounting, consultancy, IT, and ongoing support."
       />
     </main>
   )

@@ -4,11 +4,11 @@ return(
 <section className="bg-primary text-white py-20 text-center">
 
 <h2 className="text-3xl font-bold mb-6">
-Ready to start your business in Dubai?
+Ready to start your business in the UAE?
 </h2>
 
 <button className="bg-white text-primary px-8 py-3 rounded-lg">
-Consultation
+Request Consultation
 </button>
 
 </section>

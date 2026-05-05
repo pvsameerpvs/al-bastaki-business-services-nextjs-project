@@ -8,25 +8,25 @@ const items = [
   {
     title: 'About Us',
     description:
-      'Our story, milestones, and what we stand for as a business setup and consulting partner.',
+      'Our story, milestones, and what we stand for as a premier business setup and consulting partner.',
     href: '/about',
   },
   {
     title: 'Our Team',
     description:
-      'Meet the functions behind our delivery: setup, PRO, accounting, consultancy, and IT support.',
+      'Meet the functions behind our delivery: formation, PRO, accounting, consultancy, project coordination, and IT support.',
     href: '/team',
   },
   {
     title: 'Why Choose Us',
     description:
-      'A clear view of our working style: expertise, client-first process, and proven outcomes.',
+      'A clear view of our working style: local expertise, client-first coordination, and dependable outcomes.',
     href: '/why-choose-us',
   },
   {
     title: 'Testimonials',
     description:
-      'What clients value most when working with Al Bastaki Business Services.',
+      'What clients value most when working with Al Bastaki Business Services: clarity, ownership, and reliable delivery.',
     href: '/testimonials',
   },
 ]
@@ -37,7 +37,7 @@ export default function PagesIndex() {
       <PageHero
         badge="Company profile"
         title="Pages"
-        subtitle="Explore our company profile, team, and service approach. Every page follows the same design language as the homepage."
+        subtitle="Explore our company profile, team, service approach, and client feedback in one place."
         image="/hero-main2.jpg"
       />
 
@@ -84,7 +84,7 @@ export default function PagesIndex() {
 
       <PageCTA
         title="Need help deciding where to start?"
-        description="Share your goals and we will recommend the most practical path for your setup and ongoing support."
+        description="Share your goals and we will recommend the most practical path for setup, licensing, PRO, accounting, consultancy, and ongoing support."
       />
     </main>
   )

@@ -5,13 +5,13 @@ const cards = [
     step: '01',
     title: 'Company Formation',
     description:
-      'Setting up a new business or branch office in Dubai, the UAE, and Oman can be a complicated and expensive procedure. We help establish your company under the correct legal framework, choosing the most cost-effective and time-saving alternatives.',
+      'Setting up a new business or branch office in Dubai, the UAE, or a regional market requires the right structure and documentation. We help establish your company under the correct legal framework with practical, cost-aware options.',
     points: [
-      'Dubai Business Setup', 
-      'Free Zone Company Setup', 
-      'Offshore Company Setup', 
+      'Dubai Business Setup',
+      'Free Zone Company Setup',
+      'Offshore Company Setup',
       'Branch of Foreign Company Setup',
-      'Oman Business Setup' 
+      'Regional Expansion Support',
     ],
     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop',
     tone: 'light' as const
@@ -20,7 +20,7 @@ const cards = [
     step: '02',
     title: 'Business Setup',
     description:
-      'Al Bastaki Business Services holds responsibility for all registration aspects of a new business. Our goal is to help evaluate, create, and grow businesses by providing necessary support, management, and consultancy services.',
+      'Al Bastaki Business Services coordinates the registration and operational requirements behind a new business. Our goal is to help you evaluate, create, and grow with practical support, management, and consultancy services.',
     points: ['Company Setup & Liquidation', 'Visa & PRO Services', 'Local Partner', 'Contracts & POA Services', 'Amendments & Registration', 'Document Copying', 'Trademark Registration', 'Dubai Court Services', 'Corporate Services Provider'],
     image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop',
     tone: 'dark' as const
@@ -29,7 +29,7 @@ const cards = [
     step: '03',
     title: 'Accounting Services',
     description:
-      'Based on the requirements of our clients, we can provide a complete range of accounting services. We can help you manage these tasks while maintaining vital confidentiality and accuracy for your business.',
+      'Based on your requirements, we provide accounting, bookkeeping, payroll, VAT, reporting, and banking documentation support while maintaining confidentiality and accuracy.',
     points: ['Accounting & Bookkeeping', 'Payroll Management', 'Auditing Services', 'VAT Registration', 'Bank Account Opening'],
     image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=800&auto=format&fit=crop',
     tone: 'primary' as const
@@ -38,17 +38,17 @@ const cards = [
     step: '04',
     title: 'Consultancy Services',
     description:
-      'Hire the best consultants who have a deep understanding of the region and provide insights into the investment context and challenges for your business, ensuring you capture potential growth opportunities.',
+      'Work with consultants who understand the UAE and regional business environment, helping you assess investment context, challenges, and opportunities before you commit resources.',
     points: ['Marketing Management', 'Feasibility Study Consultancies', 'Facilities Resource Planning', 'Management Services', 'Facilities Management Services'],
     image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop',
     tone: 'light' as const
   },
 
   {
-    step: '06',
+    step: '05',
     title: 'IT Services',
     description:
-      'We offer every solution under one roof to grow your business. We expertise in Website Design, Web Development, Branding, and Digital Marketing, providing rewarding solutions for your digital presence.',
+      'We offer practical digital support for growth, including website design, web development, content, portals, software scope, and digital platform support with clear deliverables.',
     points: ['Web Designing', 'Internet Content Provider', 'Social Media App Management', 'Software Design', 'Portal Systems', 'Claim Settlement Services', 'CSR Initiatives Preparation'],
     image: '/it-services.jpg',
     tone: 'primary' as const
@@ -111,7 +111,7 @@ export default function Process() {
             </div>
             <div className="text-left">
               <p className="text-[28px] md:text-[36px] lg:text-[42px] font-medium text-gray-900 leading-[1.25] tracking-tight text-left">
-                From company formation to IT solutions, Al Bastaki Business Services provides everything you need to establish, manage, and grow your business seamlessly in the UAE.
+              From company formation to IT solutions, Al Bastaki Business Services provides structured support to establish, manage, and grow your business across the UAE and wider region.
               </p>
             </div>
           </motion.div>
@@ -237,7 +237,7 @@ export default function Process() {
           {/* Header Block takes 2 columns on lg */}
           <div className="col-span-2 md:col-span-4 lg:col-span-2 flex items-center justify-center lg:justify-start py-8 lg:py-0 px-4">
             <span className="text-[14px] sm:text-[16px] font-bold tracking-[0.2em] text-gray-500 uppercase text-center lg:text-left leading-relaxed">
-              We Work Closely with<br />Government Agencies &amp; Free Zones
+              Government Agencies,<br />Authorities &amp; Free Zones
             </span>
           </div>
 
@@ -264,12 +264,12 @@ export default function Process() {
           {/* Header Block takes 2 columns on lg */}
           <div className="col-span-2 md:col-span-4 lg:col-span-2 flex items-center justify-center lg:justify-start py-8 lg:py-0 px-4">
             <span className="text-[14px] sm:text-[16px] font-bold tracking-[0.2em] text-gray-500 uppercase text-center lg:text-left">
-              Our Esteemed Clients
+              Trusted by Esteemed Clients
             </span>
           </div>
 
           {/* 8 Logos mapping strictly to 1 through 8 */}
-          {[1, 2, 3, 4, 5, 6, 7, 8,9,10,11].map((num) => (
+          {[1, 2, 3, 4, 5, 6, 7, 8,9,10].map((num) => (
             <div 
               key={num} 
               className="bg-white rounded-[1.25rem] border border-gray-100 aspect-[3/2] sm:aspect-[4/3] lg:aspect-[3/2] flex items-center justify-center p-6 sm:p-8 hover:shadow-[0_15px_30px_rgba(0,0,0,0.04)] hover:-translate-y-1 hover:border-white transition-all duration-300 cursor-pointer"

@@ -6,15 +6,15 @@ export default function AboutTimeline() {
   const milestones = [
     {
       year: '2000',
-      text: 'Incorporated to carry on business as a corporate venturing and management advisory company.',
+      text: 'Incorporated in Dubai as a corporate venturing and management advisory company.',
     },
     {
       year: 'Growth',
-      text: 'Expanded into end-to-end business setup support: licensing, PRO, formation, accounting, and consultancy.',
+      text: 'Expanded into end-to-end setup support: formation, licensing, PRO, accounting, consultancy, and IT.',
     },
     {
       year: 'Today',
-      text: 'Trusted partner for companies and individuals establishing a commercial presence in Dubai and the UAE.',
+      text: 'Trusted partner for companies and individuals establishing and expanding across the UAE and wider region.',
     },
   ]
 

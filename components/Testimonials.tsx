@@ -12,7 +12,7 @@ What Our Clients Say
 
 <div className="bg-lightGrey p-10 rounded-xl">
 <p className="italic">
-"Excellent consulting services and smooth company setup process."
+"Clear guidance and a smooth company setup process."
 </p>
 <p className="mt-4 font-semibold">— Dubai Client</p>
 </div>
