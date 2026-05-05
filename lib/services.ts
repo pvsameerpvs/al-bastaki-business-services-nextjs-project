@@ -21,11 +21,11 @@ export const services: Service[] = [
   {
     slug: 'company-formation',
     title: 'Company Formation',
-    coverImage: '/hero-company-formation.jpg',
+    coverImage: '/hero-company-formation.png',
     images: [
-      '/company-formation-1.jpg',
-      '/company-formation-2.jpg',
-      '/company-formation-3.jpg',
+      '/company-formation-1.png',
+      '/company-formation-2.png',
+      '/company-formation-3.png',
     ],
     subtitle:
       'Establish the right legal structure in the UAE with jurisdiction guidance, compliant documentation, and end-to-end authority coordination.',
@@ -49,11 +49,11 @@ export const services: Service[] = [
   {
     slug: 'business-setup',
     title: 'Business Setup',
-    coverImage: '/business-setup-1.jpg',
+    coverImage: '/business-setup-hero.png',
     images: [
-      '/business-setup-4.jpg',
-      '/business-setup-3.jpg',
-      '/business-setup-7.jpg',
+      '/business-setup-1.png',
+      '/business-setup-2.png',
+      '/business-setup-3.png',
     ],
     subtitle:
       'End-to-end business setup in Dubai and the UAE — registration, licensing, PRO, visa, and corporate services executed with authority-facing discipline.',
@@ -86,11 +86,11 @@ export const services: Service[] = [
   {
     slug: 'accounting',
     title: 'Accounting Services',
-    coverImage: '/accounting-4.jpg',
+    coverImage: '/accounting-hero.png',
     images: [
-      '/accounting-1.jpg',
-      '/accounting-2.jpg',
-      '/accounting-3.jpg',
+      '/accounting-1.png',
+      '/accounting-2.png',
+      '/accounting-3.png',
     ],
     subtitle:
       'Confidential accounting, bookkeeping, payroll, VAT, and audit support — giving owners and managers complete financial clarity.',
@@ -115,11 +115,11 @@ export const services: Service[] = [
   {
     slug: 'consultancy',
     title: 'Consultancy Services',
-    coverImage: '/consultancy-3.jpg',
+    coverImage: '/consultancy-hero.png',
     images: [
-      '/consultancy-1.jpg',
-      '/consultancy-2.jpg',
-      '/consultancy-5.jpg',
+      '/consultancy-1.png',
+      '/consultancy-2.png',
+      '/consultancy-3.png',
     ],
     subtitle:
       'Senior-led advisory for market entry, feasibility, management, and growth decisions — grounded in UAE and regional business reality.',
@@ -145,7 +145,7 @@ export const services: Service[] = [
   {
     slug: 'it',
     title: 'IT Services',
-    coverImage: '/it-4.jpg',
+    coverImage: '/it-hero.png',
     images: [
       '/it-1.jpg',
       '/it-2.jpg',
