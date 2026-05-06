@@ -2,7 +2,7 @@
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
 import { useRef } from 'react'
 import Link from 'next/link'
-import AboutPillars from './AboutPillars'
+import Image from 'next/image'
 
 export default function About(){
   const containerRef = useRef<HTMLElement>(null)
@@ -67,7 +67,56 @@ export default function About(){
           </motion.div>
         </div>
 
-        
+        {/* ── CHAIRMAN'S MESSAGE SECTION (Simplified) ── */}
+        <div className="mt-24 lg:mt-32">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-[1000px] mx-auto"
+          >
+            <div className="bg-lightGrey rounded-[2rem] p-8 md:p-12 border border-gray-100 flex flex-col md:flex-row items-center gap-10 md:gap-14">
+              
+              {/* Simple Portrait Image */}
+              {/* <div className="flex-shrink-0">
+                <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                  <Image
+                    src="/chairman-message.png"
+                    alt="Chairman's Portrait"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 128px, 160px"
+                  />
+                </div>
+              </div> */}
+
+              {/* Message Content */}
+              <div className="flex-1 text-center md:text-left">
+                <div className="flex items-center justify-center md:justify-start gap-2 mb-4">
+                  <div className="h-px w-6 bg-primary" />
+                  <span className="text-[11px] font-bold tracking-[0.2em] text-gray-400 uppercase">
+                    Chairman's Message
+                  </span>
+                </div>
+                
+                <p className="text-[18px] md:text-[21px] text-gray-700 leading-relaxed font-medium italic">
+                  "Our mission is to simplify the complexities of doing business in the UAE. We believe that with the right foundation and support, every vision can become a reality."
+                </p>
+
+                <div className="mt-6">
+                  <div className="text-[18px] font-bold text-gray-900 tracking-tight">
+                    Shahab Al Bastaki
+                  </div>
+                  <div className="text-[12px] font-semibold text-primary uppercase tracking-wider mt-1">
+                    Founder & Chairman
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </motion.div>
+        </div>
 
       </div>
 
