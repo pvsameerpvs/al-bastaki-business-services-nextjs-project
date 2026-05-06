@@ -36,7 +36,6 @@ export default function BusinessSetupPage() {
           intro={service.intro}
           keyPoints={service.keyPoints}
           deliverables={service.deliverables}
-          images={service.images}
         />
       )}
 

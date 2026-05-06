@@ -15,8 +15,8 @@ export default function ServicesPage() {
       />
 
       <ServicesCatalog />
-      <Process />
-      <Services />
+      {/* <Process />
+      <Services /> */}
 
       <PageCTA
         title="Get the right service mix"

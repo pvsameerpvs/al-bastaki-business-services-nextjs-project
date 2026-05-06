@@ -10,7 +10,6 @@ export type Service = {
   slug: ServiceSlug
   title: string
   coverImage: string
-  images: [string, string, string]
   subtitle: string
   intro: string[]
   keyPoints: string[]
@@ -22,11 +21,6 @@ export const services: Service[] = [
     slug: 'company-formation',
     title: 'Company Formation',
     coverImage: '/hero-company-formation.png',
-    images: [
-      '/company-formation-1.png',
-      '/company-formation-2.png',
-      '/company-formation-3.png',
-    ],
     subtitle:
       'Establish the right legal structure in the UAE with jurisdiction guidance, compliant documentation, and end-to-end authority coordination.',
     intro: [
@@ -50,11 +44,6 @@ export const services: Service[] = [
     slug: 'business-setup',
     title: 'Business Setup',
     coverImage: '/business-setup-hero.png',
-    images: [
-      '/business-setup-1.png',
-      '/business-setup-2.png',
-      '/business-setup-3.png',
-    ],
     subtitle:
       'End-to-end business setup in Dubai and the UAE — registration, licensing, PRO, visa, and corporate services executed with authority-facing discipline.',
     intro: [
@@ -87,11 +76,6 @@ export const services: Service[] = [
     slug: 'accounting',
     title: 'Accounting Services',
     coverImage: '/accounting-hero.png',
-    images: [
-      '/accounting-1.png',
-      '/accounting-2.png',
-      '/accounting-3.png',
-    ],
     subtitle:
       'Confidential accounting, bookkeeping, payroll, VAT, and audit support — giving owners and managers complete financial clarity.',
     intro: [
@@ -116,11 +100,6 @@ export const services: Service[] = [
     slug: 'consultancy',
     title: 'Consultancy Services',
     coverImage: '/consultancy-hero.png',
-    images: [
-      '/consultancy-1.png',
-      '/consultancy-2.png',
-      '/consultancy-3.png',
-    ],
     subtitle:
       'Senior-led advisory for market entry, feasibility, management, and growth decisions — grounded in UAE and regional business reality.',
     intro: [
@@ -146,11 +125,6 @@ export const services: Service[] = [
     slug: 'it',
     title: 'IT Services',
     coverImage: '/it-hero.png',
-    images: [
-      '/it-1.jpg',
-      '/it-2.jpg',
-      '/it-3.jpg',
-    ],
     subtitle:
       'Website design, portals, software, and digital content built to strengthen your business credibility, reach, and operational efficiency.',
     intro: [
@@ -177,11 +151,6 @@ export const services: Service[] = [
     slug: 'other',
     title: 'Other Services',
     coverImage: '/hero-main2.jpg',
-    images: [
-      '/other-1.jpg',
-      '/other-2.jpg',
-      '/other-3.jpg',
-    ],
     subtitle:
       'Specialist support services coordinated with the same structured process, clear communication, and accountable delivery you expect from Al Bastaki.',
     intro: [

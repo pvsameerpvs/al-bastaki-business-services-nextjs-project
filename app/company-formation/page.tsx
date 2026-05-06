@@ -36,7 +36,6 @@ export default function CompanyFormationPage() {
           intro={service.intro}
           keyPoints={service.keyPoints}
           deliverables={service.deliverables}
-          images={service.images}
         />
       )}
 

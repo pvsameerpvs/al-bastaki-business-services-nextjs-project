@@ -36,7 +36,6 @@ export default function ITPage() {
           intro={service.intro}
           keyPoints={service.keyPoints}
           deliverables={service.deliverables}
-          images={service.images}
         />
       )}
 
