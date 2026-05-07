@@ -29,6 +29,7 @@ const navItems = [
       { label: 'Business Setup', href: '/business-setup' },
       { label: 'Accounting Services', href: '/accounting' },
       { label: 'Consultancy Services', href: '/consultancy' },
+      { label: 'Trademark Registration', href: '/trademark' },
       { label: 'IT Services', href: '/it' },
     ],
   },

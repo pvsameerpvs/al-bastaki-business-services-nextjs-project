@@ -23,6 +23,7 @@ export const heroBadgeBySlug: Partial<Record<ServiceSlug, string>> = {
   accounting: 'Accounting',
   consultancy: 'Consultancy',
   it: 'IT services',
+  trademark: 'Trademark registration',
 }
 
 export const ctaBySlug: Partial<
@@ -52,6 +53,11 @@ export const ctaBySlug: Partial<
     title: 'Build digital infrastructure that performs',
     description:
       'Tell us your goals: a website, portal, software system, or content workflow. We will scope the deliverables precisely and commit to a timeline that works for your business.',
+  },
+  trademark: {
+    title: 'Protect your brand identity with certainty',
+    description:
+      'Share your brand details, target classes, and current registration status. We will respond with a structured search and filing plan to formalize your brand protection in the UAE.',
   },
 }
 
@@ -499,6 +505,83 @@ export const focusTabsContentBySlug: Partial<
         meta: [
           { label: 'Best for', value: 'Businesses that need authoritative, current content across their digital presence' },
           { label: 'Output', value: 'A structured content strategy with managed production and publishing' },
+        ],
+      },
+    ],
+  },
+  trademark: {
+    eyebrow: 'Service scope',
+    title: 'Brand protection managed with authority-facing discipline',
+    description:
+      'We manage the complete trademark registration cycle — from initial search and classification through to Ministry of Economy filing, publication, and final certification.',
+    sideCards: [
+      {
+        title: 'Class accuracy',
+        text: 'We identify the correct Nice Classification categories to ensure your brand is protected across all relevant activities.',
+      },
+      {
+        title: 'Filing strategy',
+        text: 'Submissions are structured to meet Ministry of Economy requirements and reduce the risk of rejection or opposition.',
+      },
+      {
+        title: 'Milestone tracking',
+        text: 'Every stage — from search to certificate — is tracked with clear status updates and documented follow-up.',
+      },
+      {
+        title: 'Portfolio management',
+        text: 'We manage your registrations, renewals, and amendments under a single point of accountability.',
+      },
+    ],
+    tabs: [
+      {
+        key: 'search',
+        label: 'Trademark Search',
+        kicker: 'Search before you file',
+        description:
+          'We conduct comprehensive availability searches across the Ministry of Economy database to identify potential conflicts and evaluate the likelihood of registration before you commit to a filing.',
+        bullets: [
+          'Direct search of the UAE trademark registry database',
+          'Conflict identification and similarity assessment',
+          'Class-specific availability reporting and risk evaluation',
+          'Actionable recommendations on brand viability and filing strategy',
+        ],
+        meta: [
+          { label: 'Best for', value: 'New brands or existing brands expanding into the UAE' },
+          { label: 'Output', value: 'A detailed availability report and filing recommendation' },
+        ],
+      },
+      {
+        key: 'filing',
+        label: 'Ministry Filing',
+        kicker: 'Structured authority submission',
+        description:
+          'We manage the formal filing process with the Ministry of Economy — preparing all documentation, coordinating submissions, and managing the official follow-up until the initial approval is granted.',
+        bullets: [
+          'Preparation of official application forms and supporting documents',
+          'Class classification and filing fee coordination',
+          'Direct submission management with Ministry of Economy systems',
+          'Timeline tracking and status reporting through the approval phase',
+        ],
+        meta: [
+          { label: 'Best for', value: 'Companies ready to formalize their brand protection' },
+          { label: 'Output', value: 'A successfully filed application with tracked approval status' },
+        ],
+      },
+      {
+        key: 'protection',
+        label: 'Brand Protection',
+        kicker: 'Securing your certificate',
+        description:
+          'Once initial approval is granted, we coordinate the publication phase and monitor the opposition period — ensuring all legal requirements are met before delivering your final registration certificate.',
+        bullets: [
+          'Coordination of official gazette and newspaper publications',
+          'Monitoring of the 30-day opposition window for any challenges',
+          'Final certificate fee management and authority handover',
+          'Delivery of the final trademark registration certificate and record file',
+        ],
+        meta: [
+          { label: 'Best for', value: 'Brands completing the final stages of the registration cycle' },
+          { label: 'Output', value: 'The final, issued UAE Trademark Registration Certificate' },
         ],
       },
     ],

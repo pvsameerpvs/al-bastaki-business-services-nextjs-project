@@ -4,6 +4,7 @@ export type ServiceSlug =
   | 'accounting'
   | 'consultancy'
   | 'it'
+  | 'trademark'
   | 'other'
 
 export type Service = {
@@ -121,6 +122,31 @@ export const services: Service[] = [
     ],
   },
 
+  {
+    slug: 'trademark',
+    title: 'Trademark Registration',
+    coverImage: '/hero-main1.jpg',
+    subtitle:
+      'Protect your intellectual property, brand identity, and commercial assets in the UAE with structured Ministry of Economy filing and status tracking.',
+    intro: [
+      'Brand protection is a critical asset for any business operating in the UAE. Al Bastaki manages the complete trademark lifecycle — from initial availability searches and class classification through to filing, publication coordination, and certificate issuance with the Ministry of Economy.',
+      'We apply the same disciplined, authority-facing process to trademark registration that we do to company formation. Our team ensures your documentation is accurate, your filing strategy is sound, and every milestone in the registration cycle is tracked with accountability.',
+    ],
+    keyPoints: [
+      'Comprehensive trademark search and class classification to ensure filing accuracy and reduce rejection risk',
+      'Structured Ministry of Economy filing coordination with organized documentation and disciplined follow-up',
+      'Publication management and opposition period tracking for full compliance with UAE trademark law',
+      'Renewal planning and portfolio management to protect your brand assets and commercial identity long-term',
+    ],
+    deliverables: [
+      'Trademark Availability Search',
+      'Ministry of Economy Filing',
+      'Opposition Period Tracking',
+      'Certificate Handover',
+      'Brand Identity Protection',
+      'Intellectual Property Structuring',
+    ],
+  },
   {
     slug: 'it',
     title: 'IT Services',

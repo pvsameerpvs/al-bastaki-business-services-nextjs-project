@@ -36,6 +36,13 @@ const services = [
   },
 
   {
+    title: 'Trademark Registration',
+    description:
+      'Protect your brand identity and assets with structured trademark registration, availability searches, and Ministry of Economy coordination.',
+    href: '/trademark',
+    image: '/hero-main1.jpg',
+  },
+  {
     title: 'IT Services',
     description:
       'We support websites, portals, software scope, content workflows, and digital platforms with clear deliverables and practical handover.',
