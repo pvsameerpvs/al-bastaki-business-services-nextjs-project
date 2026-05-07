@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const whiteLogo = {
   src: '/white-logo.png',
@@ -51,6 +52,7 @@ const navItems = [
       { label: 'CLE Accounting', href: 'https://cle-accounting.com' },
     ],
   },
+  { label: 'Cost Calculator', href: '/cost-calculator', dropdown: null, external: false },
 ]
 
 // ─── Desktop Dropdown (internal links) ───────────────────────────────────────
@@ -138,6 +140,8 @@ function Chevron({ open, className = '' }: { open: boolean; className?: string }
 
 // ─── Navbar ──────────────────────────────────────────────────────────────────
 export default function Navbar() {
+  const pathname = usePathname()
+  const isInternalPage = pathname !== '/'
   const [scroll, setScroll] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -175,7 +179,7 @@ export default function Navbar() {
     <>
       <header
         className={`fixed w-full z-[100] transition-all duration-300 ${
-          scroll ? 'bg-white shadow-md py-2.5' : 'bg-transparent py-4'
+          (scroll || isInternalPage) ? 'bg-white shadow-md py-2.5' : 'bg-transparent py-4'
         }`}
       >
         <div className="max-w-[1400px] mx-auto flex items-center justify-between px-4 sm:px-6 xl:px-8">
@@ -190,7 +194,7 @@ export default function Navbar() {
               height={whiteLogo.height}
               priority
               className={`h-16 sm:h-20 lg:h-24 w-auto object-contain drop-shadow-[0_10px_30px_rgba(0,0,0,0.28)] transition-opacity duration-500 ease-out ${
-                scroll ? 'opacity-0' : 'opacity-100'
+                (scroll || isInternalPage) ? 'opacity-0' : 'opacity-100'
               }`}
             />
             {/* Blue logo (scrolled / solid header) */}
@@ -201,7 +205,7 @@ export default function Navbar() {
               height={blueLogo.height}
               priority
               className={`absolute left-0 top-0 h-16 sm:h-20 lg:h-24 w-auto object-contain pointer-events-none transition-opacity duration-500 ease-out ${
-                scroll ? 'opacity-100' : 'opacity-0'
+                (scroll || isInternalPage) ? 'opacity-100' : 'opacity-0'
               }`}
             />
           </Link>
@@ -209,7 +213,7 @@ export default function Navbar() {
           {/* ── Desktop Nav ── */}
           <nav
             className={`hidden lg:flex items-center gap-1 ${
-              scroll ? 'text-gray-700' : 'text-white/95'
+              (scroll || isInternalPage) ? 'text-gray-700' : 'text-white/95'
             }`}
           >
             {navItems.map((item) => (
@@ -234,7 +238,7 @@ export default function Navbar() {
                       ) : (
                         <Link href={item.href} className="leading-none">{item.label}</Link>
                       )}
-                      <Chevron open={activeDropdown === item.label} className={scroll ? 'text-gray-400' : 'text-white/70'} />
+                      <Chevron open={activeDropdown === item.label} className={(scroll || isInternalPage) ? 'text-gray-400' : 'text-white/70'} />
                     </>
                   ) : (
                     <Link href={item.href}>{item.label}</Link>
@@ -250,7 +254,7 @@ export default function Navbar() {
             <div
               className={`px-3.5 py-2 rounded-lg cursor-pointer text-[15px] font-medium
                 transition-all duration-200
-                ${scroll ? 'hover:bg-gray-100 hover:text-gray-900' : 'hover:bg-white/10 hover:text-white'}`}
+                ${(scroll || isInternalPage) ? 'hover:bg-gray-100 hover:text-gray-900' : 'hover:bg-white/10 hover:text-white'}`}
             >
               <Link href="/contact">Contact</Link>
             </div>
@@ -258,21 +262,20 @@ export default function Navbar() {
 
           {/* ── Desktop Right Actions ── */}
           <div className="hidden lg:flex items-center gap-3">
-            
             <Link
-              href="/contact"
+              href="/cost-calculator"
               className={`flex items-center pr-5 pl-1.5 py-1.5 rounded-full transition-all duration-300 shadow-md group ${
-                scroll ? 'bg-primary text-white hover:bg-blue-800' : 'bg-white text-primary hover:bg-gray-50'
+                (scroll || isInternalPage) ? 'bg-primary text-white hover:bg-blue-800' : 'bg-white text-primary hover:bg-gray-50'
               }`}
             >
               <div className={`w-8 h-8 rounded-full flex items-center justify-center mr-2.5 transition-colors ${
-                scroll ? 'bg-white/20 group-hover:bg-white/30' : 'bg-primary/10 group-hover:bg-primary/20'
+                (scroll || isInternalPage) ? 'bg-white/20 group-hover:bg-white/30' : 'bg-primary/10 group-hover:bg-primary/20'
               }`}>
                 <svg style={{width:'14px',height:'14px'}} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </div>
-              <span className="font-semibold text-[14px]">Consultation</span>
+              <span className="font-semibold text-[14px]">Cost Calculator</span>
             </Link>
           </div>
 
@@ -280,7 +283,7 @@ export default function Navbar() {
           <div className="flex lg:hidden items-center gap-2">
             <button
               className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${
-                scroll ? 'text-gray-800 hover:bg-gray-100' : 'text-white hover:bg-white/10'
+                (scroll || isInternalPage) ? 'text-gray-800 hover:bg-gray-100' : 'text-white hover:bg-white/10'
               }`}
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
@@ -404,18 +407,15 @@ export default function Navbar() {
           {/* Panel footer CTA */}
           <div className="px-4 py-5 border-t border-gray-100 bg-[#F9FAFB]">
             <Link
-              href="/contact"
+              href="/cost-calculator"
               onClick={() => setMobileOpen(false)}
               className="flex items-center justify-center gap-2 w-full bg-[#00223E] hover:bg-[#003560] text-white font-bold text-[14px] rounded-2xl py-3.5 transition-all shadow-[0_8px_24px_rgba(0,34,62,0.20)]"
             >
               <svg style={{width:'15px',height:'15px'}} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
-              Consultation
             </Link>
-            <p className="mt-3 text-center text-[12px] text-gray-400 font-medium">
-              Fast, no-obligation call with our team
-            </p>
+           
           </div>
         </div>
       </div>

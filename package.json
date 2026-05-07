@@ -17,6 +17,7 @@
     "autoprefixer": "^10",
     "framer-motion": "^11",
     "gsap": "^3.12",
+    "lucide-react": "^1.14.0",
     "next": "^16.2.1",
     "postcss": "^8",
     "react": "^18",

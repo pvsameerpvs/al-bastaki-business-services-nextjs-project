@@ -4,13 +4,13 @@ import { useState } from 'react'
 const languages = [
   { name: 'English', flag: '🇺🇸', code: 'EN' },
   { name: 'Arabic', flag: '🇦🇪', code: 'AR' },
-  { name: 'Hindi', flag: '🇮🇳', code: 'HI' },
   { name: 'French', flag: '🇫🇷', code: 'FR' },
-  { name: 'Chinese', flag: '🇨🇳', code: 'ZH' },
   { name: 'Italian', flag: '🇮🇹', code: 'IT' },
-  { name: 'Spanish', flag: '🇪🇸', code: 'ES' },
-  { name: 'Greek', flag: '🇬🇷', code: 'EL' },
-  { name: 'Russian', flag: '🇷🇺', code: 'RU' },
+  { name: 'Romanian', flag: '🇷🇴', code: 'RO' },
+  { name: 'Hindi', flag: '🇮🇳', code: 'HI' },
+  { name: 'Malayalam', flag: '🇮🇳', code: 'ML' },
+  { name: 'Punjabi', flag: '🇮🇳', code: 'PA' },
+  { name: 'Tamil', flag: '🇮🇳', code: 'TA' },
 ]
 
 export default function ContactFormCard() {

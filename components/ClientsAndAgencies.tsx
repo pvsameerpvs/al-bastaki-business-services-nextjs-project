@@ -42,7 +42,7 @@ export default function ClientsAndAgencies() {
             </span>
           </div>
 
-          {[1, 2, 3, 4, 5, 6, 7, 8,9,10].map((num) => (
+          {[1, 2, 3, 4, 6, 7, 8,].map((num) => (
             <div
               key={`client-${num}`}
               className="bg-white rounded-[1.25rem] border border-gray-100 aspect-[3/2] sm:aspect-[4/3] lg:aspect-[3/2] flex items-center justify-center p-6 sm:p-8 hover:shadow-[0_15px_30px_rgba(0,0,0,0.04)] hover:-translate-y-1 hover:border-white transition-all duration-300 cursor-pointer"

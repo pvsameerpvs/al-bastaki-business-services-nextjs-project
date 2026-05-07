@@ -11,7 +11,6 @@ type FormationOption = {
   key: OptionKey
   label: string
   kicker: string
-  image: string
   idealFor: string
   timeline: string
   highlights: string[]
@@ -24,7 +23,6 @@ const options: FormationOption[] = [
     key: 'mainland',
     label: 'Mainland',
     kicker: 'Operate across the UAE market',
-    image: '/mainland.jpg',
     tag: 'Most flexible',
     idealFor:
       'Companies that need broad operational flexibility, UAE market access, or the ability to serve multiple client types.',
@@ -43,7 +41,6 @@ const options: FormationOption[] = [
     key: 'freezone',
     label: 'Free Zone',
     kicker: 'Fast setup, structured packages',
-    image: '/freezone.jpg',
     tag: 'Most popular',
     idealFor:
       'Founders and international teams that want straightforward setup packages and a clear authority-led process.',
@@ -62,7 +59,6 @@ const options: FormationOption[] = [
     key: 'offshore',
     label: 'Offshore',
     kicker: 'Holding and structuring',
-    image: '/company-formation-3.jpg',
     tag: 'Asset holding',
     idealFor:
       'Ownership structures, asset holding, and scenarios where UAE local operations are not required.',
@@ -81,7 +77,6 @@ const options: FormationOption[] = [
     key: 'branch',
     label: 'Branch Office',
     kicker: 'Extend an existing company',
-    image: '/branch.jpg',
     tag: 'For established entities',
     idealFor:
       'Foreign or local companies that want a UAE presence under an existing parent entity structure.',
@@ -212,136 +207,108 @@ export default function CompanyFormationOptions() {
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.38, ease: 'easeOut' }}
           >
-            <div className="rounded-[2rem] bg-white border border-gray-100 shadow-[0_24px_80px_rgba(0,0,0,0.07)] overflow-hidden">
-              <div className="grid lg:grid-cols-[1fr_420px] xl:grid-cols-[1fr_480px]">
-
-                {/* ── LEFT: details ── */}
-                <div className="p-7 sm:p-8 md:p-10">
-
-                  {/* header */}
-                  <div className="flex items-start gap-4 flex-wrap mb-7">
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2.5 flex-wrap">
-                        <span className="inline-flex items-center rounded-full bg-primary/10 text-primary text-[11px] font-bold tracking-wide px-3 py-1 uppercase">
-                          {activeOption.tag}
-                        </span>
-                        <span className="text-[12px] font-medium text-gray-400 tracking-wide">
-                          {activeOption.kicker}
-                        </span>
-                      </div>
-                      <h3 className="mt-3 text-[26px] sm:text-[30px] font-bold text-[#1a2744] tracking-tight leading-snug">
-                        {activeOption.label}{' '}
-                        <span className="text-gray-400 font-semibold">company setup</span>
-                      </h3>
+            <div className="rounded-[2.5rem] bg-white border border-gray-100 shadow-[0_32px_100px_rgba(0,0,0,0.06)] overflow-hidden">
+              <div className="p-8 sm:p-10 md:p-14">
+                
+                {/* header */}
+                <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-10 pb-8 border-b border-gray-50">
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-3 flex-wrap mb-4">
+                      <span className="inline-flex items-center rounded-full bg-primary/10 text-primary text-[11px] font-extrabold tracking-widest px-4 py-1.5 uppercase">
+                        {activeOption.tag}
+                      </span>
+                      <span className="text-[13px] font-bold text-gray-400 tracking-wide uppercase">
+                        {activeOption.kicker}
+                      </span>
                     </div>
-
-                    {/* timeline pill */}
-                    <div className="shrink-0 rounded-2xl bg-[#F7F9FC] border border-gray-100 px-4 py-3">
-                      <div className="text-[10px] font-bold tracking-[0.2em] text-gray-400 uppercase mb-1">Timeline</div>
-                      <div className="text-[13px] font-bold text-gray-800">{activeOption.timeline}</div>
-                    </div>
+                    <h3 className="text-[32px] sm:text-[42px] font-black text-[#00223E] tracking-tighter leading-[1.1] uppercase">
+                      {activeOption.label}{' '}
+                      <span className="text-gray-300">Setup</span>
+                    </h3>
                   </div>
 
-                  {/* ideal for */}
-                  <div className="rounded-2xl bg-[#F7F9FC] border border-gray-100 px-5 py-4 mb-6">
-                    <div className="text-[11px] font-bold tracking-[0.2em] text-gray-400 uppercase mb-2">Ideal for</div>
-                    <p className="text-[14px] text-gray-700 leading-relaxed font-medium">{activeOption.idealFor}</p>
+                  {/* timeline pill */}
+                  <div className="shrink-0 rounded-[2rem] bg-[#F7F9FC] border border-gray-100 px-8 py-5 flex flex-col items-center justify-center text-center">
+                    <div className="text-[10px] font-black tracking-[0.25em] text-gray-400 uppercase mb-2">Estimated Timeline</div>
+                    <div className="text-[16px] font-black text-[#00223E] tracking-tight">{activeOption.timeline}</div>
                   </div>
+                </div>
 
-                  {/* two columns: highlights + considerations */}
-                  <div className="grid sm:grid-cols-2 gap-5">
-                    {/* key benefits */}
+                <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 md:gap-16">
+                  {/* Left Column: Vision & Ideal Use */}
+                  <div className="space-y-10">
                     <div>
-                      <div className="flex items-center gap-2 mb-3">
-                        <span className="w-6 h-6 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center">
-                          <CheckIcon size={13} />
-                        </span>
-                        <span className="text-[11px] font-bold tracking-[0.2em] text-gray-500 uppercase">Key benefits</span>
+                      <div className="text-[12px] font-black tracking-[0.25em] text-gray-400 uppercase mb-4">Ideal Scenario</div>
+                      <p className="text-[18px] text-gray-700 leading-relaxed font-medium italic border-l-4 border-[#0066A6]/20 pl-6">
+                        "{activeOption.idealFor}"
+                      </p>
+                    </div>
+
+                    {/* what's included strip */}
+                    <div className="pt-8 border-t border-gray-100">
+                      <div className="text-[12px] font-black tracking-[0.25em] text-gray-400 uppercase mb-6">
+                        Included Services
                       </div>
-                      <div className="space-y-2.5">
-                        {activeOption.highlights.map((h) => (
-                          <div key={h} className="flex items-start gap-3">
-                            <span className="mt-0.5 w-5 h-5 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center shrink-0">
-                              <CheckIcon size={11} />
+                      <div className="grid gap-3">
+                        {[
+                          'Option evaluation and checklist',
+                          'Document preparation and reviews',
+                          'Submission coordination',
+                          'Authority follow-ups',
+                        ].map((x) => (
+                          <div
+                            key={x}
+                            className="flex items-center gap-3 rounded-2xl bg-gray-50/50 border border-gray-100 px-5 py-4 transition-all hover:bg-white hover:shadow-md group"
+                          >
+                            <span className="w-5 h-5 rounded-full bg-[#0066A6]/10 text-[#0066A6] flex items-center justify-center shrink-0 group-hover:bg-[#0066A6] group-hover:text-white transition-colors">
+                              <CheckIcon size={12} />
                             </span>
-                            <span className="text-[13.5px] font-medium text-gray-700 leading-snug">{h}</span>
+                            <span className="text-[14px] font-bold text-gray-700">{x}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right Column: Comparative Analysis */}
+                  <div className="grid md:grid-cols-2 lg:grid-cols-1 gap-8 lg:gap-12">
+                    {/* key benefits */}
+                    <div className="bg-[#F0FDF4]/30 rounded-[2rem] p-8 border border-emerald-100/50">
+                      <div className="flex items-center gap-3 mb-6">
+                        <span className="w-8 h-8 rounded-xl bg-emerald-500 text-white flex items-center justify-center shadow-lg shadow-emerald-500/20">
+                          <CheckIcon size={16} />
+                        </span>
+                        <span className="text-[12px] font-black tracking-[0.25em] text-emerald-700 uppercase">Operational Benefits</span>
+                      </div>
+                      <div className="space-y-4">
+                        {activeOption.highlights.map((h) => (
+                          <div key={h} className="flex items-start gap-4">
+                            <span className="mt-1 text-emerald-500 shrink-0">
+                              <CheckIcon size={14} />
+                            </span>
+                            <span className="text-[15px] font-bold text-gray-800 leading-tight">{h}</span>
                           </div>
                         ))}
                       </div>
                     </div>
 
                     {/* things to know */}
-                    <div>
-                      <div className="flex items-center gap-2 mb-3">
-                        <span className="w-6 h-6 rounded-full bg-amber-50 text-amber-500 flex items-center justify-center">
-                          <AlertIcon size={13} />
+                    <div className="bg-[#FFFBEB]/30 rounded-[2rem] p-8 border border-amber-100/50">
+                      <div className="flex items-center gap-3 mb-6">
+                        <span className="w-8 h-8 rounded-xl bg-amber-500 text-white flex items-center justify-center shadow-lg shadow-amber-500/20">
+                          <AlertIcon size={16} />
                         </span>
-                        <span className="text-[11px] font-bold tracking-[0.2em] text-gray-500 uppercase">Things to know</span>
+                        <span className="text-[12px] font-black tracking-[0.25em] text-amber-700 uppercase">Key Considerations</span>
                       </div>
-                      <div className="space-y-2.5">
+                      <div className="space-y-4">
                         {activeOption.considerations.map((c) => (
-                          <div key={c} className="flex items-start gap-3">
-                            <span className="mt-0.5 w-5 h-5 rounded-full bg-amber-50 text-amber-500 flex items-center justify-center shrink-0">
-                              <AlertIcon size={11} />
+                          <div key={c} className="flex items-start gap-4">
+                            <span className="mt-1 text-amber-500 shrink-0">
+                              <AlertIcon size={14} />
                             </span>
-                            <span className="text-[13.5px] font-medium text-gray-700 leading-snug">{c}</span>
+                            <span className="text-[15px] font-bold text-gray-800 leading-tight">{c}</span>
                           </div>
                         ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* what's included strip */}
-                  <div className="mt-7 pt-6 border-t border-gray-100">
-                    <div className="text-[11px] font-bold tracking-[0.2em] text-gray-400 uppercase mb-3">
-                      Included with Al Bastaki
-                    </div>
-                    <div className="grid sm:grid-cols-2 gap-2">
-                      {[
-                        'Option evaluation and checklist',
-                        'Document preparation and reviews',
-                        'Submission coordination and follow-ups',
-                        'Approval tracking and final handover',
-                      ].map((x) => (
-                        <div
-                          key={x}
-                          className="flex items-center gap-2.5 rounded-xl bg-[#F7F9FC] border border-gray-100 px-4 py-2.5"
-                        >
-                          <span className="w-4 h-4 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
-                            <CheckIcon size={10} />
-                          </span>
-                          <span className="text-[13px] font-semibold text-gray-700">{x}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* ── RIGHT: image panel ── */}
-                <div className="relative hidden lg:block bg-[#00223E] min-h-[460px]">
-                  <Image
-                    src={activeOption.image}
-                    alt={`${activeOption.label} company formation`}
-                    fill
-                    className="object-cover opacity-70 mix-blend-luminosity"
-                    sizes="480px"
-                    priority
-                  />
-                  {/* overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#00223E]/60 via-transparent to-transparent" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#001530]/80 via-transparent to-transparent" />
-
-                  {/* overlay badge */}
-                  <div className="absolute bottom-8 left-7 right-7">
-                    <div className="rounded-2xl bg-white/10 backdrop-blur-sm border border-white/15 px-5 py-4">
-                      <div className="text-[11px] font-bold tracking-[0.2em] text-white/60 uppercase mb-1.5">
-                        {activeOption.label}
-                      </div>
-                      <div className="text-[17px] font-bold text-white leading-snug">
-                        {activeOption.kicker}
-                      </div>
-                      <div className="mt-2 text-[12.5px] text-white/70 font-medium">
-                        {activeOption.timeline}
                       </div>
                     </div>
                   </div>
