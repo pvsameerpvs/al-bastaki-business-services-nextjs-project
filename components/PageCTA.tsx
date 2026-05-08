@@ -35,27 +35,36 @@ export default function PageCTA({
             </p>
           </div>
 
-          <Link
-            href={href}
-            className="bg-white text-[#00223E] rounded-full p-[6px] flex items-center gap-4 hover:bg-gray-100 hover:scale-105 transition-all duration-300 shrink-0 group"
-          >
-            <span className="w-[40px] h-[40px] rounded-full bg-primary/10 flex items-center justify-center transition-transform duration-300 group-hover:-rotate-45">
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-              </svg>
-            </span>
-            <span className="font-bold text-[14px] pr-5 pb-[1px]">{buttonText}</span>
-          </Link>
+          <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0 w-full md:w-auto">
+            <Link
+              href="/cost-calculator"
+              className="bg-white/10 text-white border border-white/20 rounded-full py-3.5 px-7 flex items-center gap-2 hover:bg-white/20 transition-all duration-300 w-full sm:w-auto justify-center group"
+            >
+              <span className="font-bold text-[14px]">Cost Calculator</span>
+            </Link>
+
+            <Link
+              href={href}
+              className="bg-white text-[#00223E] rounded-full p-[6px] flex items-center gap-4 hover:bg-gray-100 hover:scale-105 transition-all duration-300 w-full sm:w-auto shrink-0 group"
+            >
+              <span className="w-[40px] h-[40px] rounded-full bg-primary/10 flex items-center justify-center transition-transform duration-300 group-hover:-rotate-45">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </span>
+              <span className="font-bold text-[14px] pr-5 pb-[1px]">{buttonText}</span>
+            </Link>
+          </div>
         </motion.div>
       </div>
     </section>

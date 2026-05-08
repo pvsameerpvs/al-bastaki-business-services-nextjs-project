@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 type PageHeroProps = {
   title: string
@@ -43,6 +44,25 @@ export default function PageHero({ title, subtitle, image, badge }: PageHeroProp
           <p className="mt-6 text-[15.5px] md:text-[17px] lg:text-[18px] leading-relaxed text-white/85 max-w-[46rem] font-medium">
             {subtitle}
           </p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-10"
+          >
+            <Link
+              href="/cost-calculator"
+              className="inline-flex items-center gap-3 bg-primary hover:bg-blue-800 text-white font-bold px-7 py-3.5 rounded-full transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 group"
+            >
+              <span>Calculate Your Business Cost</span>
+              <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center transition-colors group-hover:bg-white/30">
+                <svg style={{width:'12px',height:'12px'}} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </div>
+            </Link>
+          </motion.div>
         </motion.div>
       </div>
     </section>

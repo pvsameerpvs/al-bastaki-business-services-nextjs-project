@@ -4,6 +4,7 @@ import { useState } from 'react'
 const languages = [
   { name: 'English', flag: '🇺🇸', code: 'EN' },
   { name: 'Arabic', flag: '🇦🇪', code: 'AR' },
+  { name: 'Chinese', flag: '🇨🇳', code: 'ZH' },
   { name: 'French', flag: '🇫🇷', code: 'FR' },
   { name: 'Italian', flag: '🇮🇹', code: 'IT' },
   { name: 'Romanian', flag: '🇷🇴', code: 'RO' },
