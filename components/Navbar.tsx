@@ -50,10 +50,9 @@ const navItems = [
     dropdown: [
       { label: 'CLE Investments', href: 'https://www.cleinvestments.com' },
       { label: 'CLE UAE', href: 'https://cleuae.com' },
-      { label: 'CLE Accounting', href: 'https://cle-accounting.com' },
+      { label: 'CLE Accounting', href: 'https://cledxb.com' },
     ],
   },
-  { label: 'Cost Calculator', href: '/cost-calculator', dropdown: null, external: false },
 ]
 
 // ─── Desktop Dropdown (internal links) ───────────────────────────────────────
@@ -406,18 +405,17 @@ export default function Navbar() {
           </div>
 
           {/* Panel footer CTA */}
-          <div className="px-5 pt-5 pb-10 border-t border-gray-100 bg-white/50 backdrop-blur-sm">
+          <div className="px-5 pt-4 pb-14 border-t border-gray-100 bg-white">
             <Link
               href="/cost-calculator"
               onClick={() => setMobileOpen(false)}
-              className="flex items-center justify-between px-6 w-full bg-[#00223E] hover:bg-[#003560] text-white font-bold text-[14px] rounded-2xl py-3.5 transition-all shadow-[0_8px_24px_rgba(0,34,62,0.20)]"
+              className="flex items-center justify-between px-6 w-full bg-[#00223E] hover:bg-[#003560] text-white font-bold text-[14px] rounded-2xl py-3.5 transition-all shadow-[0_8px_24px_rgba(0,34,62,0.15)]"
             >
               <span>Cost Calculator</span>
               <svg style={{width:'15px',height:'15px'}} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </Link>
-           
           </div>
         </div>
       </div>
